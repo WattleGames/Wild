@@ -7,7 +7,7 @@ using System;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-namespace Gamble.BattleCards.Tools
+namespace Gamble.Util
 {
     [InitializeOnLoad]
     public class SceneSleectorToolBar

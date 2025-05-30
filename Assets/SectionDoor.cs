@@ -1,6 +1,5 @@
 using UnityEngine;
 using Wattle.Wild.Gameplay.Player;
-using Wattle.Wild.Logging;
 
 namespace Wattle.Wild.Gameplay
 {
