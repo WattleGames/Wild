@@ -1,9 +1,9 @@
-using Gamble.Wild.Infrastructure;
+using Wattle.Wild.Infrastructure;
 using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Gamble.Wild.Audio
+namespace Wattle.Wild.Audio
 {
     public enum AudioType
     {

@@ -1,4 +1,4 @@
-namespace Gamble.Wild.Infrastructure
+namespace Wattle.Wild.Infrastructure
 {
     public interface IConfig
     {

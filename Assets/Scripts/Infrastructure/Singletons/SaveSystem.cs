@@ -1,5 +1,5 @@
-using Gamble.Wild.Logging;
-using Gamble.Utils;
+using Wattle.Wild.Logging;
+using Wattle.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Accessibility;
 
-namespace Gamble.Wild.Infrastructure
+namespace Wattle.Wild.Infrastructure
 {
     public class SaveSystem : Singleton<SaveSystem>
     {

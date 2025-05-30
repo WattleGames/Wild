@@ -1,12 +1,12 @@
-using Gamble.Wild.Logging;
-using Gamble.Wild.UI;
-using Gamble.Utils;
+using Wattle.Wild.Logging;
+using Wattle.Wild.UI;
+using Wattle.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gamble.Wild.Infrastructure
+namespace Wattle.Wild.Infrastructure
 {
     public class SingletonManager : PersistentSingleton<SingletonManager>
     {

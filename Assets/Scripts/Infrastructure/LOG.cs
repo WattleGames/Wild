@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gamble.Wild.Logging
+namespace Wattle.Wild.Logging
 {
     public static class LOG
     {

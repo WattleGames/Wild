@@ -1,6 +1,6 @@
 using System;
 
-namespace Gamble.Utils
+namespace Wattle.Utils
 {
     public class Observable<T>
     {

@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System;
 using UnityEngine;
 
-namespace Gamble.Utils
+namespace Wattle.Utils
 {
     public static class UnityUtils
     {

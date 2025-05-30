@@ -1,7 +1,7 @@
-using Gamble.Utils;
+using Wattle.Utils;
 using UnityEngine;
 
-namespace Gamble.Wild.Infrastructure
+namespace Wattle.Wild.Infrastructure
 {
     public class AudioConfig : IConfig
     {

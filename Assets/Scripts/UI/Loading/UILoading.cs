@@ -1,5 +1,5 @@
-using Gamble.Wild.Logging;
-using Gamble.Utils;
+using Wattle.Wild.Logging;
+using Wattle.Utils;
 
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Gamble.Wild.UI
+namespace Wattle.Wild.UI
 {
     /// <summary>
     /// Handles behaviours pertaining to the UI loaading screen and loading indicator

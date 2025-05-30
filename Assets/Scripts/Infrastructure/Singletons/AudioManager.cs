@@ -1,11 +1,11 @@
-using Gamble.Wild.Audio;
-using Gamble.Utils;
+using Wattle.Wild.Audio;
+using Wattle.Utils;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
-using AudioType = Gamble.Wild.Audio.AudioType;
+using AudioType = Wattle.Wild.Audio.AudioType;
 
-namespace Gamble.Wild.Infrastructure
+namespace Wattle.Wild.Infrastructure
 {
     public class AudioManager : Singleton<AudioManager>
     {

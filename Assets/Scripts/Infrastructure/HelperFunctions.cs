@@ -1,13 +1,13 @@
 using DG.Tweening;
-using Gamble.Wild.Infrastructure;
-using Gamble.Wild.UI;
+using Wattle.Wild.Infrastructure;
+using Wattle.Wild.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Gamble.Wild
+namespace Wattle.Wild
 {
     /// <summary>
     /// Helper class with utility / extension methods

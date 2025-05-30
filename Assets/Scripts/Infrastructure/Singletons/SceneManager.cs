@@ -1,13 +1,13 @@
-using Gamble.Utils;
-using Gamble.Wild.Logging;
-using Gamble.Wild.UI;
+using Wattle.Utils;
+using Wattle.Wild.Logging;
+using Wattle.Wild.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Gamble.Wild.Infrastructure
+namespace Wattle.Wild.Infrastructure
 {
     public class SceneManager : Singleton<SceneManager>
     {

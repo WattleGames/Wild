@@ -1,5 +1,5 @@
-using Gamble.Wild.UI;
-using Gamble.Utils;
+using Wattle.Wild.UI;
+using Wattle.Utils;
 using System;
 using System.Collections;
 #if UNITY_EDITOR
@@ -7,7 +7,7 @@ using UnityEditor;
 #endif
 using UnityEngine;
 
-namespace Gamble.Wild.Infrastructure
+namespace Wattle.Wild.Infrastructure
 {
     public enum GameState
     {

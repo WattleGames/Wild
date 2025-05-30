@@ -1,8 +1,8 @@
-using Gamble.Utils;
+using Wattle.Utils;
 using System.Collections;
 using UnityEngine;
 
-namespace Gamble.Wild.Infrastructure
+namespace Wattle.Wild.Infrastructure
 {
     public class ResourceManager : Singleton<ResourceManager>
     {

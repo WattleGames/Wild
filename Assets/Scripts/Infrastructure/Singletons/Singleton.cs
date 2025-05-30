@@ -1,11 +1,11 @@
-using Gamble.Wild.Logging;
+using Wattle.Wild.Logging;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Gamble.Utils
+namespace Wattle.Utils
 {
     public abstract class Singleton<T> : Singleton where T : Component
     {

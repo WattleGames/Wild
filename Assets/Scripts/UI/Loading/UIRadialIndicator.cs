@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Gamble.Wild.UI
+namespace Wattle.Wild.UI
 {
     public class UIRadialIndicator : MonoBehaviour
     {
