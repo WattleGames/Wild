@@ -11,6 +11,8 @@ namespace Wattle.Wild.Infrastructure
 {
     public class SceneManager : Singleton<SceneManager>
     {
+        public event Action<Scene> OnSceneChanged;
+
         public override IEnumerator Initalise()
         {
             initialised = true;
@@ -34,6 +36,10 @@ namespace Wattle.Wild.Infrastructure
                 await UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName, loadMode);
 
                 LOG.Log($"Scene Loaded: {sceneName}", LOG.Type.SCENE);
+
+                Scene loadedScene = UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName);
+
+                OnSceneChanged?.Invoke(loadedScene);
 
                 onComplete?.Invoke();
 

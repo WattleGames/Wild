@@ -36,7 +36,7 @@ namespace Wattle.Wild.Infrastructure
 #if UNITY_EDITOR
                 return sandboxMode;
 #else
-                return false
+                return false;
 #endif
             } 
         }
