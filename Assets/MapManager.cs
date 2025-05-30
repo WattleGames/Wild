@@ -1,18 +1,16 @@
 using DG.Tweening;
-using JetBrains.Annotations;
 using Unity.Cinemachine;
 using UnityEngine;
 using Wattle.Utils;
 using Wattle.Wild.Gameplay.Player;
 using Wattle.Wild.Logging;
-using static System.Collections.Specialized.BitVector32;
 
 public class MapManager : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera mapCamera;
     [SerializeField] private MapSection[] mapSections;
     [SerializeField] private WorldPlayer worldPlayer;
-    
+
     private int currentIndex = 4;
     private Tweener cameraTween = null;
 
@@ -41,7 +39,7 @@ public class MapManager : MonoBehaviour
     {
         if (oldSection != null)
             LOG.Log($"FROM: {oldSection.name} TO: {newSection.name}", LOG.Type.GENERAL);
-        else 
+        else
             LOG.Log($"STARTING: {newSection.name}", LOG.Type.GENERAL);
 
 
