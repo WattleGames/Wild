@@ -102,6 +102,9 @@ namespace Wattle.Wild.Infrastructure
             AudioSettings = new AudioConfig();
             AudioSettings.Save();
 
+            SaveFile = new SaveFile();
+            SaveFile.Save();
+
             LOG.Log($"Configs reset to defaults", LOG.Type.SAVESYSTEM);
         }
 

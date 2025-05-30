@@ -26,6 +26,7 @@ namespace Wattle.Wild.Infrastructure
 #if UNITY_EDITOR
         [Header("Dev Tools")]
         [SerializeField] private bool sandboxMode = false;
+        [SerializeField] private bool clearSave = false;
         [SerializeField] private MapSectionLocation startingLocation = MapSectionLocation.CENTER;
 #endif
 
@@ -56,6 +57,11 @@ namespace Wattle.Wild.Infrastructure
 
 #if UNITY_EDITOR
                 loadDemo = this.sandboxMode;
+
+                if (clearSave)
+                {
+                    SaveSystem.Instance.ResetConfigs();
+                }
 #endif
 
                 if (!loadDemo)
