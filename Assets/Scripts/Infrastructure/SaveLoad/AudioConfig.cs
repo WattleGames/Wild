@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Wattle.Wild.Infrastructure
 {
-    public class AudioConfig : IConfig
+    public class AudioConfig : ISaveable
     {
         private struct SoundData
         {
@@ -12,13 +12,11 @@ namespace Wattle.Wild.Infrastructure
                 master = config.masterVolume.Value;
                 sfx = config.sfxVolume.Value;
                 music = config.musicVolume.Value;
-                voice = config.voiceVolume.Value;
             }
 
             public float master;
             public float sfx;
             public float music;
-            public float voice;
         }
 
         public string FileName => "SoundSettings";
@@ -26,7 +24,6 @@ namespace Wattle.Wild.Infrastructure
         public Observable<float> masterVolume = new Observable<float>(70f);
         public Observable<float> sfxVolume = new Observable<float>(70f);
         public Observable<float> musicVolume = new Observable<float>(70f);
-        public Observable<float> voiceVolume = new Observable<float>(70f);
 
         public void Deserialize(string json)
         {
@@ -35,7 +32,6 @@ namespace Wattle.Wild.Infrastructure
             masterVolume.Value = data.master;
             sfxVolume.Value = data.sfx;
             musicVolume.Value = data.music;
-            voiceVolume.Value = data.voice;
         }
 
         public string Serialize()

@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singletonManager: {fileID: 1299597352}
   sandboxMode: 0
+  startingLocation: 4
 --- !u!4 &114513174
 Transform:
   m_ObjectHideFlags: 0
@@ -174,6 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242283784}
+  - component: {fileID: 242283785}
   m_Layer: 0
   m_Name: UIGlobal
   m_TagString: Untagged
@@ -189,15 +191,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242283783}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 126.22722, y: 254.84546, z: -5.199172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1003505685}
-  - {fileID: 1535623692}
+  m_Children: []
   m_Father: {fileID: 1299597353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &242283785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242283783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17dbd4508e236e4fbaa6bfbdc93257b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &335500359
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,8 +342,8 @@ CanvasGroup:
   m_GameObject: {fileID: 381986247}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &594769939
 GameObject:
@@ -425,8 +437,8 @@ CanvasGroup:
   m_GameObject: {fileID: 948148093}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1003505684
 GameObject:
@@ -459,7 +471,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2000693347}
-  m_Father: {fileID: 242283784}
+  m_Father: {fileID: 1299597353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1003505686
 MonoBehaviour:
@@ -665,6 +677,8 @@ Transform:
   - {fileID: 1996828037}
   - {fileID: 1454868268}
   - {fileID: 242283784}
+  - {fileID: 1003505685}
+  - {fileID: 1535623692}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454868266
@@ -788,7 +802,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 242283784}
+  m_Father: {fileID: 1299597353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815548271
 GameObject:
@@ -1055,7 +1069,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

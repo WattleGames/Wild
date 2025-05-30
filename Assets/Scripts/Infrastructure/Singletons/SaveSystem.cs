@@ -12,11 +12,12 @@ namespace Wattle.Wild.Infrastructure
 {
     public class SaveSystem : Singleton<SaveSystem>
     {
-        private const string CONFIG_DIRECTORY = "Config";
+        private const string CONFIG_DIRECTORY = "Data";
         private static string configPath;
         public AudioConfig AudioSettings { get; set; }
+        public SaveFile SaveFile { get; set; }
 
-        private readonly List<IConfig> configs = new List<IConfig>();
+        private readonly List<ISaveable> configs = new List<ISaveable>();
 
         public override IEnumerator Initalise()
         {
@@ -47,11 +48,14 @@ namespace Wattle.Wild.Infrastructure
                 Directory.CreateDirectory(configPath);
             }
 
+            SaveFile = new SaveFile();
+            configs.Add(SaveFile);
+
             AudioSettings = new AudioConfig();
             configs.Add(AudioSettings);
 
             // ADD CONDIGS HERE
-            foreach (IConfig config in configs)
+            foreach (ISaveable config in configs)
             {
                 tasks.Add(LoadConfig(config));
             }
@@ -61,7 +65,7 @@ namespace Wattle.Wild.Infrastructure
             onComplete?.Invoke();
         }
 
-        public static async Task LoadConfig(IConfig config)
+        public static async Task LoadConfig(ISaveable config)
         {
             string filePath = $"{configPath}/{config.FileName}.json";
 
@@ -83,7 +87,7 @@ namespace Wattle.Wild.Infrastructure
             }
         }
 
-        public static async Task SaveConfig(IConfig config)
+        public static async Task SaveConfig(ISaveable config)
         {
             string filePath = $"{configPath}/{config.FileName}.json";
 
@@ -103,7 +107,7 @@ namespace Wattle.Wild.Infrastructure
 
         public void SaveConfigs()
         {
-            foreach (IConfig config in configs)
+            foreach (ISaveable config in configs)
             {
                 config.Save();
             }

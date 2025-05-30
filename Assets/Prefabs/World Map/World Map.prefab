@@ -55,15 +55,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapCamera: {fileID: 0}
   mapSections:
-  - {fileID: 8828128341840864963}
-  - {fileID: 7746387776422390404}
-  - {fileID: 2721043683300544034}
-  - {fileID: 7261640471332925225}
-  - {fileID: 7701403228000063289}
-  - {fileID: 8618079224758900974}
-  - {fileID: 2532654809927345164}
-  - {fileID: 900973744259160697}
-  - {fileID: 8935972073642443006}
+  - mapSection: {fileID: 8828128341840864963}
+    location: 6
+  - mapSection: {fileID: 7746387776422390404}
+    location: 7
+  - mapSection: {fileID: 2721043683300544034}
+    location: 8
+  - mapSection: {fileID: 7261640471332925225}
+    location: 3
+  - mapSection: {fileID: 7701403228000063289}
+    location: 4
+  - mapSection: {fileID: 8618079224758900974}
+    location: 5
+  - mapSection: {fileID: 2532654809927345164}
+    location: 0
+  - mapSection: {fileID: 900973744259160697}
+    location: 1
+  - mapSection: {fileID: 8935972073642443006}
+    location: 2
   worldPlayer: {fileID: 0}
 --- !u!1001 &368339225821702163
 PrefabInstance:

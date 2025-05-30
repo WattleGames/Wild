@@ -75,7 +75,7 @@ namespace Wattle.Wild
         /// </summary>
         /// <param name="config"> The config to save. </param>
         /// <param name="onComplete"> Action to fire after saving has completed. (Happens on main thread) </param>
-        public static void Save(this IConfig config, Action onComplete = null)
+        public static void Save(this ISaveable config, Action onComplete = null)
         {
             bool hasSaved = false;
 
@@ -96,7 +96,7 @@ namespace Wattle.Wild
         /// </summary>
         /// <param name="config"> The config to load. </param>
         /// <param name="onComplete"> Action to fire after loading has completed. (Happens on main thread) </param>
-        public static void Load(this IConfig config, Action onComplete = null)
+        public static void Load(this ISaveable config, Action onComplete = null)
         {
             bool hasLoaded = false;
 

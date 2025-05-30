@@ -1,6 +1,6 @@
 namespace Wattle.Wild.Infrastructure
 {
-    public interface IConfig
+    public interface ISaveable
     {
         public string FileName { get; }
         public void Deserialize(string data);

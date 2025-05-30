@@ -1,7 +1,9 @@
 using Wattle.Wild.UI;
 using Wattle.Utils;
 using System;
-using System.Collections;
+using Wattle.Wild.Gameplay;
+
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -24,6 +26,7 @@ namespace Wattle.Wild.Infrastructure
 #if UNITY_EDITOR
         [Header("Dev Tools")]
         [SerializeField] private bool sandboxMode = false;
+        [SerializeField] private MapSectionLocation startingLocation = MapSectionLocation.CENTER;
 #endif
 
         public bool IsSandbox 
@@ -76,8 +79,24 @@ namespace Wattle.Wild.Infrastructure
 
         public static void LoadGame()
         {
+            MapSectionLocation spawnLocation = SaveSystem.Instance.SaveFile.playerLocation.Value;
+            Vector2? playerLocation = SaveSystem.Instance.SaveFile.positionOffset;
+
+#if UNITY_EDITOR
+            if (Instance.IsSandbox)
+            {
+                spawnLocation = Instance.startingLocation;
+                playerLocation = null;
+            }
+#endif
+
             SceneManager.Instance.LoadScene("GameScene", UnityEngine.SceneManagement.LoadSceneMode.Single, () =>
             {
+                MapManager mapManager = FindAnyObjectByType<MapManager>();
+                if (mapManager != null)
+                {
+                    mapManager.LoadMap(spawnLocation, playerLocation);
+                }
                 OnGameStateChanged?.Invoke(GameState.Game);
             });
         }
