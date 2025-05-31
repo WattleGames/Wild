@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singletonManager: {fileID: 1299597352}
   sandboxMode: 0
+  clearSave: 0
   startingLocation: 4
 --- !u!4 &114513174
 Transform:
@@ -1015,6 +1016,6 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 334831926}
   - {fileID: 114513174}
   - {fileID: 1299597353}
+  - {fileID: 334831926}
