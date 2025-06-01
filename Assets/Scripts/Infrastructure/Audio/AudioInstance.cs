@@ -57,6 +57,7 @@ namespace Wattle.Wild.Audio
                 {
                     yield return Fade(false);
                 }
+
                 if (audioCoroutine != null)
                     StopCoroutine(audioCoroutine);
 
