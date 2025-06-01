@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: a5c3b2ef5aa2424489ec32659df00d19
+guid: 1930fd4494a74384f907da5a4be0feb3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4321618673453446872
-    second: spritesheet-removebg-preview_0
+      213: 585489585357299884
+    second: spritesheet (2)_0
   - first:
-      213: 9036203023807921177
-    second: spritesheet-removebg-preview_1
+      213: 3213048799308102398
+    second: spritesheet (2)_1
   - first:
-      213: 9170312691810078164
-    second: spritesheet-removebg-preview_2
+      213: 4619062684799962818
+    second: spritesheet (2)_2
   - first:
-      213: -5130253485342387914
-    second: spritesheet-removebg-preview_3
-  - first:
-      213: 8841877722413117069
-    second: spritesheet-removebg-preview_4
+      213: -7543266853627613897
+    second: spritesheet (2)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 223.6
+  spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,111 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet-removebg-preview_0
+      name: PlayerSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 223
-        height: 223
+        y: 2
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 829cc12a6b68604c0800000000000000
-      internalID: -4321618673453446872
+      spriteID: d1dd6e9f02c98f64dadeac12dbfdb8c8
+      internalID: -1879791179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-removebg-preview_1
+      name: PlayerSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 223
-        y: 0
-        width: 223
-        height: 223
+        x: 2048
+        y: 2
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 91cb16836ca076d70800000000000000
-      internalID: 9036203023807921177
+      spriteID: 6be0f168259e709479a152bb5008281a
+      internalID: 1252461162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-removebg-preview_2
+      name: PlayerSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 446
-        y: 0
-        width: 223
-        height: 223
+        x: 4096
+        y: 2
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4dd889a8ece734f70800000000000000
-      internalID: 9170312691810078164
+      spriteID: 17b2faa324164494788be069a18b0b4c
+      internalID: 1381699326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-removebg-preview_3
+      name: PlayerSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 669
-        y: 0
-        width: 223
-        height: 223
+        x: 6144
+        y: 2
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6311576e2adadc8b0800000000000000
-      internalID: -5130253485342387914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet-removebg-preview_4
-      rect:
-        serializedVersion: 2
-        x: 892
-        y: 0
-        width: 223
-        height: 223
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d8eafd731f8a4ba70800000000000000
-      internalID: 8841877722413117069
+      spriteID: 3f51a4b65d7b9dd4286ecbf97c5cf0f6
+      internalID: 1445833599
       vertices: []
       indices: 
       edges: []
@@ -225,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5b35b0028da549e4a854ff2992b1d065
+    spriteID: 0d3f4dc3a5542b944b17ad229d215873
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spritesheet-removebg-preview_0: -4321618673453446872
-      spritesheet-removebg-preview_1: 9036203023807921177
-      spritesheet-removebg-preview_2: 9170312691810078164
-      spritesheet-removebg-preview_3: -5130253485342387914
-      spritesheet-removebg-preview_4: 8841877722413117069
+      PlayerSpriteSheet_0: -1879791179
+      PlayerSpriteSheet_1: 1252461162
+      PlayerSpriteSheet_2: 1381699326
+      PlayerSpriteSheet_3: 1445833599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

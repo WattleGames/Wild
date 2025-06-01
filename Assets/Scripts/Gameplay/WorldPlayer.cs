@@ -8,13 +8,19 @@ namespace Wattle.Wild.Gameplay.Player
 {
     public class WorldPlayer : MonoBehaviour
     {
+        [Header("Movement")]
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private Rigidbody2D rb;
+
+        [Header("Animation")]
+        [SerializeField] private Animator playerAnimator;
 
         private Vector2 movement;
         private bool isInputEnabled = true;
 
         private (Vector2, MapSectionLocation) currentSectionDetails;
+
+        private string isMovingParameter = "isMoving";
 
         void Update()
         {
@@ -22,6 +28,11 @@ namespace Wattle.Wild.Gameplay.Player
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 
+            Vector2.ClampMagnitude(movement, 1);
+
+            bool moving = movement != Vector2.zero;
+
+            playerAnimator.SetBool(isMovingParameter, moving);
         }
 
         void FixedUpdate()
