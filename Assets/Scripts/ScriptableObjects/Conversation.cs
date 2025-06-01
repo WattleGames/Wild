@@ -13,8 +13,9 @@ namespace Wattle.Wild.Infrastructure.Conversation
 
     public abstract class ConversationStage : ScriptableObject
     {
-        public Sprite speakerPortrait;
-        public AudioClip messageVoice;
+        [Header("Speaker")]
+        public UIDialogueSpeaker dialogueSpeakerPrefab;
+        public AudioClip voiceLine;
     }
 }
 

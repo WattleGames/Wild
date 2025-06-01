@@ -19,6 +19,11 @@ namespace Wattle.Wild.UI
         [SerializeField] private RectTransform content;
         [SerializeField] private RectTransform container;
 
+        [SerializeField] private Image backgroundImage;
+
+        [SerializeField] private Sprite leaveSprite;
+        [SerializeField] private Sprite standardSprite;
+
         private float xMin = 5f;
         private float xMax = 10f;
         private float yMin = 5f;
@@ -37,6 +42,9 @@ namespace Wattle.Wild.UI
         {
             this.reply = reply;
             this.isLeave = isLeave;
+
+            backgroundImage.sprite = isLeave ? leaveSprite : standardSprite;
+            button.targetGraphic = backgroundImage;
 
             optionText.text = reply.replyText;
 

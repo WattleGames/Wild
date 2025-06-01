@@ -19,10 +19,12 @@ namespace Wattle.Wild.Gameplay.Conversation
         [SerializeField] private UIDialogueReplyPanel dialogueReplyPanel;
 
         [Header("Speaker")]
-        [SerializeField] private Image speakerImage;
         [SerializeField] private RectTransform speakerContainer;
 
+        [Header("Test")]
         [SerializeField] private Conversaion testConversation;
+
+        private UIDialogueSpeaker dialogueSpeaker;
 
         private Tweener speakerMovementTween = null;
         private Tweener speakerBobTween = null;
@@ -33,17 +35,11 @@ namespace Wattle.Wild.Gameplay.Conversation
         private float speakerStartingXPosition;
         private float speakerEndingXPosition;
 
-        private void OnEnable()
-        {
-            speakerImage.gameObject.SetActive(false);
-        }
-
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartConversation(testConversation);
-
             }
         }
 
@@ -85,12 +81,10 @@ namespace Wattle.Wild.Gameplay.Conversation
 
         private void ShowDialogue(Dialogue dialogue)
         {
-            if (speakerImage.sprite == null || dialogue.speakerPortrait.name != speakerImage.sprite.name)
+            if (dialogueSpeaker == null)
             {
-                // cancel speaker animations / tweens here
-                // transition speakers here?
-                speakerImage.sprite = dialogue.speakerPortrait;
-                speakerImage.gameObject.SetActive(true);
+                dialogueSpeaker = Instantiate(dialogue.dialogueSpeakerPrefab, speakerContainer);
+                dialogueSpeaker.InitSpeaker(dialoguePanel);
 
                 AnimateSpeaker();
 
@@ -187,8 +181,8 @@ namespace Wattle.Wild.Gameplay.Conversation
                 if (speakerMovementTween != null)
                     speakerMovementTween.Kill();
 
-                speakerImage.sprite = null;
-                speakerImage.gameObject.SetActive(false);
+                dialogueSpeaker.CleanUp();
+                Destroy(dialogueSpeaker.gameObject);
 
                 speakerContainer.anchoredPosition = new Vector3(speakerEndingXPosition, 8);
 

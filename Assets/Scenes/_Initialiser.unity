@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singletonManager: {fileID: 1299597352}
-  sandboxMode: 0
+  sandboxMode: 1
   clearSave: 0
   startingLocation: 4
 --- !u!4 &114513174
@@ -1060,6 +1060,8 @@ MonoBehaviour:
   uiButtonSound: {fileID: 0}
   mainMenuMusic: {fileID: 8300000, guid: bf98e9ef9b6488f4795242465c027e3c, type: 3}
   worldMusic: {fileID: 8300000, guid: a5cf2b82925900c46b2620bd06b99dae, type: 3}
+  graveyardMusic: {fileID: 8300000, guid: e1b850916216c0540bc3182a4d260ce6, type: 3}
+  saloonMusic: {fileID: 8300000, guid: d4b58dad17725054db5ec4627c11b3a5, type: 3}
 --- !u!4 &1996828037
 Transform:
   m_ObjectHideFlags: 0
@@ -1176,7 +1178,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &2000693351
 MonoBehaviour:

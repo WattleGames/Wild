@@ -1,18 +1,18 @@
 using DG.Tweening;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 using Wattle.Utils;
 using Wattle.Wild.Gameplay.Player;
 using Wattle.Wild.Logging;
+using Wattle.Wild.UI;
 
 namespace Wattle.Wild.Gameplay
 {
     public enum MapSectionLocation
     {
+        // World Map
         TOP_LEFT,
         TOP_CENTER,
         TOP_RIGHT,
@@ -22,6 +22,21 @@ namespace Wattle.Wild.Gameplay
         BOTTOM_LEFT,
         BOTTOM_CENTER,
         BOTTOM_RIGHT,
+
+        // Locations
+        WATERFALL,
+        CAVE,
+        SALOON,
+        FAMHOUSE,
+        GRAVEYARD,
+        CHURCH,
+        SCHOOL,
+        FACTORY,
+        HOSPITAL,
+        CARNIVAL,
+        CAMP,
+        LIBRARY,
+        CASTLE
     }
 
     public class MapManager : MonoBehaviour
@@ -32,6 +47,8 @@ namespace Wattle.Wild.Gameplay
             public MapSection mapSection;
             public MapSectionLocation location;
         }
+
+        public event Action<MapSectionLocation> OnMapSectionChanged;
 
         [SerializeField] private CinemachineCamera mapCamera; // at some point I might do the same thing for the camera as weve done with the player for moving
         [SerializeField] private MapSectionDetails[] mapSections;
@@ -68,12 +85,69 @@ namespace Wattle.Wild.Gameplay
             if (oldSection != null)
                 oldSection.ToggleDoors(false);
 
-            worldPlayer.MoveIntoNewSection(GetSectionDetailsFromSection(newSection), () =>
-            {
-                newSection.ToggleDoors(true);
-            });
+            MapSectionDetails sectionDetails = GetSectionDetailsFromSection(newSection);
+            worldPlayer.ToggleMovement(false);
 
-            MoveCameraToNewSection(newSection);
+            OnMapSectionChanged?.Invoke(sectionDetails.location);
+
+            if (IsSectionOnWorldMap(sectionDetails))
+            {
+                worldPlayer.MoveIntoNewSection(sectionDetails, () =>
+                {
+                    worldPlayer.ToggleMovement(true);
+                    newSection.ToggleDoors(true);
+                });
+
+                MoveCameraToNewSection(newSection);
+            }
+            else
+            {
+                UILoading.ShowScreen(() =>
+                {
+                    worldPlayer.MoveToNewSection(sectionDetails, null);
+                    SetCameraToNewPosition(newSection);
+
+                    UILoading.HideScreen(() =>
+                    {
+                        worldPlayer.ToggleMovement(true);
+                    });
+                });
+            }
+        }
+
+        private bool IsSectionOnWorldMap(MapSectionDetails sectionDetails)
+        {
+            bool isWorldMap = sectionDetails.location switch
+            {
+                // World Map
+                MapSectionLocation.BOTTOM_LEFT => true,
+                MapSectionLocation.BOTTOM_CENTER => true,
+                MapSectionLocation.BOTTOM_RIGHT => true,
+                MapSectionLocation.CENTER_LEFT => true,
+                MapSectionLocation.CENTER => true,
+                MapSectionLocation.CENTER_RIGHT => true,
+                MapSectionLocation.TOP_LEFT => true,
+                MapSectionLocation.TOP_CENTER => true,
+                MapSectionLocation.TOP_RIGHT => true,
+
+                // Locations
+                MapSectionLocation.WATERFALL => false,
+                MapSectionLocation.CAVE => false,
+                MapSectionLocation.SALOON => false,
+                MapSectionLocation.FAMHOUSE => false,
+                MapSectionLocation.GRAVEYARD => false,
+                MapSectionLocation.CHURCH => false,
+                MapSectionLocation.SCHOOL => false,
+                MapSectionLocation.FACTORY => false,
+                MapSectionLocation.HOSPITAL => false,
+                MapSectionLocation.CARNIVAL => false,
+                MapSectionLocation.CAMP => false,
+                MapSectionLocation.LIBRARY => false,
+                MapSectionLocation.CASTLE => false,
+                        _ => false
+            };
+
+            return isWorldMap;
         }
 
         private MapSectionDetails GetSectionDetailsFromLocation(MapSectionLocation location)
@@ -86,7 +160,12 @@ namespace Wattle.Wild.Gameplay
             return mapSections.First(x => x.mapSection == mapSection);
         }
 
-        private void MoveCameraToNewSection(MapSection newSection)
+        private void SetCameraToNewPosition(MapSection newSection)
+        {
+            mapCamera.transform.position = newSection.transform.position.WithZ(-1);
+        }
+
+        private void MoveCameraToNewSection(MapSection newSection, Action onComplete = null)
         {
             if (cameraTween != null)
             {
@@ -94,7 +173,10 @@ namespace Wattle.Wild.Gameplay
                 cameraTween = null;
             }
 
-            cameraTween = mapCamera.transform.DOMove(newSection.transform.position.WithZ(-1), 0.3f).SetLink(this.gameObject);
+            cameraTween = mapCamera.transform.DOMove(newSection.transform.position.WithZ(-1), 0.3f).SetLink(this.gameObject).OnComplete(() =>
+            {
+                onComplete?.Invoke();
+            });
         }
     }
 }

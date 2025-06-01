@@ -27,7 +27,12 @@ namespace Wattle.Wild.UI
     {
         public event Action<Dialogue> onDialogueFinished;
 
+        public event Action<float> onDialogueSpoken;
+        public event Action onDialogueEnded;
+
         [SerializeField] private RectTransform messageBox;
+
+        [SerializeField] private TextMeshProUGUI speakerName;
 
         [SerializeField] private TextMeshProUGUI draftMessageText;
         [SerializeField] private TextMeshProUGUI messageText;
@@ -52,6 +57,7 @@ namespace Wattle.Wild.UI
         public void OpenDialogueWindow(Dialogue dialogue)
         {
             this.dialogue = dialogue;
+            speakerName.text = dialogue.dialogueSpeakerPrefab.speakerName;
             messageText.text = string.Empty;
 
             if (!isActive)
@@ -224,8 +230,9 @@ namespace Wattle.Wild.UI
                     continue;
 
                 messageText.text = messageText.text.Insert(messageText.text.Length, character.ToString());
-                PlayTextCharacterAudio(character);
+                onDialogueSpoken?.Invoke(speed);
 
+                PlayTextCharacterAudio(character);
                 yield return new WaitForSeconds(speed);
             }
 

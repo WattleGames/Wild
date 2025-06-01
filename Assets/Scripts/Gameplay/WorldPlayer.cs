@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System;
 using UnityEngine;
+using Wattle.Wild.Gameplay.Conversation;
 using Wattle.Wild.Infrastructure;
 using static Wattle.Wild.Gameplay.MapManager;
 
@@ -8,6 +9,9 @@ namespace Wattle.Wild.Gameplay.Player
 {
     public class WorldPlayer : MonoBehaviour
     {
+        [Header("World Systems")]
+        [SerializeField] private ConversationManager conversationManager;
+
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private Rigidbody2D rb;
@@ -24,15 +28,18 @@ namespace Wattle.Wild.Gameplay.Player
 
         void Update()
         {
-            // Get input
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
+            if (isInputEnabled)
+            {
+                // Get input
+                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.y = Input.GetAxisRaw("Vertical");
 
-            Vector2.ClampMagnitude(movement, 1);
+                Vector2.ClampMagnitude(movement, 1);
 
-            bool moving = movement != Vector2.zero;
+                bool moving = movement != Vector2.zero;
 
-            playerAnimator.SetBool(isMovingParameter, moving);
+                playerAnimator.SetBool(isMovingParameter, moving);
+            }
         }
 
         void FixedUpdate()
@@ -42,6 +49,12 @@ namespace Wattle.Wild.Gameplay.Player
                 // Apply movement
                 rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
             }
+        }
+
+        public void ToggleMovement(bool enabled)
+        {
+            isInputEnabled = enabled;
+            playerAnimator.SetBool(isMovingParameter, enabled);
         }
 
         public void MoveToNewSection(MapSectionDetails sectionDetails, Vector2? playerPosition)
@@ -67,14 +80,11 @@ namespace Wattle.Wild.Gameplay.Player
             Vector2 oldPosition = new Vector2(this.transform.position.x, this.transform.position.y);
             Vector2 newPosition = oldPosition + new Vector2(movement.x * 2, movement.y * 2);
 
-            isInputEnabled = false;
-
             Tweener tween = rb.DOMove(newPosition, 0.35f).OnComplete(() =>
             {
                 SaveSystem.Instance.SaveFile.playerLocation.Value = sectionDetails.location;
 
                 onComplete?.Invoke();
-                isInputEnabled = true;
             }
             ).SetLink(this.gameObject);
         }
