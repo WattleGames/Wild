@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
   m_Name: Test Dialogue 3
   m_EditorClassIdentifier: 
-  speakerPortrait: {fileID: 21300000, guid: df726a09c7af3724095bf644d47855fe, type: 3}
+  speakerPortrait: {fileID: 21300000, guid: b7f90e70b493e4840b5e1a571c9c77ea, type: 3}
   messageVoice: {fileID: 0}
   dialogueText:
   - This is Dialogue 3

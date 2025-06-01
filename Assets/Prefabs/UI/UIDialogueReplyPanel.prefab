@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueOptionPrefab: {fileID: 3284991481092349576, guid: 7418eaab5112b4047b52c7f5896beb7a, type: 3}
   optionContainer: {fileID: 6410011081777469459}
+  leaveReply: {fileID: 11400000, guid: a0dcee57920500741847d308eb43e3bd, type: 2}
 --- !u!222 &4097430011025729599
 CanvasRenderer:
   m_ObjectHideFlags: 0

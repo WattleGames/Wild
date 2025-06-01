@@ -1,8 +1,10 @@
 using DG.Tweening;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Wattle.Wild.Infrastructure.Conversation;
+using Wattle.Wild.Logging;
 using Wattle.Wild.UI;
 
 namespace Wattle.Wild.Gameplay.Conversation
@@ -33,8 +35,18 @@ namespace Wattle.Wild.Gameplay.Conversation
 
         private void OnEnable()
         {
-            StartConversation(testConversation);
+            speakerImage.gameObject.SetActive(false);
         }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartConversation(testConversation);
+
+            }
+        }
+
 
         public void StartConversation(Conversaion conversation)
         {
@@ -64,19 +76,22 @@ namespace Wattle.Wild.Gameplay.Conversation
             dialoguePanel.onDialogueFinished -= OnDialogueFinished;
             dialogueReplyPanel.OnReplySelected -= OnReplySelected;
 
-            RemoveSpeaker(() =>
+            StartCoroutine(RemoveSpeaker(() =>
             {
+                LOG.Log("Conversation ended!");
                 OnConversationEnded?.Invoke();
-            });
+            }));
         }
 
         private void ShowDialogue(Dialogue dialogue)
         {
-            if (speakerImage == null || dialogue.speakerPortrait != speakerImage)
+            if (speakerImage.sprite == null || dialogue.speakerPortrait.name != speakerImage.sprite.name)
             {
                 // cancel speaker animations / tweens here
                 // transition speakers here?
                 speakerImage.sprite = dialogue.speakerPortrait;
+                speakerImage.gameObject.SetActive(true);
+
                 AnimateSpeaker();
 
             }
@@ -125,15 +140,15 @@ namespace Wattle.Wild.Gameplay.Conversation
             }
         }
 
-        private void OnReplySelected(DialogueReply reply)
+        private void OnReplySelected(DialogueReply reply, bool isLeave)
         {
-            if (reply.nextMessage != null)
-            {
-                ShowDialogue(reply.nextMessage);
-            }
-            else
+            if (isLeave)
             {
                 EndConversation();
+            }
+            else if (reply.nextMessage != null)
+            {
+                ShowDialogue(reply.nextMessage);
             }
         }
 
@@ -156,8 +171,11 @@ namespace Wattle.Wild.Gameplay.Conversation
             });
         }
 
-        private void RemoveSpeaker(Action onComplete = null)
+        private IEnumerator RemoveSpeaker(Action onComplete = null)
         {
+            int total = 3;
+            int completed = 0;
+
             if (speakerMovementTween != null)
                 speakerBobTween.Kill();
 
@@ -169,8 +187,27 @@ namespace Wattle.Wild.Gameplay.Conversation
                 if (speakerMovementTween != null)
                     speakerMovementTween.Kill();
 
-                onComplete?.Invoke();
+                speakerImage.sprite = null;
+                speakerImage.gameObject.SetActive(false);
+
+                speakerContainer.anchoredPosition = new Vector3(speakerEndingXPosition, 8);
+
+                completed++;
             });
+
+            dialoguePanel.CloseDialoguePanel(() =>
+            {
+                completed++;
+            });
+
+            dialogueReplyPanel.CloseReplyPanel(() =>
+            {
+                completed++;
+            });
+
+            yield return new WaitUntil(() => completed >= total);
+
+            onComplete?.Invoke();
         }
     }
 }

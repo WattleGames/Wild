@@ -47,11 +47,12 @@ namespace Wattle.Wild.UI
         private const float DEFAULT_TEXT_SPEED = 0.05f;
 
         private readonly Vector2 POPUP_START_POSITION = new(163, -93);
-        private readonly Vector2 POPUP_END_POSITION = new(-215, 50);
+        private readonly Vector2 POPUP_END_POSITION = new(-125, 50);
 
         public void OpenDialogueWindow(Dialogue dialogue)
         {
             this.dialogue = dialogue;
+            messageText.text = string.Empty;
 
             if (!isActive)
             {

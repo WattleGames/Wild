@@ -8,16 +8,19 @@ namespace Wattle.Wild.UI
 {
     public class UIDialogueReplyOption : MonoBehaviour
     {
-        public static event Action<DialogueReply> OnOptionSelected;
+        public static event Action<DialogueReply, bool> OnOptionSelected;
 
         [SerializeField] private Button button;
         [SerializeField] private TextMeshProUGUI optionText;
 
         private DialogueReply reply;
+        private bool isLeave;
 
-        public void Init(DialogueReply reply)
+        public void Init(DialogueReply reply, bool isLeave)
         {
             this.reply = reply;
+            this.isLeave = isLeave;
+
             optionText.text = reply.replyText;
         }
 
@@ -33,7 +36,7 @@ namespace Wattle.Wild.UI
 
         private void OptionSelect_OnClick()
         {
-            OnOptionSelected?.Invoke(reply);
+            OnOptionSelected?.Invoke(reply, isLeave);
         }
     }
 }

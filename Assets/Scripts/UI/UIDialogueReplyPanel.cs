@@ -7,10 +7,11 @@ namespace Wattle.Wild.UI
 {
     public class UIDialogueReplyPanel : MonoBehaviour
     {
-        public event Action<DialogueReply> OnReplySelected;
+        public event Action<DialogueReply, bool> OnReplySelected;
 
         [SerializeField] private UIDialogueReplyOption dialogueOptionPrefab;
         [SerializeField] private RectTransform optionContainer;
+        [SerializeField] private DialogueReply leaveReply;
 
         private List<UIDialogueReplyOption> dialogueOptions;
 
@@ -31,9 +32,13 @@ namespace Wattle.Wild.UI
             foreach (DialogueReply reply in replies)
             {
                 UIDialogueReplyOption option = Instantiate(dialogueOptionPrefab, optionContainer);
-                option.Init(reply);
+                option.Init(reply, false);
                 dialogueOptions.Add(option);
             }
+
+            UIDialogueReplyOption leaveOption = Instantiate(dialogueOptionPrefab, optionContainer);
+            leaveOption.Init(leaveReply, true);
+            dialogueOptions.Add(leaveOption);
         }
 
         public void CloseReplyPanel(Action onComplete = null) // TODO: handle exit animations
@@ -47,10 +52,10 @@ namespace Wattle.Wild.UI
             onComplete?.Invoke();
         }
 
-        private void OnOptionSelected(DialogueReply reply)
+        private void OnOptionSelected(DialogueReply reply, bool isLeave)
         {
             // player audio here?
-            OnReplySelected?.Invoke(reply);
+            OnReplySelected?.Invoke(reply, isLeave);
         }
     }
 }

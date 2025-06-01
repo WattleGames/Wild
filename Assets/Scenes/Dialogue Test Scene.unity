@@ -343,9 +343,109 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 571136648}
     m_Modifications:
+    - target: {fileID: 1041870647948610524, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041870647948610524, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041870647948610524, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041870647948610524, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041870647948610524, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041870647948610524, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704275826247292580, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99998134
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704275826247292580, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704275826247292580, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704275826247292580, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948750176696865138, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948750176696865138, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948750176696865138, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948750176696865138, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948750176696865138, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948750176696865138, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4677983375299592223, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
       propertyPath: m_Name
       value: UIDialoguePopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500146831607087365, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500146831607087365, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500146831607087365, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500146831607087365, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500146831607087365, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500146831607087365, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246867100304073083, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b14df0fb1da723b4aae5f32daa8416b9, type: 2}
+    - target: {fileID: 7246867100304073083, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -867959509368965453, guid: b14df0fb1da723b4aae5f32daa8416b9, type: 2}
+    - target: {fileID: 7246867100304073083, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7941030718546620774, guid: bc66fb07f7433404589f141ca94a19b1, type: 3}
       propertyPath: m_Pivot.x
