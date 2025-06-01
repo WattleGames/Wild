@@ -17,8 +17,12 @@ namespace Wattle.Wild.Infrastructure
         private int defaultCapacity = 5;
         private int maxCapacity = 100;
 
+        private AudioInstance musicInstance = null;
+
         public override IEnumerator Initalise()
         {
+            Initialiser.OnGameStateChanged += OnGameStateChanged;
+
             instancePool = new ObjectPool<AudioInstance>(
                 createFunc: () => { return CreateAudioInstance(); },
                 OnAudioInstanceRetrieved,
@@ -29,15 +33,32 @@ namespace Wattle.Wild.Infrastructure
                 maxSize: maxCapacity
                 );
 
+            musicInstance = Instantiate(audioInstancePrefab, instanceParent);
+
             initialised = true;
 
             yield return base.Initalise();
         }
 
-        private void OnDestroy()
+        private void OnGameStateChanged(GameState gamestate)
         {
+            if (gamestate == GameState.MainMenu)
+                musicInstance.Load(ResourceManager.Instance.mainMenuMusic, AudioType.MUSIC);
+            else
+                musicInstance.Load(ResourceManager.Instance.worldMusic, AudioType.MUSIC);
+        }       
+
+        private void OnApplicationQuit()
+        {
+            Initialiser.OnGameStateChanged -= OnGameStateChanged;
+
             instancePool.Dispose();
             instancePool = null;
+        }
+
+        public static void PlayMusic(AudioClip musicTrack)
+        {
+            Instance.musicInstance.Load(musicTrack, AudioType.MUSIC);
         }
 
         public static void Play(AudioClip audio, Vector3 position, AudioType audioType)
@@ -65,15 +86,17 @@ namespace Wattle.Wild.Infrastructure
         {
             instance.onInstanceFinished -= OnAudioInstanceFinished;
             instance.gameObject.SetActive(false);
-            instance.CleanUp();
+            StartCoroutine(instance.CleanUp());
         }
 
         private void OnAudioInstanceDestroyed(AudioInstance instance)
         {
             instance.onInstanceFinished -= OnAudioInstanceFinished;
-            instance.CleanUp();
+            StartCoroutine(instance.CleanUp(() =>
+            {
+                Destroy(instance.gameObject);
 
-            Destroy(instance.gameObject);
+            }));
         }
 
         private void OnAudioInstanceFinished(AudioInstance audioInstance)
