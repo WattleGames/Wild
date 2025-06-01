@@ -132,6 +132,9 @@ namespace Wattle.Wild.Audio
                 case AudioType.MUSIC:
                     paramMod = SaveSystem.Instance.AudioSettings.musicVolume.Value;
                     break;
+                case AudioType.VOICE:
+                    paramMod = SaveSystem.Instance.AudioSettings.dialogueVolume.Value;
+                    break;
             }
 
             float volume = masterVolume * paramMod;
@@ -140,7 +143,7 @@ namespace Wattle.Wild.Audio
 
         private IEnumerator Fade(bool fadeIn)
         {
-            Tweener tween = audioSource.DOFade(fadeIn ? 1 : 0, 1).SetAutoKill();
+            Tweener tween = audioSource.DOFade(fadeIn ? SaveSystem.Instance.AudioSettings.musicVolume.Value : 0, 1).SetAutoKill();
             yield return new WaitUntil(() => !tween.active);
         }
     }

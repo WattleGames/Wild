@@ -12,11 +12,13 @@ namespace Wattle.Wild.Infrastructure
                 master = config.masterVolume.Value;
                 sfx = config.sfxVolume.Value;
                 music = config.musicVolume.Value;
+                dialogue = config.dialogueVolume.Value;
             }
 
             public float master;
             public float sfx;
             public float music;
+            public float dialogue;
         }
 
         public string FileName => "SoundSettings";
@@ -24,6 +26,7 @@ namespace Wattle.Wild.Infrastructure
         public Observable<float> masterVolume = new Observable<float>(70f);
         public Observable<float> sfxVolume = new Observable<float>(70f);
         public Observable<float> musicVolume = new Observable<float>(70f);
+        public Observable<float> dialogueVolume = new Observable<float>(70f);
 
         public void Deserialize(string json)
         {
@@ -32,6 +35,7 @@ namespace Wattle.Wild.Infrastructure
             masterVolume.Value = data.master;
             sfxVolume.Value = data.sfx;
             musicVolume.Value = data.music;
+            dialogueVolume.Value = data.dialogue;
         }
 
         public string Serialize()
