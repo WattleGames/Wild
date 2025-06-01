@@ -1,6 +1,9 @@
+using DG.Tweening;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Wattle.Wild.Infrastructure.Conversation;
 
 namespace Wattle.Wild.UI
@@ -39,17 +42,55 @@ namespace Wattle.Wild.UI
             UIDialogueReplyOption leaveOption = Instantiate(dialogueOptionPrefab, optionContainer);
             leaveOption.Init(leaveReply, true);
             dialogueOptions.Add(leaveOption);
+
+            Canvas.ForceUpdateCanvases();
+
+            StartCoroutine(AnimateReplies());
+
+            IEnumerator AnimateReplies()
+            {
+                foreach (UIDialogueReplyOption option in dialogueOptions)
+                {
+                    option.PlayEnterAnimation();
+                    option.StartFloat();
+
+                    yield return new WaitForSeconds(0.2f);
+                }
+                yield return null;
+            }
         }
 
         public void CloseReplyPanel(Action onComplete = null) // TODO: handle exit animations
         {
-            foreach (UIDialogueReplyOption reply in dialogueOptions)
+            StartCoroutine(RemoveReplies(() =>
             {
-                Destroy(reply.gameObject);
-            }
+                foreach (UIDialogueReplyOption option in dialogueOptions)
+                {
+                    Destroy(option.gameObject);
+                }
 
-            dialogueOptions.Clear();
-            onComplete?.Invoke();
+                dialogueOptions.Clear();
+                onComplete?.Invoke();
+            }));
+
+            IEnumerator RemoveReplies(Action onComplete)
+            {
+                for (int i = 0; i < dialogueOptions.Count; i++)
+                {
+                    UIDialogueReplyOption option = dialogueOptions[i];
+                    Tweener tween = option.PlayExitAnimation();
+
+                    yield return new WaitForSeconds(0.1f);
+
+                    if (i == dialogueOptions.Count - 1)
+                    {
+                        tween.OnComplete(() =>
+                        {
+                            onComplete.Invoke();
+                        });
+                    }
+                }
+            }
         }
 
         private void OnOptionSelected(DialogueReply reply, bool isLeave)
