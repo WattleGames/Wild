@@ -6,7 +6,7 @@ public class UIMainMenu : MonoBehaviour
 {
     [Header("Buttons")]
     [SerializeField] private Button playbutton;
-    [SerializeField] private Button optionsButton;
+    // [SerializeField] private Button optionsButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button backButton;
@@ -20,7 +20,7 @@ public class UIMainMenu : MonoBehaviour
     private void OnEnable()
     {
         playbutton.onClick.AddListener(Play_OnClick);
-        optionsButton.onClick.AddListener(Options_OnClick);
+        // optionsButton.onClick.AddListener(Options_OnClick);
         creditsButton.onClick.AddListener(Credits_OnClick);
         quitButton.onClick.AddListener(Quit_OnClick);
         backButton.onClick.AddListener(Back_OnClick);
@@ -29,7 +29,7 @@ public class UIMainMenu : MonoBehaviour
     private void OnDisable()
     {
         playbutton.onClick.RemoveListener(Play_OnClick);
-        optionsButton.onClick.RemoveListener(Options_OnClick);
+        // optionsButton.onClick.RemoveListener(Options_OnClick);
         creditsButton.onClick.RemoveListener(Credits_OnClick);
         quitButton.onClick.RemoveListener(Quit_OnClick);
         backButton.onClick.RemoveListener(Back_OnClick);

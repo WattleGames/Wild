@@ -7,6 +7,8 @@ namespace Wattle.Wild.Infrastructure
     public class ResourceManager : Singleton<ResourceManager>
     {
         [SerializeField] public AudioClip uiButtonSound;
+        [SerializeField] public AudioClip mainMenuMusic;
+        [SerializeField] public AudioClip worldMusic;
 
         public override IEnumerator Initalise()
         {

@@ -2,6 +2,8 @@ using Wattle.Wild.Infrastructure;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
+using DG.Tweening;
 
 namespace Wattle.Wild.Audio
 {
@@ -16,6 +18,8 @@ namespace Wattle.Wild.Audio
     {
         public Action<AudioInstance> onInstanceFinished;
 
+        public bool IsPlaying => audioSource.isPlaying;
+
         [SerializeField] private AudioSource audioSource;
 
         private Coroutine audioCoroutine = null;
@@ -24,23 +28,49 @@ namespace Wattle.Wild.Audio
 
         public void Load(AudioClip audioClip, AudioType instanceType)
         {
-            this.instanceType = instanceType;
-            this.audioClip = audioClip;
+            StartCoroutine(CleanUp(() =>
+            {
+                this.instanceType = instanceType;
+                this.audioClip = audioClip;
 
-            SubscribeToSettingEvents();
+                if (instanceType == AudioType.MUSIC)
+                {
+                    audioSource.loop = true;
+                    audioSource.spatialize = false;
+                }
 
-            Play();
+                SubscribeToSettingEvents();
+
+                Play();
+            }));
         }
 
-        public void CleanUp()
+        public IEnumerator CleanUp(Action onComplete = null)
         {
-            if (audioCoroutine != null)
-                StopCoroutine(audioCoroutine);
+            if (audioClip == null)
+            {
+                onComplete?.Invoke();
+            }
+            else
+            {
+                if (instanceType == AudioType.MUSIC)
+                {
+                    yield return Fade(false);
+                }
 
-            audioCoroutine = null;
-            audioClip = null;
+                if (audioCoroutine != null)
+                    StopCoroutine(audioCoroutine);
 
-            UnsubscribeToSettingEvents();
+                audioCoroutine = null;
+                audioClip = null;
+
+                UnsubscribeToSettingEvents();
+
+                onComplete?.Invoke();
+            }
+
+            yield return null;
+
         }
 
         private void Play()
@@ -51,6 +81,10 @@ namespace Wattle.Wild.Audio
 
         private IEnumerator Play_Internal()
         {
+            audioSource.volume = 0;
+
+            StartCoroutine(Fade(true));
+
             audioSource.Play();
             yield return new WaitUntil(() => !audioSource.isPlaying);
             onInstanceFinished?.Invoke(this);
@@ -98,10 +132,19 @@ namespace Wattle.Wild.Audio
                 case AudioType.MUSIC:
                     paramMod = SaveSystem.Instance.AudioSettings.musicVolume.Value;
                     break;
+                case AudioType.VOICE:
+                    paramMod = SaveSystem.Instance.AudioSettings.dialogueVolume.Value;
+                    break;
             }
 
             float volume = masterVolume * paramMod;
             return volume;
+        }
+
+        private IEnumerator Fade(bool fadeIn)
+        {
+            Tweener tween = audioSource.DOFade(fadeIn ? SaveSystem.Instance.AudioSettings.musicVolume.Value : 0, 1).SetAutoKill();
+            yield return new WaitUntil(() => !tween.active);
         }
     }
 }
