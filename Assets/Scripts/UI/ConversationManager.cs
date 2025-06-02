@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Wattle.Wild.Gameplay.Player;
 using Wattle.Wild.Infrastructure.Conversation;
 using Wattle.Wild.Logging;
 using Wattle.Wild.UI;
@@ -35,15 +36,6 @@ namespace Wattle.Wild.Gameplay.Conversation
         private float speakerStartingXPosition;
         private float speakerEndingXPosition;
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                StartConversation(testConversation);
-            }
-        }
-
-
         public void StartConversation(Conversaion conversation)
         {
             dialoguePanel.onDialogueFinished += OnDialogueFinished;
@@ -75,6 +67,8 @@ namespace Wattle.Wild.Gameplay.Conversation
             StartCoroutine(RemoveSpeaker(() =>
             {
                 LOG.Log("Conversation ended!");
+
+                dialogueSpeaker = null;
                 OnConversationEnded?.Invoke();
             }));
         }
@@ -87,13 +81,14 @@ namespace Wattle.Wild.Gameplay.Conversation
                 dialogueSpeaker.InitSpeaker(dialoguePanel);
 
                 AnimateSpeaker();
-
             }
 
             if (dialogueReplyPanelShowing)
             {
                 dialogueReplyPanel.CloseReplyPanel(() =>
                 {
+                    dialogueReplyPanelShowing = false;
+
                     dialoguePanelShowing = true;
                     dialoguePanel.OpenDialogueWindow(dialogue);
                 });
@@ -111,6 +106,8 @@ namespace Wattle.Wild.Gameplay.Conversation
             {
                 dialoguePanel.CloseDialoguePanel(() =>
                 {
+                    dialoguePanelShowing = false;
+
                     dialogueReplyPanelShowing = true;
                     dialogueReplyPanel.OpenReplyWindow(replies);
                 });
@@ -175,11 +172,9 @@ namespace Wattle.Wild.Gameplay.Conversation
 
             speakerMovementTween = speakerContainer.DOAnchorPosX(speakerStartingXPosition, 1f).SetEase(Ease.OutQuint).OnComplete(() =>
             {
-                if (speakerBobTween != null)
-                    speakerBobTween.Kill();
+                speakerBobTween?.Kill();
 
-                if (speakerMovementTween != null)
-                    speakerMovementTween.Kill();
+                speakerMovementTween?.Kill();
 
                 dialogueSpeaker.CleanUp();
                 Destroy(dialogueSpeaker.gameObject);

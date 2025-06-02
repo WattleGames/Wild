@@ -26,6 +26,24 @@ namespace Wattle.Wild.Gameplay.Player
 
         private string isMovingParameter = "isMoving";
 
+        private void OnEnable()
+        {
+            if (conversationManager != null)
+            {
+                conversationManager.OnConversationStarted += OnConversationStarted;
+                conversationManager.OnConversationEnded += OnConversationEnded;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (conversationManager != null)
+            {
+                conversationManager.OnConversationStarted += OnConversationStarted;
+                conversationManager.OnConversationEnded += OnConversationEnded;
+            }
+        }
+
         void Update()
         {
             if (isInputEnabled)
@@ -49,6 +67,16 @@ namespace Wattle.Wild.Gameplay.Player
                 // Apply movement
                 rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
             }
+        }
+
+        private void OnConversationStarted()
+        {
+            ToggleMovement(false);
+        }
+
+        private void OnConversationEnded()
+        {
+            ToggleMovement(true);
         }
 
         public void ToggleMovement(bool enabled)

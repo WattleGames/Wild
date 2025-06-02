@@ -75,6 +75,12 @@ namespace Wattle.Wild.UI
 
             IEnumerator RemoveReplies(Action onComplete)
             {
+                if (dialogueOptions.Count == 0)
+                {
+                    onComplete?.Invoke();
+                    yield break;
+                }
+
                 for (int i = 0; i < dialogueOptions.Count; i++)
                 {
                     UIDialogueReplyOption option = dialogueOptions[i];
