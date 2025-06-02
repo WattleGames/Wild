@@ -45,23 +45,31 @@ namespace Wattle.Wild.Infrastructure
 
         private void OnGameStateChanged(GameState gameState)
         {
-            if (gameState == GameState.MainMenu)
-                musicInstance.Load(ResourceManager.Instance.mainMenuMusic, AudioType.MUSIC);
-            else
+            switch (gameState)
             {
-                if (gameState == GameState.World)
-                {
-                    musicInstance.Load(ResourceManager.Instance.worldMusic, AudioType.MUSIC);
-                }
-                if (gameState == GameState.WorldTransition)
-                {
+                case GameState.MainMenu:
+                    musicInstance.Load(ResourceManager.Instance.mainMenuMusic, AudioType.MUSIC);
+                    break;
+                case GameState.World:
+                    {
+                        MapManager mapManager = FindFirstObjectByType<MapManager>();
 
-                }
-                else if (gameState == GameState.Conversation)
-                {
-
-                }
-                // need to check the map managers music (conversation also?) 
+                        if (mapManager != null)
+                        {
+                            AudioClip audioClip = mapManager.GetCurrentMapSection().sectionAudio;
+                            if (audioClip != null)
+                            {
+                                if (musicInstance.Audio == null || audioClip.name != musicInstance.Audio.name)
+                                    PlayMusic(audioClip);
+                            }
+                        }
+                        break;
+                    }
+                case GameState.Conversation:
+                    {
+                        // need to check the map managers music (conversation also?) 
+                        break;
+                    }
             }
 
             currentGameState = gameState;
@@ -70,6 +78,8 @@ namespace Wattle.Wild.Infrastructure
         private void OnApplicationQuit()
         {
             Initialiser.OnGameStateChanged -= OnGameStateChanged;
+
+            StartCoroutine(musicInstance.CleanUp());
 
             instancePool.Dispose();
             instancePool = null;

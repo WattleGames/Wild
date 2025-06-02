@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e53f8b6e0e7d63c4785cc45aa0732135
+guid: 5f1144746a721b9478ea67a6bbda8401
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4769318998693152943
-    second: unnamed (2)_0
+      213: -7570773202456973942
+    second: Untitled_Artwork-6 (4)_0
+  - first:
+      213: 3253292281045942211
+    second: Untitled_Artwork-6 (4)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -50,7 +53,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 9
-  spritePivot: {x: 0.49876544, y: 0.022633642}
+  spritePivot: {x: 0.45061728, y: 0.027571913}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: unnamed (2)_0
+      name: Untitled_Artwork-6 (4)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 4000
-        height: 817
+        y: 891
+        width: 73
+        height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa880a14c56003240800000000000000
-      internalID: 4769318998693152943
+      spriteID: a8d618052e53fe690800000000000000
+      internalID: -7570773202456973942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork-6 (4)_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 4000
+        height: 867
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf734ac714062d20800000000000000
+      internalID: 3253292281045942211
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      unnamed (2)_0: 4769318998693152943
+      Untitled_Artwork-6 (4)_0: -7570773202456973942
+      Untitled_Artwork-6 (4)_1: 3253292281045942211
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

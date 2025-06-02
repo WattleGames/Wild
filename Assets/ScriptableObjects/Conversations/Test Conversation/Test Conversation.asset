@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Test Conversation
   m_EditorClassIdentifier: 
   startingStage: {fileID: 11400000, guid: 57ae624b9cb946f468afcb5ab3dbdd10, type: 2}
+  audioClip: {fileID: 8300000, guid: 7b5d954b2e3adb2489640ba27e56a515, type: 3}

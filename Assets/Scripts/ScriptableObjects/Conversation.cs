@@ -9,6 +9,7 @@ namespace Wattle.Wild.Infrastructure.Conversation
     public class Conversaion : ScriptableObject
     {
         public ConversationStage startingStage;
+        public AudioClip audioClip;
     }
 
     public abstract class ConversationStage : ScriptableObject

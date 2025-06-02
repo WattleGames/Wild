@@ -58,6 +58,11 @@ namespace Wattle.Wild.Gameplay
         private Tweener cameraTween = null;
         private MapSectionDetails currentSection;
 
+        public MapSectionDetails GetCurrentMapSection()
+        { 
+            return currentSection;
+        }
+
         public void LoadMap(MapSectionLocation startingLocation, Vector2? playerPosition)
         {
             // move the player to starting position
@@ -71,10 +76,10 @@ namespace Wattle.Wild.Gameplay
             MapSectionDetails startSectionDetails = GetSectionDetailsFromLocation(startingLocation);
             currentSection = startSectionDetails;
 
-            mapCamera.transform.position = startSectionDetails.mapSection.transform.position.WithZ(-1);
-            worldPlayer.MoveToNewSection(startSectionDetails, playerPosition);
+            mapCamera.transform.position = currentSection.mapSection.transform.position.WithZ(-1);
+            worldPlayer.MoveToNewSection(currentSection, playerPosition);
 
-            startSectionDetails.mapSection.ToggleDoors(true);
+            currentSection.mapSection.ToggleDoors(true);
         }
 
         public void MoveSections(MapSection oldSection, MapSection newSection)
@@ -88,13 +93,13 @@ namespace Wattle.Wild.Gameplay
             if (oldSection != null)
                 oldSection.ToggleDoors(false);
 
-            MapSectionDetails sectionDetails = GetSectionDetailsFromSection(newSection);
+            currentSection = GetSectionDetailsFromSection(newSection);
 
             Initialiser.ChangeGamestate(GameState.WorldTransition);
 
-            if (IsSectionOnWorldMap(sectionDetails))
+            if (IsSectionOnWorldMap(currentSection))
             {
-                worldPlayer.MoveIntoNewSection(sectionDetails, () =>
+                worldPlayer.MoveIntoNewSection(currentSection, () =>
                 {
                     Initialiser.ChangeGamestate(GameState.World);
                     newSection.ToggleDoors(true);
@@ -106,7 +111,7 @@ namespace Wattle.Wild.Gameplay
             {
                 UILoading.ShowScreen(() =>
                 {
-                    worldPlayer.MoveToNewSection(sectionDetails, null);
+                    worldPlayer.MoveToNewSection(currentSection, null);
                     SetCameraToNewPosition(newSection);
 
                     UILoading.HideScreen(() =>
