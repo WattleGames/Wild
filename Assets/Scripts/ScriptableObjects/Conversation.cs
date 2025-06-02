@@ -1,7 +1,4 @@
-using DG.Tweening;
-using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Wattle.Wild.Infrastructure.Conversation
 {
@@ -9,12 +6,14 @@ namespace Wattle.Wild.Infrastructure.Conversation
     public class Conversaion : ScriptableObject
     {
         public ConversationStage startingStage;
+        public AudioClip audioClip;
     }
 
     public abstract class ConversationStage : ScriptableObject
     {
-        public Sprite speakerPortrait;
-        public AudioClip messageVoice;
+        [Header("Speaker")]
+        public UIDialogueSpeaker dialogueSpeakerPrefab;
+        public AudioClip voiceLine;
     }
 }
 

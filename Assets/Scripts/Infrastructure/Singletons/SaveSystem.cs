@@ -1,12 +1,11 @@
-using Wattle.Wild.Logging;
-using Wattle.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Accessibility;
+using Wattle.Utils;
+using Wattle.Wild.Logging;
 
 namespace Wattle.Wild.Infrastructure
 {
@@ -47,9 +46,6 @@ namespace Wattle.Wild.Infrastructure
                 LOG.Log($"Directory does not exist, creating: {configPath}", LOG.Type.SAVESYSTEM);
                 Directory.CreateDirectory(configPath);
             }
-
-            SaveFile = new SaveFile();
-            configs.Add(SaveFile);
 
             AudioSettings = new AudioConfig();
             configs.Add(AudioSettings);
@@ -102,8 +98,8 @@ namespace Wattle.Wild.Infrastructure
             AudioSettings = new AudioConfig();
             AudioSettings.Save();
 
-            SaveFile = new SaveFile();
-            SaveFile.Save();
+            //SaveFile = new SaveFile();
+            //SaveFile.Save();
 
             LOG.Log($"Configs reset to defaults", LOG.Type.SAVESYSTEM);
         }

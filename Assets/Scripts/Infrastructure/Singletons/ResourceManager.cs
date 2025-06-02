@@ -9,6 +9,8 @@ namespace Wattle.Wild.Infrastructure
         [SerializeField] public AudioClip uiButtonSound;
         [SerializeField] public AudioClip mainMenuMusic;
         [SerializeField] public AudioClip worldMusic;
+        [SerializeField] public AudioClip graveyardMusic;
+        [SerializeField] public AudioClip saloonMusic;
 
         public override IEnumerator Initalise()
         {

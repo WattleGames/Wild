@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
 using AudioType = Wattle.Wild.Audio.AudioType;
+using Wattle.Wild.Gameplay;
 
 namespace Wattle.Wild.Infrastructure
 {
@@ -18,6 +19,8 @@ namespace Wattle.Wild.Infrastructure
         private int maxCapacity = 100;
 
         private AudioInstance musicInstance = null;
+
+        private GameState currentGameState;
 
         public override IEnumerator Initalise()
         {
@@ -40,17 +43,43 @@ namespace Wattle.Wild.Infrastructure
             yield return base.Initalise();
         }
 
-        private void OnGameStateChanged(GameState gamestate)
+        private void OnGameStateChanged(GameState gameState)
         {
-            if (gamestate == GameState.MainMenu)
-                musicInstance.Load(ResourceManager.Instance.mainMenuMusic, AudioType.MUSIC);
-            else
-                musicInstance.Load(ResourceManager.Instance.worldMusic, AudioType.MUSIC);
+            switch (gameState)
+            {
+                case GameState.MainMenu:
+                    musicInstance.Load(ResourceManager.Instance.mainMenuMusic, AudioType.MUSIC);
+                    break;
+                case GameState.World:
+                    {
+                        MapManager mapManager = FindFirstObjectByType<MapManager>();
+
+                        if (mapManager != null)
+                        {
+                            AudioClip audioClip = mapManager.GetCurrentMapSection().sectionAudio;
+                            if (audioClip != null)
+                            {
+                                if (musicInstance.Audio == null || audioClip.name != musicInstance.Audio.name)
+                                    PlayMusic(audioClip);
+                            }
+                        }
+                        break;
+                    }
+                case GameState.Conversation:
+                    {
+                        // need to check the map managers music (conversation also?) 
+                        break;
+                    }
+            }
+
+            currentGameState = gameState;
         }       
 
         private void OnApplicationQuit()
         {
             Initialiser.OnGameStateChanged -= OnGameStateChanged;
+
+            StartCoroutine(musicInstance.CleanUp());
 
             instancePool.Dispose();
             instancePool = null;
