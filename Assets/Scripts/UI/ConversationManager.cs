@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Wattle.Wild.Gameplay.Player;
+using Wattle.Wild.Infrastructure;
 using Wattle.Wild.Infrastructure.Conversation;
 using Wattle.Wild.Logging;
 using Wattle.Wild.UI;
@@ -12,9 +13,6 @@ namespace Wattle.Wild.Gameplay.Conversation
 {
     public class ConversationManager : MonoBehaviour
     {
-        public event Action OnConversationStarted;
-        public event Action OnConversationEnded;
-
         [Header("Panels")]
         [SerializeField] private UIDialoguePanel dialoguePanel;
         [SerializeField] private UIDialogueReplyPanel dialogueReplyPanel;
@@ -56,7 +54,7 @@ namespace Wattle.Wild.Gameplay.Conversation
                 ShowReplies(new DialogueReply[] { reply });
             }
 
-            OnConversationStarted?.Invoke();
+            Initialiser.ChangeGamestate(GameState.Conversation);
         }
 
         public void EndConversation()
@@ -66,10 +64,8 @@ namespace Wattle.Wild.Gameplay.Conversation
 
             StartCoroutine(RemoveSpeaker(() =>
             {
-                LOG.Log("Conversation ended!");
-
                 dialogueSpeaker = null;
-                OnConversationEnded?.Invoke();
+                Initialiser.ChangeGamestate(GameState.World);
             }));
         }
 

@@ -14,12 +14,16 @@ namespace Wattle.Wild.Infrastructure
     public enum GameState
     {
         MainMenu,
-        Game
+        World,
+        WorldTransition,
+        Conversation,
+        Paused,
     }
 
     public class Initialiser : PersistentSingleton<Initialiser>
     {
         public static event Action<GameState> OnGameStateChanged;
+        private static GameState gameState;
 
         [SerializeField] private SingletonManager singletonManager;
 
@@ -68,7 +72,7 @@ namespace Wattle.Wild.Infrastructure
                 {
                     SceneManager.Instance.LoadScene("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, () =>
                     {
-                        OnGameStateChanged?.Invoke(GameState.MainMenu);
+                        ChangeGamestate(GameState.MainMenu);
                     });
                 }
                 else
@@ -103,7 +107,8 @@ namespace Wattle.Wild.Infrastructure
                 {
                     mapManager.LoadMap(spawnLocation, playerLocation);
                 }
-                OnGameStateChanged?.Invoke(GameState.Game);
+
+                ChangeGamestate(GameState.World);
             });
         }
 
@@ -114,6 +119,12 @@ namespace Wattle.Wild.Infrastructure
 #else
             Application.Quit();
 #endif
+        }
+
+        public static void ChangeGamestate(GameState state)
+        {
+            gameState = state;
+            OnGameStateChanged?.Invoke(gameState);
         }
     }
 }

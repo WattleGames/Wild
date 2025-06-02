@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: c4cfe91462eef0f47bef0ef085303bf4
+guid: edb70757e89291c4dbcb5bd7eeb7da0f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4533000642573581126
-    second: tree forest_0
+      213: -3069150850074499367
+    second: Untitled_Artwork-5 (1)_0
+  - first:
+      213: 8774222808439358471
+    second: Untitled_Artwork-5 (1)_1
+  - first:
+      213: -3873154539878841406
+    second: Untitled_Artwork-5 (1)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tree forest_0
+      name: Untitled_Artwork-5 (1)_0
       rect:
         serializedVersion: 2
-        x: 3145
-        y: 1707
-        width: 855
-        height: 1293
+        x: 3792
+        y: 2257
+        width: 208
+        height: 484
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64b373b411478ee30800000000000000
-      internalID: 4533000642573581126
+      spriteID: 9d6a83b109f2865d0800000000000000
+      internalID: -3069150850074499367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork-5 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 3762
+        y: 1314
+        width: 238
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 704882d082d44c970800000000000000
+      internalID: 8774222808439358471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork-5 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 3871
+        y: 1833
+        width: 129
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c38452877acf3ac0800000000000000
+      internalID: -3873154539878841406
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tree forest_0: 4533000642573581126
+      Untitled_Artwork-5 (1)_0: -3069150850074499367
+      Untitled_Artwork-5 (1)_1: 8774222808439358471
+      Untitled_Artwork-5 (1)_2: -3873154539878841406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

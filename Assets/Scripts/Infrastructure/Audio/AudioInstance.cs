@@ -18,6 +18,7 @@ namespace Wattle.Wild.Audio
     {
         public Action<AudioInstance> onInstanceFinished;
 
+        public AudioClip Audio => audioClip;
         public bool IsPlaying => audioSource.isPlaying;
 
         [SerializeField] private AudioSource audioSource;

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: c4cfe91462eef0f47bef0ef085303bf4
+guid: 071dc29f30307474b99383cf84e5a170
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4533000642573581126
-    second: tree forest_0
+      213: -4579157184417489090
+    second: Untitled_Artwork-2 (2)_0
+  - first:
+      213: 7078639285959474257
+    second: Untitled_Artwork-2 (2)_1
+  - first:
+      213: -1249273952844092230
+    second: Untitled_Artwork-2 (2)_2
+  - first:
+      213: -6370141570249763083
+    second: Untitled_Artwork-2 (2)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tree forest_0
+      name: Untitled_Artwork-2 (2)_0
       rect:
         serializedVersion: 2
-        x: 3145
-        y: 1707
-        width: 855
-        height: 1293
+        x: 1870
+        y: 1379
+        width: 648
+        height: 175
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64b373b411478ee30800000000000000
-      internalID: 4533000642573581126
+      spriteID: e3f1e1c5dc09370c0800000000000000
+      internalID: -4579157184417489090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork-2 (2)_1
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 1312
+        width: 141
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c3db42de06c3260800000000000000
+      internalID: 7078639285959474257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork-2 (2)_2
+      rect:
+        serializedVersion: 2
+        x: 3157
+        y: 1253
+        width: 843
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc649575ffa9aee0800000000000000
+      internalID: -1249273952844092230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork-2 (2)_3
+      rect:
+        serializedVersion: 2
+        x: 3457
+        y: 1220
+        width: 138
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f650580ef5b897a0800000000000000
+      internalID: -6370141570249763083
       vertices: []
       indices: 
       edges: []
@@ -138,8 +213,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tree forest_0: 4533000642573581126
+      Untitled_Artwork-2 (2)_0: -4579157184417489090
+      Untitled_Artwork-2 (2)_1: 7078639285959474257
+      Untitled_Artwork-2 (2)_2: -1249273952844092230
+      Untitled_Artwork-2 (2)_3: -6370141570249763083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

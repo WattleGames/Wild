@@ -28,20 +28,12 @@ namespace Wattle.Wild.Gameplay.Player
 
         private void OnEnable()
         {
-            if (conversationManager != null)
-            {
-                conversationManager.OnConversationStarted += OnConversationStarted;
-                conversationManager.OnConversationEnded += OnConversationEnded;
-            }
+            Initialiser.OnGameStateChanged += OnGameStateChanged;
         }
 
         private void OnDisable()
         {
-            if (conversationManager != null)
-            {
-                conversationManager.OnConversationStarted += OnConversationStarted;
-                conversationManager.OnConversationEnded += OnConversationEnded;
-            }
+            Initialiser.OnGameStateChanged -= OnGameStateChanged;
         }
 
         void Update()
@@ -69,14 +61,21 @@ namespace Wattle.Wild.Gameplay.Player
             }
         }
 
-        private void OnConversationStarted()
+        private void OnGameStateChanged(GameState gameState)
         {
-            ToggleMovement(false);
-        }
-
-        private void OnConversationEnded()
-        {
-            ToggleMovement(true);
+            switch (gameState)
+            {
+                case GameState.Conversation:
+                case GameState.Paused:
+                case GameState.WorldTransition:
+                    ToggleMovement(false);
+                    break;
+                case GameState.World:
+                    ToggleMovement(true);
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void ToggleMovement(bool enabled)

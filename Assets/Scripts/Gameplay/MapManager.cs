@@ -2,9 +2,11 @@ using DG.Tweening;
 using System;
 using System.Linq;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using Wattle.Utils;
 using Wattle.Wild.Gameplay.Player;
+using Wattle.Wild.Infrastructure;
 using Wattle.Wild.Logging;
 using Wattle.Wild.UI;
 
@@ -46,15 +48,15 @@ namespace Wattle.Wild.Gameplay
         {
             public MapSection mapSection;
             public MapSectionLocation location;
+            public AudioClip sectionAudio;
         }
-
-        public event Action<MapSectionLocation> OnMapSectionChanged;
 
         [SerializeField] private CinemachineCamera mapCamera; // at some point I might do the same thing for the camera as weve done with the player for moving
         [SerializeField] private MapSectionDetails[] mapSections;
         [SerializeField] private WorldPlayer worldPlayer;
 
         private Tweener cameraTween = null;
+        private MapSectionDetails currentSection;
 
         public void LoadMap(MapSectionLocation startingLocation, Vector2? playerPosition)
         {
@@ -67,6 +69,7 @@ namespace Wattle.Wild.Gameplay
             }
 
             MapSectionDetails startSectionDetails = GetSectionDetailsFromLocation(startingLocation);
+            currentSection = startSectionDetails;
 
             mapCamera.transform.position = startSectionDetails.mapSection.transform.position.WithZ(-1);
             worldPlayer.MoveToNewSection(startSectionDetails, playerPosition);
@@ -86,15 +89,14 @@ namespace Wattle.Wild.Gameplay
                 oldSection.ToggleDoors(false);
 
             MapSectionDetails sectionDetails = GetSectionDetailsFromSection(newSection);
-            worldPlayer.ToggleMovement(false);
 
-            OnMapSectionChanged?.Invoke(sectionDetails.location);
+            Initialiser.ChangeGamestate(GameState.WorldTransition);
 
             if (IsSectionOnWorldMap(sectionDetails))
             {
                 worldPlayer.MoveIntoNewSection(sectionDetails, () =>
                 {
-                    worldPlayer.ToggleMovement(true);
+                    Initialiser.ChangeGamestate(GameState.World);
                     newSection.ToggleDoors(true);
                 });
 
@@ -109,7 +111,7 @@ namespace Wattle.Wild.Gameplay
 
                     UILoading.HideScreen(() =>
                     {
-                        worldPlayer.ToggleMovement(true);
+                        Initialiser.ChangeGamestate(GameState.World);
                     });
                 });
             }

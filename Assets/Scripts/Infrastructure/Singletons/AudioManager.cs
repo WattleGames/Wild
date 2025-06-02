@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
 using AudioType = Wattle.Wild.Audio.AudioType;
+using Wattle.Wild.Gameplay;
 
 namespace Wattle.Wild.Infrastructure
 {
@@ -18,6 +19,8 @@ namespace Wattle.Wild.Infrastructure
         private int maxCapacity = 100;
 
         private AudioInstance musicInstance = null;
+
+        private GameState currentGameState;
 
         public override IEnumerator Initalise()
         {
@@ -40,12 +43,28 @@ namespace Wattle.Wild.Infrastructure
             yield return base.Initalise();
         }
 
-        private void OnGameStateChanged(GameState gamestate)
+        private void OnGameStateChanged(GameState gameState)
         {
-            if (gamestate == GameState.MainMenu)
+            if (gameState == GameState.MainMenu)
                 musicInstance.Load(ResourceManager.Instance.mainMenuMusic, AudioType.MUSIC);
             else
-                musicInstance.Load(ResourceManager.Instance.worldMusic, AudioType.MUSIC);
+            {
+                if (gameState == GameState.World)
+                {
+                    musicInstance.Load(ResourceManager.Instance.worldMusic, AudioType.MUSIC);
+                }
+                if (gameState == GameState.WorldTransition)
+                {
+
+                }
+                else if (gameState == GameState.Conversation)
+                {
+
+                }
+                // need to check the map managers music (conversation also?) 
+            }
+
+            currentGameState = gameState;
         }       
 
         private void OnApplicationQuit()
