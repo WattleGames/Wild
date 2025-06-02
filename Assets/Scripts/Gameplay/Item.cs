@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
     //A script defining an item. Add to all items in the game
     //Requires items to have a trigger
 
-    public delegate void ItemEventHandler(Item item);
+    public delegate void ItemEventHandler(ItemData item);
 
     //an event used whenever the player picks an item up
     public static event ItemEventHandler onItemPickedUp;
@@ -26,7 +26,7 @@ public class Item : MonoBehaviour
         if(collision.gameObject.GetComponent<PlayerInventory>())
         {
             //invoke the onItemPickedUp event
-            onItemPickedUp?.Invoke(this);
+            onItemPickedUp?.Invoke(_itemData);
             Destroy(this.gameObject);
         }
     }

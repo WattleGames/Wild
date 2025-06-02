@@ -12,8 +12,12 @@ public class ItemData : ScriptableObject
 
     public static ItemEventHandler onItemUsed;
 
+    [SerializeField] private Sprite _itemImage;
+
     [SerializeField] private string _itemName;
 
+
+    public Sprite ItemImage { get {  return _itemImage; } }
     public string ItemName { get { return _itemName; } }
 
 
@@ -22,6 +26,10 @@ public class ItemData : ScriptableObject
     {
         //fires an onItem used event
        onItemUsed?.Invoke(this);
+
+       Debug.Log("Firing the event for " + _itemName + " !");
+
+       
     }
 
 
