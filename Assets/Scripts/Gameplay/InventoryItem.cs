@@ -23,8 +23,10 @@ public class InventoryItem : MonoBehaviour
 
     public void RemoveItem(ItemData currentItem)
     {
+        //set the item data to null
         ItemData = null;
 
-        itemImage.sprite =null;
+        //destroy the item
+        Destroy(this.gameObject);
     }
 }
