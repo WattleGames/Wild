@@ -89,23 +89,14 @@ namespace Wattle.Wild.Infrastructure
 
         public static void LoadGame()
         {
-            MapSectionLocation spawnLocation = SaveSystem.Instance.SaveFile.playerLocation.Value;
-            Vector2? playerLocation = SaveSystem.Instance.SaveFile.positionOffset;
-
-#if UNITY_EDITOR
-            if (Instance.IsSandbox)
-            {
-                spawnLocation = Instance.startingLocation;
-                playerLocation = null;
-            }
-#endif
+            Instance.startingLocation = Instance.IsSandbox ? MapSectionLocation.CENTER : Instance.startingLocation;
 
             SceneManager.Instance.LoadScene("GameScene", UnityEngine.SceneManagement.LoadSceneMode.Single, () =>
             {
                 MapManager mapManager = FindAnyObjectByType<MapManager>();
                 if (mapManager != null)
                 {
-                    mapManager.LoadMap(spawnLocation, playerLocation);
+                    mapManager.LoadMap(Instance.startingLocation);
                 }
 
                 ChangeGamestate(GameState.World);
