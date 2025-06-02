@@ -63,7 +63,7 @@ namespace Wattle.Wild.Gameplay
             return currentSection;
         }
 
-        public void LoadMap(MapSectionLocation startingLocation, Vector2? playerPosition)
+        public void LoadMap(MapSectionLocation startingLocation)
         {
             // move the player to starting position
             for (int i = 0; i < mapSections.Length; ++i)
@@ -77,7 +77,7 @@ namespace Wattle.Wild.Gameplay
             currentSection = startSectionDetails;
 
             mapCamera.transform.position = currentSection.mapSection.transform.position.WithZ(-1);
-            worldPlayer.MoveToNewSection(currentSection, playerPosition);
+            worldPlayer.MoveToNewSection(currentSection);
 
             currentSection.mapSection.ToggleDoors(true);
         }
@@ -111,7 +111,7 @@ namespace Wattle.Wild.Gameplay
             {
                 UILoading.ShowScreen(() =>
                 {
-                    worldPlayer.MoveToNewSection(currentSection, null);
+                    worldPlayer.MoveToNewSection(currentSection);
                     SetCameraToNewPosition(newSection);
 
                     UILoading.HideScreen(() =>

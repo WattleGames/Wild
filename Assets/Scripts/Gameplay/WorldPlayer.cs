@@ -84,20 +84,13 @@ namespace Wattle.Wild.Gameplay.Player
             playerAnimator.SetBool(isMovingParameter, enabled);
         }
 
-        public void MoveToNewSection(MapSectionDetails sectionDetails, Vector2? playerPosition)
+        public void MoveToNewSection(MapSectionDetails sectionDetails)
         {
             this.currentSectionDetails = (new Vector2(sectionDetails.mapSection.transform.position.x, sectionDetails.mapSection.transform.position.y), sectionDetails.location);
 
-            Vector2 position =
-                playerPosition == null ? sectionDetails.mapSection.transform.position
-                : new Vector2(sectionDetails.mapSection.transform.position.x + playerPosition.Value.x, sectionDetails.mapSection.transform.position.y + playerPosition.Value.y);
+            Vector2 position = sectionDetails.mapSection.transform.position;
 
             rb.transform.position = new Vector3(position.x, position.y, this.transform.position.z);
-
-            if (SaveSystem.Instance.SaveFile.playerLocation.Value != sectionDetails.location)
-            {
-                SaveSystem.Instance.SaveFile.playerLocation.Value = sectionDetails.location;
-            }
         }
 
         public void MoveIntoNewSection(MapSectionDetails sectionDetails, Action onComplete = null)
@@ -114,23 +107,6 @@ namespace Wattle.Wild.Gameplay.Player
                 onComplete?.Invoke();
             }
             ).SetLink(this.gameObject);
-        }
-
-        private void OnApplicationQuit()
-        {
-            SavePlayerData();
-        }
-
-        private void SavePlayerData()
-        {
-            Vector2 positionOffset = new Vector2(
-                    this.transform.position.x - currentSectionDetails.Item1.x,
-                    this.transform.position.y - currentSectionDetails.Item1.y);
-
-            SaveSystem.Instance.SaveFile.positionOffset = positionOffset;
-            SaveSystem.Instance.SaveFile.playerLocation.Value = currentSectionDetails.Item2;
-
-            SaveSystem.Instance.SaveFile.Save();
         }
     }
 }
