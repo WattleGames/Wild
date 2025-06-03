@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Wattle.Wild.Infrastructure;
 using Wattle.Wild.Infrastructure.Conversation;
 
 namespace Wattle.Wild.UI
@@ -36,7 +37,6 @@ namespace Wattle.Wild.UI
 
         [SerializeField] private TextMeshProUGUI draftMessageText;
         [SerializeField] private TextMeshProUGUI messageText;
-        [SerializeField] private AudioSource audioSource;
 
         private Coroutine messageCorutine = null;
         private Tweener moveTween;
@@ -48,6 +48,8 @@ namespace Wattle.Wild.UI
         private bool isTextAnimating = false;
 
         private Dialogue dialogue;
+        private AudioClip characterAudioBack;
+        private AudioClip voiceline;
 
         private const float DEFAULT_TEXT_SPEED = 0.05f;
 
@@ -57,6 +59,8 @@ namespace Wattle.Wild.UI
         public void OpenDialogueWindow(Dialogue dialogue)
         {
             this.dialogue = dialogue;
+            this.voiceline = dialogue.voiceLine;
+
             speakerName.text = dialogue.dialogueSpeakerPrefab.speakerName;
             messageText.text = string.Empty;
 
@@ -249,16 +253,12 @@ namespace Wattle.Wild.UI
 
             int maxValue = (int)'z'; // wont work for secial characters
 
-            if (audioSource.isPlaying)
-                audioSource.Stop();
-
             if (charCode <= maxValue)
             {
                 float scalar = 1 - (0.2f * ((float)charCode / (float)maxValue));
 
-                audioSource.pitch = 1 + scalar;
-
-                audioSource.Play();
+                AudioClip audioClip = voiceline != null ? voiceline : dialogue.dialogueSpeakerPrefab.FallbackVoice;
+                AudioManager.Play(audioClip, Vector3.zero, Audio.AudioType.VOICE);
             }
         }
 

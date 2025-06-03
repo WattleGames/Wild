@@ -120,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 168024795354179423}
   - component: {fileID: 3778648756763237640}
+  - component: {fileID: 895734889612504225}
   - component: {fileID: 1516064970453691815}
   - component: {fileID: 5990258566735121244}
   m_Layer: 0
@@ -162,6 +163,27 @@ MonoBehaviour:
   moveSpeed: 1.6
   rb: {fileID: 1516064970453691815}
   playerAnimator: {fileID: 6541786322669308402}
+  inventoryUI: {fileID: 0}
+  inventory: {fileID: 895734889612504225}
+--- !u!114 &895734889612504225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2683782548819583501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c634b10ba9980274f8a8f45cb6218133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventorySlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _inventoryItemPrefab: {fileID: 951504071944476965, guid: 41f4e9fa65d81d342964b8fd8bb87905, type: 3}
 --- !u!50 &1516064970453691815
 Rigidbody2D:
   serializedVersion: 5

@@ -2,40 +2,76 @@ using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using Wattle.Utils;
+using Wattle.Wild.Infrastructure;
 
-public class UIInventory : MonoBehaviour, IPointerClickHandler
+public class UIInventory : MonoBehaviour
 {
-    [SerializeField] private bool _inventoryOpened;
-    [SerializeField] private GameObject _toggleButton;
+    [SerializeField] private Button handleButton;
+    [SerializeField] private RectTransform rectTransform;
 
-    public void OnPointerClick(PointerEventData eventData)
+    private bool inventoryOpened = false;
+    private Tweener movingTween;
+    private bool canOpenInventory = true;
+
+    private void OnEnable()
     {
-        // The UI element that was clicked
-        GameObject clickedObject = eventData.pointerCurrentRaycast.gameObject;
+        Initialiser.OnGameStateChanged += OnGameStateChanged;
 
-        //if the clicked object was the toggle button
-        if(clickedObject == _toggleButton)
+        WorldInteraction.OnWorldInteractionEntered += OnInteractionEntered;
+        WorldInteraction.OnWorldInteractionExited += OnInteractionExited;
+
+        handleButton.onClick.AddListener(HandleButtonClick);
+
+        rectTransform.anchoredPosition = rectTransform.anchoredPosition.WithY(-118f);
+    }
+
+    private void OnDisable()
+    {
+        Initialiser.OnGameStateChanged -= OnGameStateChanged;
+
+        WorldInteraction.OnWorldInteractionEntered -= OnInteractionEntered;
+        WorldInteraction.OnWorldInteractionExited -= OnInteractionExited;
+
+        handleButton.onClick.RemoveListener(HandleButtonClick);
+
+        movingTween?.Kill();
+    }
+
+    private void OnGameStateChanged(GameState gameState)
+    {
+        switch (gameState)
         {
-            //toggle the inventory
-            ToggleInventoryUI();
+            case GameState.Conversation:
+            case GameState.WorldTransition:
+                Toggle(false);
+                break;
         }
     }
 
-    public void ToggleInventoryUI()
+    private void OnInteractionEntered()
     {
-        if (!_inventoryOpened)
-        {
-            //open the inventory
-            GetComponent<RectTransform>().DOAnchorPosY(-69f, 1f);
-            _inventoryOpened = true;
-        }
+        canOpenInventory = false;
+    }
 
-        //else if the inventory is open
-        else if (_inventoryOpened)
-        {
-            //close the inventory
-            GetComponent<RectTransform>().DOAnchorPosY(-128f, 1f);
-            _inventoryOpened = false;
-        }
+    private void OnInteractionExited()
+    {
+        canOpenInventory = true;
+    }
+
+    private void HandleButtonClick()
+    {
+        if (canOpenInventory)
+            Toggle(!inventoryOpened);
+    }
+
+    public void Toggle(bool enabled)
+    {
+        movingTween?.Kill();
+
+        //open the inventory
+        movingTween = rectTransform.DOAnchorPosY(enabled ? -200f : -118f, 1f).SetEase(Ease.OutElastic);
+        inventoryOpened = enabled;
     }
 }

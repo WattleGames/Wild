@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    //The player inventory script. Used to hold all the items the player will come across
-
-  
-
-    //A new inventory list using arrays
+    // The player inventory script. Used to hold all the items the player will come across
+    // A new inventory list using arrays
    [SerializeField] private InventorySlot[] _inventorySlots;
    [SerializeField] private GameObject _inventoryItemPrefab;
-
-   
-
-
-  
 
     private void OnEnable()
     {
@@ -25,20 +17,7 @@ public class PlayerInventory : MonoBehaviour
     private void OnDisable()
     {
         Item.onItemPickedUp -= AddItemToInventory;
-        
     }
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            CheckIfItemIsInInventory("Bullet");
-        }
-    }
-
-
-
 
     //Used when the player adds an item to inventory
     public void AddItemToInventory(ItemData item)
@@ -57,9 +36,7 @@ public class PlayerInventory : MonoBehaviour
                 
             }
         } 
-        
     }
-
 
     public void SpawnNewItem(ItemData itemData, InventorySlot slot)
     {
@@ -84,7 +61,6 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    
     public bool CheckIfItemIsInInventory(string requestedItem)
     {
         //iterate throug the inventory
@@ -100,6 +76,4 @@ public class PlayerInventory : MonoBehaviour
         }
         return false;
     }
-    
-   
 }

@@ -9,6 +9,8 @@ namespace Wattle.Wild.Gameplay.Player
 {
     public class WorldPlayer : MonoBehaviour
     {
+        public UIInventory InventoryUI => inventoryUI;
+
         [Header("World Systems")]
         [SerializeField] private ConversationManager conversationManager;
 
@@ -18,6 +20,10 @@ namespace Wattle.Wild.Gameplay.Player
 
         [Header("Animation")]
         [SerializeField] private Animator playerAnimator;
+
+        [Header("Inventory")]
+        [SerializeField] private UIInventory inventoryUI;
+        [SerializeField] private PlayerInventory inventory;
 
         private Vector2 movement;
         private bool isInputEnabled = true;
@@ -102,8 +108,6 @@ namespace Wattle.Wild.Gameplay.Player
 
             Tweener tween = rb.DOMove(newPosition, 0.35f).OnComplete(() =>
             {
-                SaveSystem.Instance.SaveFile.playerLocation.Value = sectionDetails.location;
-
                 onComplete?.Invoke();
             }
             ).SetLink(this.gameObject);

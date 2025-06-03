@@ -9,6 +9,9 @@ using Wattle.Wild.Logging;
 
 public class WorldInteraction : MonoBehaviour
 {
+    public static event Action OnWorldInteractionEntered;
+    public static event Action OnWorldInteractionExited;
+
     [SerializeField] private UnityEvent onInteractionStarted;
     [SerializeField] private Image interactionSprite;
     [SerializeField] private Transform notificationTransform;
@@ -46,6 +49,10 @@ public class WorldInteraction : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent(out WorldPlayer worldPlayer))
         {
+            OnWorldInteractionEntered?.Invoke();
+
+            worldPlayer.InventoryUI.Toggle(false);
+
             isActive = true;
 
             if (spriteTweener != null)
@@ -70,27 +77,32 @@ public class WorldInteraction : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isActive = false;
-
-        if (spriteTweener != null)
+        if (collision.gameObject.TryGetComponent(out WorldPlayer worldPlayer))
         {
-            spriteTweener.Kill();
-            spriteTweener = null;
-        }
+            isActive = false;
 
-        if (moveTweener != null)
-        {
-            moveTweener.Kill();
-            moveTweener = null;
-        }
+            OnWorldInteractionExited?.Invoke();
 
-        if (idleTweener != null)
-        {
-            idleTweener.Kill();
-            idleTweener = null;
-        }
+            if (spriteTweener != null)
+            {
+                spriteTweener.Kill();
+                spriteTweener = null;
+            }
 
-        PlayAnimation(false);
+            if (moveTweener != null)
+            {
+                moveTweener.Kill();
+                moveTweener = null;
+            }
+
+            if (idleTweener != null)
+            {
+                idleTweener.Kill();
+                idleTweener = null;
+            }
+
+            PlayAnimation(false);
+        }
     }
 
     private void PlayAnimation(bool isEntering, Action onComplete = null)

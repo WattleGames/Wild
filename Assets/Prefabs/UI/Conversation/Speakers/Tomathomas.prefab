@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: speakerName
       value: Tomathomas
       objectReference: {fileID: 0}
+    - target: {fileID: 7887616918389270177, guid: e5ef02b002f5ea94db6b65dc5d8096cd, type: 3}
+      propertyPath: fallbackVoice
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f8e6c4b0d0ff5c44a7246882f200f84, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

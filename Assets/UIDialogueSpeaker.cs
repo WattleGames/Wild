@@ -7,11 +7,13 @@ using Wattle.Wild.UI;
 public class UIDialogueSpeaker : MonoBehaviour
 {
     public string speakerName;
+    public AudioClip FallbackVoice => fallbackVoice;
 
     [SerializeField] private Image characterPortrait;
 
     [SerializeField] private RectTransform upperMouth;
     [SerializeField] private RectTransform lowerMouth;
+    [SerializeField] AudioClip fallbackVoice;
 
     public float upperMouthMovementRange = 2;
     public float lowerMouthMovementRange = 2;
