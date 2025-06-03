@@ -1,4 +1,3 @@
-using Wattle.Wild.UI;
 using Wattle.Utils;
 using System;
 using Wattle.Wild.Gameplay;
@@ -34,16 +33,16 @@ namespace Wattle.Wild.Infrastructure
         [SerializeField] private MapSectionLocation startingLocation = MapSectionLocation.CENTER;
 #endif
 
-        public bool IsSandbox 
-        { 
-            get 
+        public bool IsSandbox
+        {
+            get
             {
 #if UNITY_EDITOR
                 return sandboxMode;
 #else
                 return false;
 #endif
-            } 
+            }
         }
 
         // Probably profile related stuff in here
@@ -61,11 +60,6 @@ namespace Wattle.Wild.Infrastructure
 
 #if UNITY_EDITOR
                 loadDemo = this.sandboxMode;
-
-                if (clearSave)
-                {
-                    SaveSystem.Instance.ResetConfigs();
-                }
 #endif
 
                 if (!loadDemo)
@@ -89,14 +83,19 @@ namespace Wattle.Wild.Infrastructure
 
         public static void LoadGame()
         {
-            Instance.startingLocation = Instance.IsSandbox ? MapSectionLocation.CENTER : Instance.startingLocation;
+            MapSectionLocation location;
+#if UNITY_EDITOR
+            location = Instance.startingLocation;
+#else
+            location = MapSectionLocation.CENTER;
+#endif
 
             SceneManager.Instance.LoadScene("GameScene", UnityEngine.SceneManagement.LoadSceneMode.Single, () =>
             {
                 MapManager mapManager = FindAnyObjectByType<MapManager>();
                 if (mapManager != null)
                 {
-                    mapManager.LoadMap(Instance.startingLocation);
+                    mapManager.LoadMap(location);
                 }
 
                 ChangeGamestate(GameState.World);

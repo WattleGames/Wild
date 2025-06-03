@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Test Reply 1
   m_EditorClassIdentifier: 
-  speakerPortrait: {fileID: 0}
-  messageVoice: {fileID: 0}
-  replyText: Test Reply 1
+  dialogueSpeakerPrefab: {fileID: 0}
+  voiceLine: {fileID: 0}
+  replyText: And the right twin?
   nextMessage: {fileID: 11400000, guid: b7a23b0117c129144ad27a6066c32a48, type: 2}

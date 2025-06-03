@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
   m_Name: Test Dialogue 1
   m_EditorClassIdentifier: 
-  dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: d36ee5201a4147644bd48b1eabdf8faf, type: 3}
+  dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: ce7f965da37d78441a97e30404b3c98d, type: 3}
   voiceLine: {fileID: 0}
   dialogueText:
-  - This is dialogue 1
+  - This is dialogue 1This is dialogue 1This is dialogue 1This is dialogue 1This
+    is dialogue 1This is dialogue 1This is dialogue 1This is dialogue 1This is dialogue
+    1This is dialogue 1This is dialogue 1This is dialogue 1
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
   - {fileID: 11400000, guid: f0f8439462961874a81318e96206c14d, type: 2}

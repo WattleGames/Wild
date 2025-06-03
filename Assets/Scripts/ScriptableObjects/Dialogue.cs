@@ -10,5 +10,6 @@ namespace Wattle.Wild.Infrastructure.Conversation
 
         public DialogueStyle dialogueStyle;
         public DialogueReply[] dialogueReplies;
+        public string speaker;
     }
 }

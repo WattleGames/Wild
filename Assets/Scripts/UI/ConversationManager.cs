@@ -71,7 +71,7 @@ namespace Wattle.Wild.Gameplay.Conversation
 
         private void ShowDialogue(Dialogue dialogue)
         {
-            if (dialogueSpeaker == null)
+            if (dialogueSpeaker == null || dialogueSpeaker.speakerName != dialogue.dialogueSpeakerPrefab.speakerName)
             {
                 dialogueSpeaker = Instantiate(dialogue.dialogueSpeakerPrefab, speakerContainer);
                 dialogueSpeaker.InitSpeaker(dialoguePanel);

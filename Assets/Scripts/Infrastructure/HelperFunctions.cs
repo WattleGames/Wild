@@ -77,6 +77,11 @@ namespace Wattle.Wild
         /// <param name="onComplete"> Action to fire after saving has completed. (Happens on main thread) </param>
         public static void Save(this ISaveable config, Action onComplete = null)
         {
+#if UNITY_WEBGL
+            onComplete?.Invoke();
+            return;
+#else
+
             bool hasSaved = false;
 
             UILoading.ShowIndicator(() => hasSaved);
@@ -89,6 +94,8 @@ namespace Wattle.Wild
                 hasSaved = true;
                 onComplete?.Invoke();
             });
+#endif
+            
         }
 
         /// <summary>
@@ -98,6 +105,10 @@ namespace Wattle.Wild
         /// <param name="onComplete"> Action to fire after loading has completed. (Happens on main thread) </param>
         public static void Load(this ISaveable config, Action onComplete = null)
         {
+#if UNITY_WEBGL
+            onComplete?.Invoke();
+            return;
+#else
             bool hasLoaded = false;
 
             UILoading.ShowIndicator(() => hasLoaded);
@@ -110,6 +121,7 @@ namespace Wattle.Wild
                 hasLoaded = true;
                 onComplete?.Invoke();
             });
+#endif
         }
 
         public static void FadeCanvasAsync(CanvasGroup canvasGroup, bool fadeIn, float duration, Action onComplete = null)

@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Wattle.Wild.Infrastructure
     {
         private const string CONFIG_DIRECTORY = "Data";
         private static string configPath;
-        public AudioConfig AudioSettings { get; set; }
+        public AudioConfig AudioSettings { get; set; } = new AudioConfig();
         public SaveFile SaveFile { get; set; }
 
         private readonly List<ISaveable> configs = new List<ISaveable>();
@@ -21,6 +22,10 @@ namespace Wattle.Wild.Infrastructure
         public override IEnumerator Initalise()
         {
             configPath = $"{Application.persistentDataPath}/{CONFIG_DIRECTORY}";
+            initialised = true;
+
+#if !UNITY_WEBGL
+            LOG.Log($"SAVE PATH {configPath}");
 
             try
             {
@@ -33,6 +38,7 @@ namespace Wattle.Wild.Infrastructure
             {
                 LOG.LogError($"Exception thrown: {e}", LOG.Type.SAVESYSTEM);
             }
+#endif
 
             yield return base.Initalise();
         }
@@ -41,21 +47,22 @@ namespace Wattle.Wild.Infrastructure
         {
             List<Task> tasks = new List<Task>();
 
+            AudioSettings = new AudioConfig();
+            configs.Add(AudioSettings);
+
+#if !UNITY_WEBGL
             if (!Directory.Exists(configPath))
             {
                 LOG.Log($"Directory does not exist, creating: {configPath}", LOG.Type.SAVESYSTEM);
                 Directory.CreateDirectory(configPath);
             }
 
-            AudioSettings = new AudioConfig();
-            configs.Add(AudioSettings);
-
             // ADD CONDIGS HERE
             foreach (ISaveable config in configs)
             {
                 tasks.Add(LoadConfig(config));
             }
-
+#endif
             await Task.WhenAll(tasks);
 
             onComplete?.Invoke();
@@ -63,6 +70,8 @@ namespace Wattle.Wild.Infrastructure
 
         public static async Task LoadConfig(ISaveable config)
         {
+            await Task.Yield();
+#if !UNITY_WEBGL
             string filePath = $"{configPath}/{config.FileName}.json";
 
             if (File.Exists(filePath))
@@ -81,6 +90,7 @@ namespace Wattle.Wild.Infrastructure
 
                 LOG.Log($"CONFIG: {config.FileName} Created and Loaded from {filePath}", LOG.Type.SAVESYSTEM);
             }
+#endif
         }
 
         public static async Task SaveConfig(ISaveable config)
@@ -97,9 +107,6 @@ namespace Wattle.Wild.Infrastructure
         {
             AudioSettings = new AudioConfig();
             AudioSettings.Save();
-
-            //SaveFile = new SaveFile();
-            //SaveFile.Save();
 
             LOG.Log($"Configs reset to defaults", LOG.Type.SAVESYSTEM);
         }

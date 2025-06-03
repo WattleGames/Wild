@@ -7,21 +7,22 @@ using Wattle.Wild.UI;
 public class UIDialogueSpeaker : MonoBehaviour
 {
     public string speakerName;
-    public AudioClip FallbackVoice => fallbackVoice;
 
     [SerializeField] private Image characterPortrait;
+    [SerializeField] private AudioClip fallbackVoice;
 
     [SerializeField] private RectTransform upperMouth;
     [SerializeField] private RectTransform lowerMouth;
-    [SerializeField] AudioClip fallbackVoice;
+
+    [SerializeField] private bool moveUpperMouth = true;
+    [SerializeField] private bool moveLowerMouth = true;
 
     public float upperMouthMovementRange = 2;
     public float lowerMouthMovementRange = 2;
 
     private bool isSpeaking = false;
 
-    private float blinkRate = 0.0f;
-    private UIDialoguePanel dialoguePanel;
+    protected UIDialoguePanel dialoguePanel;
 
     private Tweener upperMouthTween = null;
     private Tweener lowerMothTween = null;
@@ -39,27 +40,38 @@ public class UIDialogueSpeaker : MonoBehaviour
         dialoguePanel.onDialogueSpoken -= OnDialogueSpoken;
     }
 
-    private void OnDialogueSpoken(float speed)
+    public virtual AudioClip GetFallbackVoice(string speaker)
+    {
+        return fallbackVoice;
+    }
+
+    protected virtual void OnDialogueSpoken(float speed, string speaker)
     {
         direction *= - 1;
 
         if (upperMouthTween != null)
             upperMouthTween.Kill(true);
 
-        upperMouthTween = upperMouth.DOAnchorPosY(2, speed / 2.0f).OnComplete(() =>
+        if (moveUpperMouth)
         {
-            upperMouthTween = upperMouth.DOAnchorPosY(-2, speed / 2.0f).OnComplete(() =>
+            upperMouthTween = upperMouth.DOAnchorPosY(2, speed / 2.0f).OnComplete(() =>
             {
-                upperMouthTween.Kill(true);
+                upperMouthTween = upperMouth.DOAnchorPosY(-2, speed / 2.0f).OnComplete(() =>
+                {
+                    upperMouthTween.Kill(true);
+                });
             });
-        });
+        }
 
-        if (lowerMothTween != null)
-            lowerMothTween.Kill(true);
-
-        lowerMothTween = lowerMouth.DOAnchorPosY(2 * direction, speed).OnComplete(() =>
+        if (moveLowerMouth)
         {
-            lowerMothTween.Kill(true);
-        });
+            if (lowerMothTween != null)
+                lowerMothTween.Kill(true);
+
+            lowerMothTween = lowerMouth.DOAnchorPosY(2 * direction, speed).OnComplete(() =>
+            {
+                lowerMothTween.Kill(true);
+            });
+        }
     }
 }

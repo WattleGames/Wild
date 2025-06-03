@@ -282,6 +282,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7581105139562074877, guid: 2d2a04cde0d5f9a46badae2ddbe70ab9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1967273404}
+    - target: {fileID: 7581105139562074877, guid: 2d2a04cde0d5f9a46badae2ddbe70ab9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581105139562074877, guid: 2d2a04cde0d5f9a46badae2ddbe70ab9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -92510927
+      objectReference: {fileID: 0}
     - target: {fileID: 7825614958371905007, guid: 2d2a04cde0d5f9a46badae2ddbe70ab9, type: 3}
       propertyPath: m_Name
       value: ConversationManager
@@ -1077,6 +1089,18 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
+    - target: {fileID: 1081460152562248507, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: e79055974a96f55458d0e6f9ac833460, type: 2}
+    - target: {fileID: 2295867027789510260, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1236355873}
+    - target: {fileID: 2295867027789510260, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 48cd341a2e9dd4b478a6810cb6f5d0ca, type: 2}
     - target: {fileID: 2845673132509247903, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1121,6 +1145,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: World Map
       objectReference: {fileID: 0}
+    - target: {fileID: 6808500070295547251, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1236355873}
+    - target: {fileID: 6808500070295547251, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808500070295547251, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 48cd341a2e9dd4b478a6810cb6f5d0ca, type: 2}
     - target: {fileID: 6890132019512369157, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: mapCamera
       value: 

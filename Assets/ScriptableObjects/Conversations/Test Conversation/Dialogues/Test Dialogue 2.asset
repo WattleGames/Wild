@@ -15,7 +15,9 @@ MonoBehaviour:
   dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: d36ee5201a4147644bd48b1eabdf8faf, type: 3}
   voiceLine: {fileID: 0}
   dialogueText:
-  - This is Dialogue 2
+  - This is dialogue 1This is dialogue 1This is dialogue 1This is dialogue 1This
+    is dialogue 1This is dialogue 1This is dialogue 1This is dialogue 1This is dialogue
+    1This is dialogue 1This is dialogue 1This is dialogue 1
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
   - {fileID: 11400000, guid: 041996f9bf6d6e040be32e0ca7a549d8, type: 2}

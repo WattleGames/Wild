@@ -28,7 +28,7 @@ namespace Wattle.Wild.UI
     {
         public event Action<Dialogue> onDialogueFinished;
 
-        public event Action<float> onDialogueSpoken;
+        public event Action<float, string> onDialogueSpoken;
         public event Action onDialogueEnded;
 
         [SerializeField] private RectTransform messageBox;
@@ -234,7 +234,7 @@ namespace Wattle.Wild.UI
                     continue;
 
                 messageText.text = messageText.text.Insert(messageText.text.Length, character.ToString());
-                onDialogueSpoken?.Invoke(speed);
+                onDialogueSpoken?.Invoke(speed, dialogue.speaker);
 
                 PlayTextCharacterAudio(character);
                 yield return new WaitForSeconds(speed);
@@ -257,7 +257,7 @@ namespace Wattle.Wild.UI
             {
                 float scalar = 1 - (0.2f * ((float)charCode / (float)maxValue));
 
-                AudioClip audioClip = voiceline != null ? voiceline : dialogue.dialogueSpeakerPrefab.FallbackVoice;
+                AudioClip audioClip = voiceline != null ? voiceline : dialogue.dialogueSpeakerPrefab.GetFallbackVoice(dialogue.speaker);
                 AudioManager.Play(audioClip, Vector3.zero, Audio.AudioType.VOICE);
             }
         }
