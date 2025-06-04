@@ -316,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7887616918389270177, guid: e5ef02b002f5ea94db6b65dc5d8096cd, type: 3}
       propertyPath: speakerName
-      value: Swanson
+      value: Clan Thug
       objectReference: {fileID: 0}
     - target: {fileID: 7887616918389270177, guid: e5ef02b002f5ea94db6b65dc5d8096cd, type: 3}
       propertyPath: fallbackVoice

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 using AudioType = Wattle.Wild.Audio.AudioType;
 using Wattle.Wild.Gameplay;
+using System;
 
 namespace Wattle.Wild.Infrastructure
 {
@@ -48,7 +49,7 @@ namespace Wattle.Wild.Infrastructure
             switch (gameState)
             {
                 case GameState.MainMenu:
-                    musicInstance.Load(ResourceManager.Instance.mainMenuMusic, AudioType.MUSIC);
+                    PlayMusic(ResourceManager.Instance.mainMenuMusic);
                     break;
                 case GameState.World:
                     {
@@ -85,17 +86,19 @@ namespace Wattle.Wild.Infrastructure
             instancePool = null;
         }
 
-        public static void PlayMusic(AudioClip musicTrack)
+        public static void PlayMusic(AudioClip musicTrack, Action onComplete = null)
         {
-            Instance.musicInstance.Load(musicTrack, AudioType.MUSIC);
+            Instance.musicInstance.Load(musicTrack, AudioType.MUSIC, onComplete);
         }
 
-        public static void Play(AudioClip audio, Vector3 position, AudioType audioType)
+        public static AudioInstance Play(AudioClip audio, Vector3 position, AudioType audioType, Action onComplete = null)
         {
             AudioInstance instance = Instance.instancePool.Get();
             instance.transform.position = position;
 
-            instance.Load(audio, audioType);
+            instance.Load(audio, audioType, onComplete);
+
+            return instance;
         }
 
         private AudioInstance CreateAudioInstance()

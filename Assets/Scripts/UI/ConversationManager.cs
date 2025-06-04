@@ -36,14 +36,15 @@ namespace Wattle.Wild.Gameplay.Conversation
 
         public void StartConversation(Conversaion conversation)
         {
+            dialoguePanel.onDialogueStarted += OnDialogueStarted;
             dialoguePanel.onDialogueFinished += OnDialogueFinished;
+
             dialogueReplyPanel.OnReplySelected += OnReplySelected;
 
             speakerStartingXPosition = speakerContainer.anchoredPosition.x + speakerContainer.rect.width;
             speakerEndingXPosition = speakerContainer.anchoredPosition.x;
 
-            if (speakerBobTween != null)
-                speakerBobTween.Kill();
+            speakerBobTween?.Kill();
 
             if (conversation.startingStage is Dialogue dialogue)
             {
@@ -52,6 +53,24 @@ namespace Wattle.Wild.Gameplay.Conversation
             else if (conversation.startingStage is DialogueReply reply)
             {
                 ShowReplies(new DialogueReply[] { reply });
+
+                if (dialogueSpeaker != null)
+                {
+                    RemoveSpeaker(() =>
+                    {
+                        dialogueSpeaker = Instantiate(reply.nextMessage.dialogueMessages[0].dialogueSpeakerPrefab, speakerContainer);
+                        dialogueSpeaker.InitSpeaker(dialoguePanel);
+
+                        AnimateSpeaker();
+                    });
+                }
+                else
+                {
+                    dialogueSpeaker = Instantiate(reply.nextMessage.dialogueMessages[0].dialogueSpeakerPrefab, speakerContainer);
+                    dialogueSpeaker.InitSpeaker(dialoguePanel);
+
+                    AnimateSpeaker();
+                }
             }
 
             Initialiser.ChangeGamestate(GameState.Conversation);
@@ -59,10 +78,12 @@ namespace Wattle.Wild.Gameplay.Conversation
 
         public void EndConversation()
         {
+            dialoguePanel.onDialogueStarted -= OnDialogueStarted;
             dialoguePanel.onDialogueFinished -= OnDialogueFinished;
+
             dialogueReplyPanel.OnReplySelected -= OnReplySelected;
 
-            StartCoroutine(RemoveSpeaker(() =>
+            StartCoroutine(CloseConversation(() =>
             {
                 dialogueSpeaker = null;
                 Initialiser.ChangeGamestate(GameState.World);
@@ -71,14 +92,6 @@ namespace Wattle.Wild.Gameplay.Conversation
 
         private void ShowDialogue(Dialogue dialogue)
         {
-            if (dialogueSpeaker == null || dialogueSpeaker.speakerName != dialogue.dialogueSpeakerPrefab.speakerName)
-            {
-                dialogueSpeaker = Instantiate(dialogue.dialogueSpeakerPrefab, speakerContainer);
-                dialogueSpeaker.InitSpeaker(dialoguePanel);
-
-                AnimateSpeaker();
-            }
-
             if (dialogueReplyPanelShowing)
             {
                 dialogueReplyPanel.CloseReplyPanel(() =>
@@ -115,6 +128,30 @@ namespace Wattle.Wild.Gameplay.Conversation
             }
         }
 
+        private void OnDialogueStarted(DialogueMessage dialogueMessage)
+        {
+            if (dialogueSpeaker == null || dialogueMessage.dialogueSpeakerPrefab.speakerName != dialogueSpeaker.speakerName)
+            {
+                if (dialogueSpeaker != null)
+                {
+                    RemoveSpeaker(() =>
+                    {
+                        dialogueSpeaker = Instantiate(dialogueMessage.dialogueSpeakerPrefab, speakerContainer);
+                        dialogueSpeaker.InitSpeaker(dialoguePanel);
+
+                        AnimateSpeaker();
+                    });
+                }
+                else
+                {
+                    dialogueSpeaker = Instantiate(dialogueMessage.dialogueSpeakerPrefab, speakerContainer);
+                    dialogueSpeaker.InitSpeaker(dialoguePanel);
+
+                    AnimateSpeaker();
+                }
+            }
+        }
+
         private void OnDialogueFinished(Dialogue dialouge)
         {
             if (dialouge.dialogueReplies != null && dialouge.dialogueReplies.Length > 0)
@@ -133,9 +170,16 @@ namespace Wattle.Wild.Gameplay.Conversation
             {
                 EndConversation();
             }
-            else if (reply.nextMessage != null)
+            else
             {
-                ShowDialogue(reply.nextMessage);
+                if (reply != null && reply.nextMessage != null)
+                {
+                    ShowDialogue(reply.nextMessage);
+                }
+                else
+                {
+                    EndConversation();
+                }
             }
         }
 
@@ -158,25 +202,14 @@ namespace Wattle.Wild.Gameplay.Conversation
             });
         }
 
-        private IEnumerator RemoveSpeaker(Action onComplete = null)
+        private IEnumerator CloseConversation(Action onComplete)
         {
             int total = 3;
             int completed = 0;
 
-            if (speakerMovementTween != null)
-                speakerBobTween.Kill();
-
-            speakerMovementTween = speakerContainer.DOAnchorPosX(speakerStartingXPosition, 1f).SetEase(Ease.OutQuint).OnComplete(() =>
+            RemoveSpeaker(() =>
             {
-                speakerBobTween?.Kill();
-
-                speakerMovementTween?.Kill();
-
-                dialogueSpeaker.CleanUp();
-                Destroy(dialogueSpeaker.gameObject);
-
-                speakerContainer.anchoredPosition = new Vector3(speakerEndingXPosition, 8);
-
+                dialogueSpeaker = null;
                 completed++;
             });
 
@@ -192,7 +225,29 @@ namespace Wattle.Wild.Gameplay.Conversation
 
             yield return new WaitUntil(() => completed >= total);
 
+            Initialiser.ChangeGamestate(GameState.World);
+
             onComplete?.Invoke();
+        }
+
+        private void RemoveSpeaker(Action onComplete = null)
+        {
+            if (speakerMovementTween != null)
+                speakerBobTween.Kill();
+
+            speakerMovementTween = speakerContainer.DOAnchorPosX(speakerStartingXPosition, 1f).SetEase(Ease.OutQuint).OnComplete(() =>
+            {
+                speakerBobTween?.Kill();
+
+                speakerMovementTween?.Kill();
+
+                dialogueSpeaker.CleanUp();
+                Destroy(dialogueSpeaker.gameObject);
+
+                speakerContainer.anchoredPosition = new Vector3(speakerEndingXPosition, 8);
+
+                onComplete?.Invoke();
+            });
         }
     }
 }

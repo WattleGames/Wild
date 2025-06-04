@@ -27,10 +27,13 @@ namespace Wattle.Wild.Audio
         private AudioClip audioClip = null;
         private AudioType instanceType;
 
-        public void Load(AudioClip audioClip, AudioType instanceType)
+        private Action onCompleteCallback = null;
+
+        public void Load(AudioClip audioClip, AudioType instanceType, Action onCompleteCallback)
         {
             StartCoroutine(CleanUp(() =>
             {
+                this.onCompleteCallback = onCompleteCallback;
                 this.instanceType = instanceType;
                 this.audioClip = audioClip;
 
@@ -57,6 +60,10 @@ namespace Wattle.Wild.Audio
                 if (instanceType == AudioType.MUSIC)
                 {
                     yield return Fade(false);
+                }
+                else if (instanceType == AudioType.VOICE)
+                {
+                    audioSource.Stop();
                 }
 
                 if (audioCoroutine != null)
@@ -88,7 +95,9 @@ namespace Wattle.Wild.Audio
 
             audioSource.Play();
             yield return new WaitUntil(() => !audioSource.isPlaying);
+
             onInstanceFinished?.Invoke(this);
+            onCompleteCallback?.Invoke();
 
             audioCoroutine = null;
         }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5c361103557914a939c88eb4dd435f, type: 3}
   m_Name: Martin Fishman Conversation
   m_EditorClassIdentifier: 
-  startingStage: {fileID: 11400000, guid: 67910e11f2366a74fbfaa0da940bd361, type: 2}
+  startingStage: {fileID: 11400000, guid: 0a3f90166074491429a952a1919a3023, type: 2}
   audioClip: {fileID: 0}

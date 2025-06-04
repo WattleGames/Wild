@@ -39,7 +39,8 @@ namespace Wattle.Wild.Gameplay
         CARNIVAL,
         CAMP,
         LIBRARY,
-        CASTLE
+        CASTLE,
+        STARTING_AREA
     }
 
     public class MapManager : MonoBehaviour
@@ -65,7 +66,7 @@ namespace Wattle.Wild.Gameplay
             return currentSection;
         }
 
-        public void LoadMap(MapSectionLocation startingLocation)
+        public void LoadMap(MapSectionLocation startingLocation, bool isDev)
         {
             // move the player to starting position
             for (int i = 0; i < mapSections.Length; ++i)
@@ -79,8 +80,13 @@ namespace Wattle.Wild.Gameplay
             currentSection = startSectionDetails;
 
             mapCamera.transform.position = currentSection.mapSection.transform.position.WithZ(-1);
-            worldPlayer.MoveToNewSection(currentSection, false);
-            lastPlayerPosition = worldPlayer.transform.position;
+
+            if (!isDev)
+                worldPlayer.MoveToNewSection(currentSection, false);
+            else
+                worldPlayer.transform.position = currentSection.mapSection.transform.position;
+
+            lastPlayerPosition = Vector3.zero;
 
             currentSection.mapSection.ToggleDoors(true);
         }
@@ -109,8 +115,9 @@ namespace Wattle.Wild.Gameplay
                 UILoading.ShowScreen(() =>
                 {
                     bool isLocation = !IsSectionOnWorldMap(newSectionDetails);
+                    bool areBothLocations = isLocation && !IsSectionOnWorldMap(currentSection);
 
-                    if (isLocation)
+                    if (!areBothLocations && isLocation)
                         lastPlayerPosition = worldPlayer.transform.position;
                     else
                         worldPlayer.transform.position = lastPlayerPosition;
@@ -163,6 +170,7 @@ namespace Wattle.Wild.Gameplay
                 MapSectionLocation.CAMP => false,
                 MapSectionLocation.LIBRARY => false,
                 MapSectionLocation.CASTLE => false,
+                MapSectionLocation.STARTING_AREA => false,
                         _ => false
             };
 

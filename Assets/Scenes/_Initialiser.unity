@@ -1105,10 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiButtonSound: {fileID: 0}
-  mainMenuMusic: {fileID: 8300000, guid: bf98e9ef9b6488f4795242465c027e3c, type: 3}
-  worldMusic: {fileID: 8300000, guid: a5cf2b82925900c46b2620bd06b99dae, type: 3}
-  graveyardMusic: {fileID: 8300000, guid: e1b850916216c0540bc3182a4d260ce6, type: 3}
-  saloonMusic: {fileID: 8300000, guid: d4b58dad17725054db5ec4627c11b3a5, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 17c36dd901284604e858ee8e26533ed3, type: 3}
 --- !u!4 &1996828037
 Transform:
   m_ObjectHideFlags: 0

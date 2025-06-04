@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Wattle.Wild.Infrastructure.Conversation;
@@ -39,9 +40,12 @@ namespace Wattle.Wild.UI
                 dialogueOptions.Add(option);
             }
 
-            UIDialogueReplyOption leaveOption = Instantiate(dialogueOptionPrefab, optionContainer);
-            leaveOption.Init(leaveReply, true);
-            dialogueOptions.Add(leaveOption);
+            if (!replies.Any(x => x.nextMessage == null))
+            {
+                UIDialogueReplyOption leaveOption = Instantiate(dialogueOptionPrefab, optionContainer);
+                leaveOption.Init(leaveReply, true);
+                dialogueOptions.Add(leaveOption);
+            }
 
             Canvas.ForceUpdateCanvases();
 

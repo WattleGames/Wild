@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Wattle.Wild.Audio;
 using Wattle.Wild.Infrastructure;
 using Wattle.Wild.Infrastructure.Conversation;
 
@@ -26,6 +27,7 @@ namespace Wattle.Wild.UI
 
     public class UIDialoguePanel : MonoBehaviour
     {
+        public event Action<DialogueMessage> onDialogueStarted;
         public event Action<Dialogue> onDialogueFinished;
 
         public event Action<float, string> onDialogueSpoken;
@@ -56,12 +58,17 @@ namespace Wattle.Wild.UI
         private readonly Vector2 POPUP_START_POSITION = new(163, -93);
         private readonly Vector2 POPUP_END_POSITION = new(250, 50);
 
+        private bool isVoicelinePlaying = false;
+        private AudioInstance voicelineAudioInstance;
+
         public void OpenDialogueWindow(Dialogue dialogue)
         {
-            this.dialogue = dialogue;
-            this.voiceline = dialogue.voiceLine;
+            messageIndex = 0;
 
-            speakerName.text = dialogue.dialogueSpeakerPrefab.speakerName;
+            this.dialogue = dialogue;
+            this.voiceline = dialogue.dialogueMessages[messageIndex].voiceLine;
+
+            speakerName.text = dialogue.dialogueMessages[messageIndex].dialogueSpeakerPrefab.speakerName;
             messageText.text = string.Empty;
 
             if (!isActive)
@@ -70,27 +77,30 @@ namespace Wattle.Wild.UI
                 messageBox.localScale = new Vector3(0, 0, 0);
             }
 
-            messageIndex = 0;
             isActive = true;
 
-            CancelTextCorutine();
+            CancelSpeechCoroutine();
+
+            onDialogueStarted?.Invoke(dialogue.dialogueMessages[messageIndex]);
 
             ShowPopup(dialogue.dialogueStyle.popUpSpeed, dialogue.dialogueStyle.messageEase, () =>
             {
-                DisplayDialogue(dialogue.dialogueText[messageIndex]);
+                DisplayDialogue();
             });
         }
 
-        private void DisplayDialogue(string text)
+        private void DisplayDialogue()
         {
+            DialogueMessage message = dialogue.dialogueMessages[messageIndex];
+
             messageText.text = string.Empty;
-            draftMessageText.text = text;
+            draftMessageText.text = message.dialogueText;
 
             Canvas.ForceUpdateCanvases();
 
             messageText.fontSize = draftMessageText.fontSize;
 
-            DisplayMessageText(text, dialogue.dialogueStyle.isTimed, () =>
+            DisplayMessageText(message.dialogueText, dialogue.dialogueStyle.isTimed, () =>
             {
 
             });
@@ -113,7 +123,7 @@ namespace Wattle.Wild.UI
         public void CloseDialoguePanel(Action onComplete = null)
         {
             isActive = false;
-            CancelTextCorutine();
+            CancelSpeechCoroutine();
 
             if (dialogue.dialogueStyle.popUpSpeed == 0)
             {
@@ -137,7 +147,7 @@ namespace Wattle.Wild.UI
             messageText.text = string.Empty;
 
             if (isTimed)
-                messageCorutine = StartCoroutine(DisplayMessageText(text, onComplete));
+                messageCorutine = StartCoroutine(AnimateTextAndPlayAudio(text, onComplete));
             else
             {
                 messageText.text = text;
@@ -145,7 +155,7 @@ namespace Wattle.Wild.UI
             }
         }
 
-        private void CancelTextCorutine()
+        private void CancelSpeechCoroutine()
         {
             if (messageCorutine != null)
             {
@@ -196,7 +206,7 @@ namespace Wattle.Wild.UI
             };
         }
 
-        private IEnumerator DisplayMessageText(string text, Action onComplete)
+        private IEnumerator AnimateTextAndPlayAudio(string text, Action onComplete)
         {
             isTextAnimating = true;
 
@@ -234,14 +244,34 @@ namespace Wattle.Wild.UI
                     continue;
 
                 messageText.text = messageText.text.Insert(messageText.text.Length, character.ToString());
-                onDialogueSpoken?.Invoke(speed, dialogue.speaker);
 
-                PlayTextCharacterAudio(character);
+                if (dialogue.dialogueMessages[messageIndex].isSpoken)
+                {
+                    onDialogueSpoken?.Invoke(speed, dialogue.dialogueMessages[messageIndex].speaker);
+
+                    if (dialogue.dialogueMessages[messageIndex].voiceLine == null)
+                        PlayTextCharacterAudio(character);
+                    else
+                        PlayVoicelineAudio();
+                }
+
                 yield return new WaitForSeconds(speed);
             }
 
             isTextAnimating = false;
             onComplete?.Invoke();
+        }
+
+        private void PlayVoicelineAudio()
+        {
+            if (!isVoicelinePlaying)
+            {
+                isVoicelinePlaying = true;
+                voicelineAudioInstance = AudioManager.Play(dialogue.dialogueMessages[messageIndex].voiceLine, Vector3.zero, Audio.AudioType.VOICE, () =>
+                {
+                    isVoicelinePlaying = false;
+                });
+            }
         }
 
         private void PlayTextCharacterAudio(char character)
@@ -255,9 +285,9 @@ namespace Wattle.Wild.UI
 
             if (charCode <= maxValue)
             {
-                float scalar = 1 - (0.2f * ((float)charCode / (float)maxValue));
+                float scalar = 1 - (0.2f * (charCode / (float)maxValue));
 
-                AudioClip audioClip = voiceline != null ? voiceline : dialogue.dialogueSpeakerPrefab.GetFallbackVoice(dialogue.speaker);
+                AudioClip audioClip = dialogue.dialogueMessages[messageIndex].dialogueSpeakerPrefab.GetFallbackVoice(dialogue.dialogueMessages[messageIndex].speaker);
                 AudioManager.Play(audioClip, Vector3.zero, Audio.AudioType.VOICE);
             }
         }
@@ -267,26 +297,37 @@ namespace Wattle.Wild.UI
             if (!isActive)
                 return;
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetMouseButtonDown(0))
             {
+                if (isVoicelinePlaying)
+                {
+                    StartCoroutine(voicelineAudioInstance.CleanUp(() =>
+                    {
+                        voicelineAudioInstance = null;
+                        isVoicelinePlaying = false;
+                    }));
+                }
 
                 if (!isTextAnimating && (!moveTween.active && !scaleTween.active))
                 {
-                    if (messageIndex == dialogue.dialogueText.Length - 1)
+                    if (messageIndex == dialogue.dialogueMessages.Length - 1)
                     {
                         // we're done, signal to close the panel
                         onDialogueFinished?.Invoke(dialogue);
+                        isActive = false;
                     }
                     else
                     {
                         messageIndex += 1;
-                        DisplayDialogue(dialogue.dialogueText[messageIndex]);
+                        onDialogueStarted?.Invoke(dialogue.dialogueMessages[messageIndex]);
+
+                        DisplayDialogue();
                     }
                 }
                 else
                 {
                     // if playing, skip the voice line and text scrolling
-                    CancelTextCorutine();
+                    CancelSpeechCoroutine();
                     messageText.text = draftMessageText.text;
                 }
             }
