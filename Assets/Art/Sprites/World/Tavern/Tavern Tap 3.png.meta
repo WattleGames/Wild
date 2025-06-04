@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 1930fd4494a74384f907da5a4be0feb3
+guid: 37986147faba31d42850bc557068e6d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 585489585357299884
-    second: spritesheet (2)_0
+      213: 8917089874762948319
+    second: Tavern-3 (1)_0
   - first:
-      213: 3213048799308102398
-    second: spritesheet (2)_1
+      213: -5399135129989827197
+    second: Tavern-3 (1)_1
   - first:
-      213: 4619062684799962818
-    second: spritesheet (2)_2
+      213: 4345257345116717923
+    second: Tavern-3 (1)_2
   - first:
-      213: -7543266853627613897
-    second: spritesheet (2)_3
+      213: -1032718517826279889
+    second: Tavern-3 (1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -55,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerSpriteSheet_0
+      name: Tavern-3 (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 2048
-        height: 2048
+        x: 1903
+        y: 2809
+        width: 36
+        height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 780, y: 800, z: 950, w: 680}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d1dd6e9f02c98f64dadeac12dbfdb8c8
-      internalID: -1879791179
+      spriteID: fde5a7f0ffddfbb70800000000000000
+      internalID: 8917089874762948319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpriteSheet_1
+      name: Tavern-3 (1)_1
       rect:
         serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 2048
-        height: 2048
+        x: 1897
+        y: 2744
+        width: 28
+        height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 780, y: 800, z: 950, w: 680}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6be0f168259e709479a152bb5008281a
-      internalID: 1252461162
+      spriteID: 385bf92843b6215b0800000000000000
+      internalID: -5399135129989827197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpriteSheet_2
+      name: Tavern-3 (1)_2
       rect:
         serializedVersion: 2
-        x: 4096
-        y: 2
-        width: 2048
-        height: 2048
+        x: 1903
+        y: 2788
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 780, y: 800, z: 950, w: 680}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 17b2faa324164494788be069a18b0b4c
-      internalID: 1381699326
+      spriteID: 363c65188847d4c30800000000000000
+      internalID: 4345257345116717923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpriteSheet_3
+      name: Tavern-3 (1)_3
       rect:
         serializedVersion: 2
-        x: 6144
-        y: 0
-        width: 2048
-        height: 2048
+        x: 1921
+        y: 2784
+        width: 6
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 780, y: 800, z: 950, w: 680}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3f51a4b65d7b9dd4286ecbf97c5cf0f6
-      internalID: 1445833599
+      spriteID: f262ff7cafb0ba1f0800000000000000
+      internalID: -1032718517826279889
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0d3f4dc3a5542b944b17ad229d215873
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerSpriteSheet_0: -1879791179
-      PlayerSpriteSheet_1: 1252461162
-      PlayerSpriteSheet_2: 1381699326
-      PlayerSpriteSheet_3: 1445833599
+      Tavern-3 (1)_0: 8917089874762948319
+      Tavern-3 (1)_1: -5399135129989827197
+      Tavern-3 (1)_2: 4345257345116717923
+      Tavern-3 (1)_3: -1032718517826279889
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 1930fd4494a74384f907da5a4be0feb3
+guid: 30c9f03878972b642bc47b338f797bae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 585489585357299884
-    second: spritesheet (2)_0
-  - first:
-      213: 3213048799308102398
-    second: spritesheet (2)_1
-  - first:
-      213: 4619062684799962818
-    second: spritesheet (2)_2
-  - first:
-      213: -7543266853627613897
-    second: spritesheet (2)_3
+      213: 2928856813259149221
+    second: Tavern-1 (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -55,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,89 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerSpriteSheet_0
+      name: Tavern-1 (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 2048
-        height: 2048
+        x: 1904
+        y: 2820
+        width: 33
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 780, y: 800, z: 950, w: 680}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d1dd6e9f02c98f64dadeac12dbfdb8c8
-      internalID: -1879791179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 780, y: 800, z: 950, w: 680}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6be0f168259e709479a152bb5008281a
-      internalID: 1252461162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 4096
-        y: 2
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 780, y: 800, z: 950, w: 680}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17b2faa324164494788be069a18b0b4c
-      internalID: 1381699326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 6144
-        y: 0
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 780, y: 800, z: 950, w: 680}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f51a4b65d7b9dd4286ecbf97c5cf0f6
-      internalID: 1445833599
+      spriteID: 5af4b4001c365a820800000000000000
+      internalID: 2928856813259149221
       vertices: []
       indices: 
       edges: []
@@ -213,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0d3f4dc3a5542b944b17ad229d215873
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerSpriteSheet_0: -1879791179
-      PlayerSpriteSheet_1: 1252461162
-      PlayerSpriteSheet_2: 1381699326
-      PlayerSpriteSheet_3: 1445833599
+      Tavern-1 (1)_0: 2928856813259149221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

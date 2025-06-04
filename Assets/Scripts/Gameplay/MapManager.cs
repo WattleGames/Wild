@@ -12,6 +12,7 @@ using Wattle.Wild.UI;
 
 namespace Wattle.Wild.Gameplay
 {
+    [Serializable]
     public enum MapSectionLocation
     {
         // World Map
@@ -28,7 +29,7 @@ namespace Wattle.Wild.Gameplay
         // Locations
         WATERFALL,
         CAVE,
-        SALOON,
+        TAVERN,
         FAMHOUSE,
         GRAVEYARD,
         CHURCH,
@@ -57,6 +58,7 @@ namespace Wattle.Wild.Gameplay
 
         private Tweener cameraTween = null;
         private MapSectionDetails currentSection;
+        private Vector3 lastPlayerPosition;
 
         public MapSectionDetails GetCurrentMapSection()
         { 
@@ -77,30 +79,25 @@ namespace Wattle.Wild.Gameplay
             currentSection = startSectionDetails;
 
             mapCamera.transform.position = currentSection.mapSection.transform.position.WithZ(-1);
-            worldPlayer.MoveToNewSection(currentSection);
+            worldPlayer.MoveToNewSection(currentSection, false);
+            lastPlayerPosition = worldPlayer.transform.position;
 
             currentSection.mapSection.ToggleDoors(true);
         }
 
-        public void MoveSections(MapSection oldSection, MapSection newSection)
+        public void MoveSections(MapSection newSection)
         {
-            if (oldSection != null)
-                LOG.Log($"FROM: {oldSection.name} TO: {newSection.name}", LOG.Type.GENERAL);
-            else
-                LOG.Log($"STARTING: {newSection.name}", LOG.Type.GENERAL);
+            currentSection.mapSection.ToggleDoors(false);
 
-
-            if (oldSection != null)
-                oldSection.ToggleDoors(false);
-
-            currentSection = GetSectionDetailsFromSection(newSection);
+            MapSectionDetails newSectionDetails = GetSectionDetailsFromSection(newSection);
 
             Initialiser.ChangeGamestate(GameState.WorldTransition);
 
-            if (IsSectionOnWorldMap(currentSection))
+            if (IsSectionOnWorldMap(currentSection) && IsSectionOnWorldMap(newSectionDetails))
             {
-                worldPlayer.MoveIntoNewSection(currentSection, () =>
+                worldPlayer.MoveIntoNewSection(newSectionDetails, () =>
                 {
+                    currentSection = newSectionDetails;
                     Initialiser.ChangeGamestate(GameState.World);
                     newSection.ToggleDoors(true);
                 });
@@ -111,15 +108,30 @@ namespace Wattle.Wild.Gameplay
             {
                 UILoading.ShowScreen(() =>
                 {
-                    worldPlayer.MoveToNewSection(currentSection);
+                    bool isLocation = !IsSectionOnWorldMap(newSectionDetails);
+
+                    if (isLocation)
+                        lastPlayerPosition = worldPlayer.transform.position;
+                    else
+                        worldPlayer.transform.position = lastPlayerPosition;
+
+                    worldPlayer.MoveToNewSection(newSectionDetails, isLocation);
+
                     SetCameraToNewPosition(newSection);
+                    newSection.ToggleDoors(true);
 
                     UILoading.HideScreen(() =>
                     {
+                        currentSection = newSectionDetails;
                         Initialiser.ChangeGamestate(GameState.World);
                     });
                 });
             }
+        }
+
+        public void MoveToLocation(string location)
+        {
+
         }
 
         private bool IsSectionOnWorldMap(MapSectionDetails sectionDetails)
@@ -140,7 +152,7 @@ namespace Wattle.Wild.Gameplay
                 // Locations
                 MapSectionLocation.WATERFALL => false,
                 MapSectionLocation.CAVE => false,
-                MapSectionLocation.SALOON => false,
+                MapSectionLocation.TAVERN => false,
                 MapSectionLocation.FAMHOUSE => false,
                 MapSectionLocation.GRAVEYARD => false,
                 MapSectionLocation.CHURCH => false,

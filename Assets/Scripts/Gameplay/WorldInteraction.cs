@@ -38,6 +38,7 @@ public class WorldInteraction : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                isActive = false;
                 onInteractionStarted?.Invoke();
             }
         }

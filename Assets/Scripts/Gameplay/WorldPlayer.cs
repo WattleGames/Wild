@@ -90,13 +90,15 @@ namespace Wattle.Wild.Gameplay.Player
             playerAnimator.SetBool(isMovingParameter, enabled);
         }
 
-        public void MoveToNewSection(MapSectionDetails sectionDetails)
+        public void MoveToNewSection(MapSectionDetails sectionDetails, bool isLocation)
         {
             this.currentSectionDetails = (new Vector2(sectionDetails.mapSection.transform.position.x, sectionDetails.mapSection.transform.position.y), sectionDetails.location);
 
-            Vector2 position = sectionDetails.mapSection.transform.position;
-
-            rb.transform.position = new Vector3(position.x, position.y, this.transform.position.z);
+            if (isLocation)
+            {
+                Vector3 position = sectionDetails.mapSection.GetSpawnLocation().position;
+                rb.transform.position = new Vector3(position.x, position.y, this.transform.position.z);
+            }
         }
 
         public void MoveIntoNewSection(MapSectionDetails sectionDetails, Action onComplete = null)
