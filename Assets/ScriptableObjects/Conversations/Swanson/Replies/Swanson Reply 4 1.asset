@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Swanson Reply 4 1
   m_EditorClassIdentifier: 
-  replyText: '"Impressive.  Where can I find a place to stay?"'
+  replyText: '"Well it shows."'
   nextMessage: {fileID: 11400000, guid: f43173099422e204dbb673a5791039a8, type: 2}

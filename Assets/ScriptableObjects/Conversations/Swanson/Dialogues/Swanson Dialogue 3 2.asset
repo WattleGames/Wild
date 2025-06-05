@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: ce7f965da37d78441a97e30404b3c98d, type: 3}
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 2b00b09471a95a64daa7904c223eefac, type: 3}
     isSpoken: 1
     speaker: 
-    dialogueText: Why thanks. I keep it myself.
+    dialogueText: '"Why thanks. I like to run a tight ship here, though it can get
+      lonely from time to time "'
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
   - {fileID: 11400000, guid: 02f762848fa6d4c4b9531aec7f2413a0, type: 2}

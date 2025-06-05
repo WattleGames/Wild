@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: ce7f965da37d78441a97e30404b3c98d, type: 3}
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 51941ce1d089a9d4e99600d89196e7d1, type: 3}
     isSpoken: 1
     speaker: 
-    dialogueText: Pretty much yeah. What else?
+    dialogueText: i mean seeing you is making me think of what i could have... wait
+      is that too much, please dont go... keep pressing E on me, im soo lonely?"
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
+  - {fileID: 11400000, guid: ea3499f4ee61d2a45b702d616b296afd, type: 2}
   - {fileID: 11400000, guid: d143cc1ea92540f4c82147ccea2f223f, type: 2}

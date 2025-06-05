@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 694a24b2093902d448f1a952829553d7, type: 3}
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 46f686f7b7f7742478c9b6be21bfd589, type: 3}
     isSpoken: 1
     speaker: 
     dialogueText: I dont have a clue what you're on about mate, soo go on, on yer

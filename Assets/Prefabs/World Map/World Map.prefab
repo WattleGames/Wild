@@ -804,6 +804,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prologue Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 6405549987238174903, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987063785784429188, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987063785784429188, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

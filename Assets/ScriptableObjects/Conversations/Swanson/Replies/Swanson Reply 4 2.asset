@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Swanson Reply 4 2
   m_EditorClassIdentifier: 
-  replyText: '"Do you always talk about yourself?"'
+  replyText: '"What do you mean by that?"'
   nextMessage: {fileID: 11400000, guid: 6bec9cbe97e3cea4a870045f5c2599c1, type: 2}

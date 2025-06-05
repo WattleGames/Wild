@@ -19,7 +19,7 @@ MonoBehaviour:
     speaker: 
     dialogueText: '*he blushes slightly but is able to maintain composure*'
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 694a24b2093902d448f1a952829553d7, type: 3}
-    voiceLine: {fileID: 8300000, guid: 375f2e66e11ebbd48a6031236f7f3ae3, type: 3}
+    voiceLine: {fileID: 8300000, guid: fcba50221652de44db5b7120bcfe664d, type: 3}
     isSpoken: 1
     speaker: 
     dialogueText: 'this is not the time or place to mess around cowboy

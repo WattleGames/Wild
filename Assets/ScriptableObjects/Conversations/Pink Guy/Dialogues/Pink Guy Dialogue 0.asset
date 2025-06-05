@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 93a31ec404d7fa445b248885329f0f9a, type: 3}
-    voiceLine: {fileID: 8300000, guid: 4c94f0b4d310f92418a72e5753105846, type: 3}
+    voiceLine: {fileID: 8300000, guid: 9825b3b6d7cc8bd43856564d506a4752, type: 3}
     isSpoken: 1
     speaker: 
     dialogueText: hey there weary traveler, you look like you've had it rough, you

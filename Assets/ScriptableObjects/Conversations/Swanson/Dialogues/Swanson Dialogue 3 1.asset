@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: ce7f965da37d78441a97e30404b3c98d, type: 3}
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: c03b4fb6130646b438bfa4d27e659557, type: 3}
     isSpoken: 1
     speaker: 
     dialogueText: Ripe Beer, Topfwhipper, World Map or Peanuts, take your pick.

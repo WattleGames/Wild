@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Swanson Reply 6 1
   m_EditorClassIdentifier: 
-  replyText: '"You make a good pitch. I''ll consider."'
+  replyText: '"I guess I''ll leave you to it."'
   nextMessage: {fileID: 0}

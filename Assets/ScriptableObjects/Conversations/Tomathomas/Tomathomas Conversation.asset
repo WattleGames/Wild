@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5c361103557914a939c88eb4dd435f, type: 3}
   m_Name: Tomathomas Conversation
   m_EditorClassIdentifier: 
-  startingStage: {fileID: 11400000, guid: 1b4f110242763f54fbe780d14608017d, type: 2}
+  startingStage: {fileID: 11400000, guid: a083c2c3400c92647a06dd3ea1df0667, type: 2}
   conversationMusic: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 93a31ec404d7fa445b248885329f0f9a, type: 3}
-    voiceLine: {fileID: 8300000, guid: 781622b7d4daaeb4eae29daaca99dd00, type: 3}
+    voiceLine: {fileID: 8300000, guid: 9312d14d4345b514caf4fc5fd1f706c5, type: 3}
     isSpoken: 1
     speaker: 
     dialogueText: you're in a place only found by those who become truly lost...

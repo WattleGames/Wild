@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: ce7f965da37d78441a97e30404b3c98d, type: 3}
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: bf87e3a3deced804ea2c30c5c8d7c9b7, type: 3}
     isSpoken: 1
     speaker: 
-    dialogueText: Well, I'm fine aren't I? I do try.
+    dialogueText: '"Well, better now that ive got a new face to look at ."'
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
   - {fileID: 11400000, guid: 02f762848fa6d4c4b9531aec7f2413a0, type: 2}
