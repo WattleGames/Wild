@@ -15,19 +15,19 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.33
+    m_Value: 0.4
   xMultiplier:
     m_OverrideState: 1
     m_Value: 1
   yMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.698
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   scale:
     m_OverrideState: 1
-    m_Value: 1.1
+    m_Value: 1.11
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
