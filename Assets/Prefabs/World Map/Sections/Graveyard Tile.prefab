@@ -3682,11 +3682,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -3699,7 +3699,7 @@ PrefabInstance:
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 479053149532422043}
+      objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3718,7 +3718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: StartConversation
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -3730,7 +3730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Wattle.Wild.Gameplay.Conversation.ConversationManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -3742,19 +3742,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: ec828d8b907af094c919f8d71d955f2f, type: 2}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: ee0da67ba0bef414f98f4e81b906ba37, type: 2}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Wattle.Wild.Infrastructure.Conversation.Conversaion, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3861,7 +3861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032554775747975579, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8.91
       objectReference: {fileID: 0}
     - target: {fileID: 6032554775747975579, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3926,7 +3926,7 @@ PrefabInstance:
     - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: 'sectionDoors.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 980364270933542971}
     - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: 'sectionDoors.Array.data[1]'
       value: 
@@ -4233,7 +4233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      value: StartConversation
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -4286,7 +4286,7 @@ PrefabInstance:
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: ee0da67ba0bef414f98f4e81b906ba37, type: 2}
+      objectReference: {fileID: 11400000, guid: ec828d8b907af094c919f8d71d955f2f, type: 2}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine

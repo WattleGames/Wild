@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
+  m_Name: SWMG Dialogue 1 1
+  m_EditorClassIdentifier: 
+  dialogueMessages:
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 1c0f5fa800f7f3f47b8b1371cf21ee07, type: 3}
+    voiceLine: {fileID: 0}
+    isSpoken: 1
+    speaker: 
+    dialogueText: Sigh... Guess it doesn't work squad. I'm just trying to get any
+      advantage I can in the fight against those bandits. They've been encroaching
+      our forest home for as long as I can remember.
+  - dialogueSpeakerPrefab: {fileID: 0}
+    voiceLine: {fileID: 0}
+    isSpoken: 1
+    speaker: 
+    dialogueText: You seem particularly harmless, not part of any of that. Maybe
+      you could help?
+  dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
+  dialogueReplies:
+  - {fileID: 11400000, guid: 56334eaac3a2c1649a242148c4f83692, type: 2}
+  - {fileID: 11400000, guid: 82ce1ddf8508cc84c89541525cf33a98, type: 2}

@@ -40,7 +40,8 @@ namespace Wattle.Wild.Gameplay
         CAMP,
         LIBRARY,
         CASTLE,
-        STARTING_AREA
+        STARTING_AREA,
+        FOREST_CAVE
     }
 
     public class MapManager : MonoBehaviour

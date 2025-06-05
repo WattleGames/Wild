@@ -567,6 +567,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.0202
       objectReference: {fileID: 0}
+    - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveSections
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Wattle.Wild.Gameplay.MapManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Wattle.Wild.Gameplay.Player.MapSection, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8374267658086876241, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_Size.x
       value: 0.041541852

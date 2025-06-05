@@ -399,6 +399,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2a04cde0d5f9a46badae2ddbe70ab9, type: 3}
+--- !u!1 &563494866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7825614958371905007, guid: 2d2a04cde0d5f9a46badae2ddbe70ab9, type: 3}
+  m_PrefabInstance: {fileID: 563494865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &613753171 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 590372562401841016, guid: 8142ea0654c2d4b4e8fe431b1d9d7002, type: 3}
@@ -799,7 +804,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1777102699190893922, guid: 2d2a04cde0d5f9a46badae2ddbe70ab9, type: 3}
   m_PrefabInstance: {fileID: 563494865}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 563494866}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9446eddb20fac164ebaba6309772505c, type: 3}
@@ -1168,7 +1173,7 @@ PrefabInstance:
     - target: {fileID: 6159252059647760699, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1236355873}
+      objectReference: {fileID: 563494866}
     - target: {fileID: 6168519049914017628, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
