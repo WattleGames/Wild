@@ -19,5 +19,4 @@ MonoBehaviour:
     speaker: 
     dialogueText: oh pshh ya don't need to worry about the details...
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
-  dialogueReplies:
-  - {fileID: 11400000, guid: fdadcee092c902f49829a4ac31f7da5d, type: 2}
+  dialogueReplies: []
