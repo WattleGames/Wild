@@ -2838,6 +2838,37 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &7881027134508113340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8504970515059000449}
+  m_Layer: 0
+  m_Name: Spawn location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8504970515059000449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881027134508113340}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: -0.244, z: 0.06427014}
+  m_LocalScale: {x: 0.083333336, y: 0.11111112, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1677824616019804056}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7926362139655375588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4007,6 +4038,10 @@ PrefabInstance:
       value: Graveyard Tile
       objectReference: {fileID: 0}
     - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
+      propertyPath: spawnLocation
+      value: 
+      objectReference: {fileID: 8504970515059000449}
+    - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: sectionDoors.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4049,6 +4084,9 @@ PrefabInstance:
     - {fileID: 3036307255072100724, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
     - {fileID: 608023213878987583, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6032554775747975579, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 8504970515059000449}
     - targetCorrespondingSourceObject: {fileID: 8148330983683603927, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       insertIndex: -1
       addedObject: {fileID: 21051012255828792}
@@ -4177,6 +4215,11 @@ PrefabInstance:
       addedObject: {fileID: 4764196152689572609}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
+--- !u!4 &1677824616019804056 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6032554775747975579, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
+  m_PrefabInstance: {fileID: 4971732105081873923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2307322701016999968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7276240055518055971, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}

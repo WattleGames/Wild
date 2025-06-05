@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Wattle.Utils;
 using Wattle.Wild.Gameplay.Player;
 using Wattle.Wild.Infrastructure;
@@ -100,7 +101,29 @@ namespace Wattle.Wild.Gameplay
 
             Initialiser.ChangeGamestate(GameState.WorldTransition);
 
-            if (IsSectionOnWorldMap(currentSection) && IsSectionOnWorldMap(newSectionDetails))
+            // dirty edge code
+            if ((currentSection.location == MapSectionLocation.CENTER && newSectionDetails.location == MapSectionLocation.TOP_CENTER ||
+                currentSection.location == MapSectionLocation.TOP_CENTER && newSectionDetails.location == MapSectionLocation.CENTER))
+            {
+                UILoading.ShowScreen(() =>
+                {
+                    bool isLocation = !IsSectionOnWorldMap(newSectionDetails);
+                    bool areBothLocations = isLocation && !IsSectionOnWorldMap(currentSection);
+
+                    worldPlayer.MoveToNewSection(newSectionDetails, false);
+                    worldPlayer.transform.position = newSectionDetails.mapSection.GetSpawnLocation().position;
+
+                    SetCameraToNewPosition(newSection);
+                    newSection.ToggleDoors(true);
+
+                    UILoading.HideScreen(() =>
+                    {
+                        currentSection = newSectionDetails;
+                        Initialiser.ChangeGamestate(GameState.World);
+                    });
+                });
+            }
+            else if (IsSectionOnWorldMap(currentSection) && IsSectionOnWorldMap(newSectionDetails))
             {
                 worldPlayer.MoveIntoNewSection(newSectionDetails, () =>
                 {

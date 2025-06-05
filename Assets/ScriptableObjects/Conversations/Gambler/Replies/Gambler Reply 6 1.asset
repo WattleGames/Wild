@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gambler Reply 6 1
   m_EditorClassIdentifier: 
   replyText: '*Flip the coin (Heads).*'
-  nextMessage: {fileID: 11400000, guid: 63776ac3a64445940a417acf9408c07b, type: 2}
+  nextMessage: {fileID: 11400000, guid: 5f0bc7229c63f944182db899ea51726f, type: 2}
   replyAction: 
   actionParams: 
