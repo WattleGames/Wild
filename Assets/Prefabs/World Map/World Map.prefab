@@ -389,14 +389,6 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 5361377794227623884}
-    - target: {fileID: 4647013879740928213, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 37689c370a83f1f4582bcefa7324a169, type: 2}
-    - target: {fileID: 9174355598106998434, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
-      propertyPath: m_Name
-      value: SWMG
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
