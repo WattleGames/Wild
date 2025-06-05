@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Gambler Reply 4 1
   m_EditorClassIdentifier: 
-  replyText: '*Show Cards*'
+  replyText: '"Alright, you pulled me over. I''ll play your game"'
   nextMessage: {fileID: 11400000, guid: 10f0126b24b9724468abd541ddadb465, type: 2}
+  replyAction: 
+  actionParams: 

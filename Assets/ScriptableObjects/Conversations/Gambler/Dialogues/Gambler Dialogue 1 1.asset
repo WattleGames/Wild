@@ -17,8 +17,8 @@ MonoBehaviour:
     voiceLine: {fileID: 0}
     isSpoken: 0
     speaker: 
-    dialogueText: '*The Gambler nods as to greet*'
+    dialogueText: ... Why yes of course! The other guests happen to be in the restroom,
+      sir. They'll be back any time sir, yes, they'll be back any time.
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
   - {fileID: 11400000, guid: 4822c1aaeec3dbf4cb2d667afa4bc714, type: 2}
-  - {fileID: 11400000, guid: 40e19b770fb8a314c8f1b19669f2a9d1, type: 2}

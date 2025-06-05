@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
-  m_Name: Gambler Reply 2 2
+  m_Name: Gambler Reply 6 2
   m_EditorClassIdentifier: 
-  replyText: '"You look like you own land"'
-  nextMessage: {fileID: 11400000, guid: c69319a1361cfaf418cb1bb9aef6e4a7, type: 2}
+  replyText: '*Flip the coin (Tails).*'
+  nextMessage: {fileID: 11400000, guid: 5f0bc7229c63f944182db899ea51726f, type: 2}
+  replyAction: ITEM
+  actionParams: BOAT

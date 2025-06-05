@@ -17,6 +17,14 @@ MonoBehaviour:
     voiceLine: {fileID: 0}
     isSpoken: 1
     speaker: 
-    dialogueText: You're gonna need better luck next time.
+    dialogueText: Now - Let's play shan't we?
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 94c9d71db502c844187bd4da4e967532, type: 3}
+    voiceLine: {fileID: 0}
+    isSpoken: 1
+    speaker: 
+    dialogueText: Welcome to Big Joe's Big Coin Game! Rules are simple ladies and
+      gentlemen! Flip this coin and land on Heads to win!
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
-  dialogueReplies: []
+  dialogueReplies:
+  - {fileID: 11400000, guid: accf547d5b14bf04aa1db76e68cf0026, type: 2}
+  - {fileID: 11400000, guid: 807038e882b52a441a7cf29abd37a012, type: 2}

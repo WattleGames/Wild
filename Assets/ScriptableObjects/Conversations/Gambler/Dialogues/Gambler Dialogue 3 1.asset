@@ -17,10 +17,16 @@ MonoBehaviour:
     voiceLine: {fileID: 0}
     isSpoken: 1
     speaker: 
-    dialogueText: Very well, I'll tell ya I'm hard to beat...
+    dialogueText: 'Fine! You got me. This place used to be so good, great even. Fully
+      booked and crowds full o'' laughter each n'' ev''ry night... That was before
+      opposite day, when the ocean o'' time changed everyone. '
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 94c9d71db502c844187bd4da4e967532, type: 3}
+    voiceLine: {fileID: 0}
+    isSpoken: 1
+    speaker: 
+    dialogueText: With no young people left, there are no stupid people left to waste
+      their hard earned money on facecious promises of vast wealth, you see? Will
+      you please play a game with me? I promise it'll be worth ye time.
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
   - {fileID: 11400000, guid: 14e252cfb943b0248a6f793fa697b23a, type: 2}
-  - {fileID: 11400000, guid: eebe854c6903569459fb7219a050705b, type: 2}
-  - {fileID: 11400000, guid: 9af1f22898d22b34ca215f466e1a2720, type: 2}
-  - {fileID: 11400000, guid: accf547d5b14bf04aa1db76e68cf0026, type: 2}

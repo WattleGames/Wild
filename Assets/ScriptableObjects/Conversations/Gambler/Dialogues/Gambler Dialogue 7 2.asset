@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
-  m_Name: Gambler Dialogue 3 2
+  m_Name: Gambler Dialogue 7 2
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 94c9d71db502c844187bd4da4e967532, type: 3}
     voiceLine: {fileID: 0}
     isSpoken: 1
     speaker: 
-    dialogueText: That's a keen eye ye got on ya. I run a spectacle down south. You
-      should stop by, although I'll warn ya, tickets sell out fast. Here's one on
-      me.
+    dialogueText: Congratulations! You win a free boat trip! Now you can go anywhere
+      you've ever dreamt of! Make sure to bring me pictures.
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies: []

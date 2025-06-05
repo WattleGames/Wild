@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Gambler Reply 2 1
   m_EditorClassIdentifier: 
-  replyText: '*Challenge him to a game of poker.*'
+  replyText: '"Not even an ounce of that is true."'
   nextMessage: {fileID: 11400000, guid: d36d9530c96ba524a8b17dff3fdb7d86, type: 2}
+  replyAction: 
+  actionParams: 

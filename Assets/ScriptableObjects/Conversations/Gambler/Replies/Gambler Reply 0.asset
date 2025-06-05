@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Gambler Reply 0
   m_EditorClassIdentifier: 
-  replyText: '"Are you pissing on the floor?!"'
+  replyText: '"...Impressive place. Where is everyone?"'
   nextMessage: {fileID: 11400000, guid: c0f230da3f42ce945a90c407afd68d69, type: 2}
+  replyAction: 
+  actionParams: 

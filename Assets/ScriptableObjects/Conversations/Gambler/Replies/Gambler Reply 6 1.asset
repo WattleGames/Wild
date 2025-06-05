@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
-  m_Name: Gambler Reply 4 2 (WIN)
+  m_Name: Gambler Reply 6 1
   m_EditorClassIdentifier: 
-  replyText: '*Show Cards*'
-  nextMessage: {fileID: 11400000, guid: 63776ac3a64445940a417acf9408c07b, type: 2}
-  replyAction: ITEM
-  actionParams: BOAT
+  replyText: '*Flip the coin (Tails).*'
+  nextMessage: {fileID: 11400000, guid: 5f0bc7229c63f944182db899ea51726f, type: 2}
+  replyAction: 
+  actionParams: 
