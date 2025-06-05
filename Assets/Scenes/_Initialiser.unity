@@ -151,7 +151,7 @@ MonoBehaviour:
   singletonManager: {fileID: 1299597352}
   sandboxMode: 1
   clearSave: 0
-  startingLocation: 6
+  startingLocation: 7
 --- !u!4 &114513174
 Transform:
   m_ObjectHideFlags: 0
