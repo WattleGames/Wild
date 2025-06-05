@@ -20,4 +20,4 @@ MonoBehaviour:
     dialogueText: you're in a place only found by those who become truly lost...
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
-  - {fileID: 11400000, guid: b74c4f152b5be0f4386ab60737d76a85, type: 2}
+  - {fileID: 11400000, guid: 7871c281aa977224d90becdefaea8396, type: 2}

@@ -1109,6 +1109,10 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
+    - target: {fileID: 1081460152562248507, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: e79055974a96f55458d0e6f9ac833460, type: 2}
     - target: {fileID: 1421291577551139764, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1161,6 +1165,10 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
+    - target: {fileID: 3825700318030667266, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5017322905801282196, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: m_Name
       value: World Map

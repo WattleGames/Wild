@@ -12,16 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
   m_Name: Martin Fishman Dialogue 2 Reaction
   m_EditorClassIdentifier: 
-  dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 9b5e169625420b24994c51c6802a9a9e, type: 3}
-  voiceLine: {fileID: 0}
-  dialogueText:
-  - '*Martin Fishman fumbles his fishing
-
-    rod, surprised to be spoken to.
-
-
-    "Oh
-    darn dickerin dicks! G''day to ya."'
+  dialogueMessages:
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 9b5e169625420b24994c51c6802a9a9e, type: 3}
+    voiceLine: {fileID: 0}
+    isSpoken: 1
+    speaker: 
+    dialogueText: AHHHHHHHHHH!!!!!
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies: []
-  speaker: 
