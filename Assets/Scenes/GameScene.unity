@@ -865,9 +865,17 @@ PrefabInstance:
       propertyPath: '_inventorySlots.Array.data[4]'
       value: 
       objectReference: {fileID: 930049534}
+    - target: {fileID: 1949448461778453374, guid: 08f721222b66cfd44bca9112561f3f9c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2683782548819583501, guid: 08f721222b66cfd44bca9112561f3f9c, type: 3}
       propertyPath: m_Name
       value: WorldPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683782548819583501, guid: 08f721222b66cfd44bca9112561f3f9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3778648756763237640, guid: 08f721222b66cfd44bca9112561f3f9c, type: 3}
       propertyPath: inventoryUI

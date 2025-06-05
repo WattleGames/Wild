@@ -8,6 +8,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     {
         //use the item
         this.GetComponentInChildren<InventoryItem>().ItemData.UseItem();
+        
 
         //remove the item after being used
         this.GetComponentInChildren<InventoryItem>().RemoveItem(this.GetComponentInChildren<InventoryItem>().ItemData);
