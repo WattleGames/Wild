@@ -10,12 +10,14 @@ public class ItemData : ScriptableObject
 
     public delegate void ItemEventHandler(ItemData item);
 
-    public static ItemEventHandler onItemUsed;
+    //events for all the items in the game (Add more depending on how many items we have)
+    public static ItemEventHandler onBulletItemUsed;
+  
 
+ 
     [SerializeField] private Sprite _itemImage;
 
     [SerializeField] private string _itemName;
-
 
     public Sprite ItemImage { get {  return _itemImage; } }
     public string ItemName { get { return _itemName; } }
@@ -24,10 +26,16 @@ public class ItemData : ScriptableObject
 
     public void UseItem()
     {
-        //fires an onItem used event
-       onItemUsed?.Invoke(this);
+        //first check what the object is
+        if (_itemName == "Bullet")
+        {
+            onBulletItemUsed?.Invoke(this);
+            Debug.Log("Firing the event for " + _itemName + " !");
+        }
+        
+        //add more checks here depending on how many items we have
 
-       Debug.Log("Firing the event for " + _itemName + " !");
+      
 
        
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class InventoryItem : MonoBehaviour
@@ -9,6 +10,7 @@ public class InventoryItem : MonoBehaviour
 
     [Header("UI")]
     public Image itemImage;
+
 
 
     

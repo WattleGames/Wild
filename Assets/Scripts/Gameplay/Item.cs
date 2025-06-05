@@ -17,8 +17,7 @@ public class Item : MonoBehaviour
 
     public ItemData ItemData {  get { return _itemData; } }
 
-    
-
+  
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,6 +26,7 @@ public class Item : MonoBehaviour
         {
             //invoke the onItemPickedUp event
             onItemPickedUp?.Invoke(_itemData);
+
             Destroy(this.gameObject);
         }
     }
