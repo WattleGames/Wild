@@ -117,10 +117,10 @@ MonoBehaviour:
     sectionAudio: {fileID: 8300000, guid: 5d11433ee8d50b04db56c1ac7e492b95, type: 3}
   - mapSection: {fileID: 7677609784323696216}
     location: 22
-    sectionAudio: {fileID: 0}
+    sectionAudio: {fileID: 8300000, guid: 6ce56976fe769a24190bd904b1860442, type: 3}
   - mapSection: {fileID: 5090350765454535656}
     location: 10
-    sectionAudio: {fileID: 0}
+    sectionAudio: {fileID: 8300000, guid: 6ce56976fe769a24190bd904b1860442, type: 3}
   - mapSection: {fileID: 7022548753142151765}
     location: 11
     sectionAudio: {fileID: 8300000, guid: bf7a706f3618a6f43b568b3dac179806, type: 3}
