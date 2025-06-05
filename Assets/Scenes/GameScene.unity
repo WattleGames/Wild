@@ -1118,37 +1118,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1236355873}
     - target: {fileID: 2604819850462036525, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2604819850462036525, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2604819850462036525, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
-    - target: {fileID: 2604819850462036525, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2604819850462036525, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartConversation
-      objectReference: {fileID: 0}
-    - target: {fileID: 2604819850462036525, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Wattle.Wild.Gameplay.Conversation.ConversationManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2604819850462036525, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 628577c94f4f5834cbf70246aa098f6b, type: 2}
-    - target: {fileID: 2604819850462036525, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Wattle.Wild.Infrastructure.Conversation.Conversaion, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 2845673132509247903, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1205,14 +1177,6 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
-    - target: {fileID: 6518405804582322885, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: m_Size.x
-      value: 1.7265203
-      objectReference: {fileID: 0}
-    - target: {fileID: 6518405804582322885, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.14928257
-      objectReference: {fileID: 0}
     - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1245,14 +1209,6 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
-    - target: {fileID: 8892096664990920584, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: m_Size.x
-      value: 0.63492066
-      objectReference: {fileID: 0}
-    - target: {fileID: 8892096664990920584, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.2274603
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

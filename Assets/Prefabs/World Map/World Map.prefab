@@ -547,6 +547,34 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: Wattle.Wild.Gameplay.Player.MapSection, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 485142529433776908, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 485142529433776908, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 485142529433776908, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 485142529433776908, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 485142529433776908, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Wattle.Wild.Gameplay.Conversation.ConversationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 485142529433776908, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 628577c94f4f5834cbf70246aa098f6b, type: 2}
+    - target: {fileID: 485142529433776908, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Wattle.Wild.Infrastructure.Conversation.Conversaion, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 821151983433965886, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
       propertyPath: destinationSection
       value: 
@@ -1409,6 +1437,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7108441402195206625}
     m_Modifications:
+    - target: {fileID: 203142700554812193, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.63492066
+      objectReference: {fileID: 0}
+    - target: {fileID: 203142700554812193, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.2274603
+      objectReference: {fileID: 0}
     - target: {fileID: 821151983433965886, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
       propertyPath: destinationSection
       value: 
@@ -1464,6 +1500,14 @@ PrefabInstance:
     - target: {fileID: 2085848727687990539, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
       propertyPath: m_Name
       value: Church Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 2576235404173317740, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7265203
+      objectReference: {fileID: 0}
+    - target: {fileID: 2576235404173317740, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.14928257
       objectReference: {fileID: 0}
     - target: {fileID: 4096713508951275490, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
       propertyPath: destinationSection
