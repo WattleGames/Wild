@@ -17,7 +17,7 @@ MonoBehaviour:
     voiceLine: {fileID: 0}
     isSpoken: 1
     speaker: 
-    dialogueText: Congratulations! <color=red>You win a free boat trip!</color> Now
-      you can go anywhere you've ever dreamt of! Make sure to bring me pictures.
+    dialogueText: Congratulations! You win a free boat trip! Now you can go anywhere
+      you've ever dreamt of! Make sure to bring me pictures.
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies: []
