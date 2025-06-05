@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5c361103557914a939c88eb4dd435f, type: 3}
+  m_Name: Pink Guy Conversation
+  m_EditorClassIdentifier: 
+  startingStage: {fileID: 11400000, guid: e4e1834c16b6ee94d9ad3ce6aaebbf0d, type: 2}
+  conversationMusic: {fileID: 0}
