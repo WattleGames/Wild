@@ -117,10 +117,10 @@ MonoBehaviour:
     sectionAudio: {fileID: 8300000, guid: 5d11433ee8d50b04db56c1ac7e492b95, type: 3}
   - mapSection: {fileID: 7677609784323696216}
     location: 22
-    sectionAudio: {fileID: 8300000, guid: 9c2a0513c5cc4474b98bfc1f20e7629f, type: 3}
+    sectionAudio: {fileID: 0}
   - mapSection: {fileID: 5090350765454535656}
     location: 10
-    sectionAudio: {fileID: 8300000, guid: 9c2a0513c5cc4474b98bfc1f20e7629f, type: 3}
+    sectionAudio: {fileID: 0}
   - mapSection: {fileID: 7022548753142151765}
     location: 11
     sectionAudio: {fileID: 8300000, guid: bf7a706f3618a6f43b568b3dac179806, type: 3}
@@ -772,6 +772,14 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: Wattle.Wild.Gameplay.Player.MapSection, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5735225905657862995, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735225905657862995, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0692
+      objectReference: {fileID: 0}
     - target: {fileID: 6405549987238174903, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
       propertyPath: m_Name
       value: Prologue Exit
@@ -1233,26 +1241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prolouge Cave
       objectReference: {fileID: 0}
-    - target: {fileID: 2385649694935712325, guid: 86b978a6eaf9c364e8a521b83a410385, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6890132019512369157}
-    - target: {fileID: 2385649694935712325, guid: 86b978a6eaf9c364e8a521b83a410385, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MoveSections
-      objectReference: {fileID: 0}
-    - target: {fileID: 2385649694935712325, guid: 86b978a6eaf9c364e8a521b83a410385, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Wattle.Wild.Gameplay.MapManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2385649694935712325, guid: 86b978a6eaf9c364e8a521b83a410385, type: 3}
+    - target: {fileID: 3898795046371880333, guid: 86b978a6eaf9c364e8a521b83a410385, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 9051393238289050899}
-    - target: {fileID: 2385649694935712325, guid: 86b978a6eaf9c364e8a521b83a410385, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Wattle.Wild.Gameplay.Player.MapSection, Assembly-CSharp
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 72b5e5e4e24cb0c4e9e85bec696edd14, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

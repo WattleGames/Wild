@@ -125,7 +125,7 @@ namespace Wattle.Wild.UI
             isActive = false;
             CancelSpeechCoroutine();
 
-            if (dialogue.dialogueStyle.popUpSpeed == 0)
+            if (dialogue != null && dialogue.dialogueStyle.popUpSpeed == 0)
             {
                 messageBox.anchoredPosition = new Vector3(POPUP_END_POSITION.x, POPUP_END_POSITION.y, messageBox.position.z);
                 messageBox.localScale = new Vector3(0, 0, 0);

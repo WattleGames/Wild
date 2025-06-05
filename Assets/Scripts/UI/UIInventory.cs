@@ -71,7 +71,7 @@ public class UIInventory : MonoBehaviour
         movingTween?.Kill();
 
         //open the inventory
-        movingTween = rectTransform.DOAnchorPosY(enabled ? -200f : -118f, 1f).SetEase(Ease.OutElastic);
+        movingTween = rectTransform.DOAnchorPosY(enabled ? -220f : -118f, 1f).SetEase(Ease.OutElastic);
         inventoryOpened = enabled;
     }
 }
