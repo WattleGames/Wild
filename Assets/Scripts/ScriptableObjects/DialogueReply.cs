@@ -10,5 +10,8 @@ namespace Wattle.Wild.Infrastructure.Conversation
 
         public Dialogue nextMessage;
         // requirements?
+
+        public string replyAction;
+        public string actionParams;
     }
 }

@@ -1,5 +1,8 @@
 using DG.Tweening;
+using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using Wattle.Utils;
 using Wattle.Wild.Gameplay.Conversation;
@@ -10,6 +13,8 @@ namespace Wattle.Wild.Gameplay.Player
 {
     public class WorldPlayer : MonoBehaviour
     {
+        public static event Action<string> OnPlayerItemCollected;
+
         public UIInventory InventoryUI => inventoryUI;
 
         [Header("World Systems")]
@@ -33,17 +38,30 @@ namespace Wattle.Wild.Gameplay.Player
 
         private string isMovingParameter = "isMoving";
 
+        private Dictionary<string, bool> items = new Dictionary<string, bool>();
+
         private void OnEnable()
         {
+            if (conversationManager != null)
+            {
+                conversationManager.onItemEarned += HandleItemEarned;
+            }
+            WorldInteraction.onItemCollected += HandleItemEarned;
             Initialiser.OnGameStateChanged += OnGameStateChanged;
         }
 
         private void OnDisable()
         {
+            if (conversationManager != null)
+            {
+                conversationManager.onItemEarned -= HandleItemEarned;
+            }
+            WorldInteraction.onItemCollected -= HandleItemEarned;
+
             Initialiser.OnGameStateChanged -= OnGameStateChanged;
         }
 
-        void Update()
+        private void Update()
         {
             if (isInputEnabled)
             {
@@ -59,7 +77,7 @@ namespace Wattle.Wild.Gameplay.Player
             }
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             if (isInputEnabled)
             {
@@ -83,6 +101,29 @@ namespace Wattle.Wild.Gameplay.Player
                 default:
                     break;
             }
+        }
+
+        private void HandleItemEarned(string item)
+        {
+            TryAddItemToPlayer(item);
+        }
+
+        public void TryAddItemToPlayer(string itemName)
+        {
+            if (!items.ContainsKey(itemName))
+            {
+                items.Add(itemName, true);
+            }
+        }
+
+        public bool CheckIfPlayerHasItem(string itemName)
+        {
+            if (items.ContainsKey(itemName))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public void ToggleMovement(bool enabled)

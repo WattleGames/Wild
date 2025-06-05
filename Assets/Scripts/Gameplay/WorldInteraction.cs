@@ -12,7 +12,12 @@ public class WorldInteraction : MonoBehaviour
     public static event Action OnWorldInteractionEntered;
     public static event Action OnWorldInteractionExited;
 
+    [Header("Action")]
+    [SerializeField] private string interactionAction;
+    [SerializeField] private string interactionParams;
+
     [SerializeField] private UnityEvent onInteractionStarted;
+    public static event Action<string> onItemCollected;
 
     [SerializeField] private Image interactionSprite;
     [SerializeField] private Transform notificationTransform;
@@ -41,6 +46,14 @@ public class WorldInteraction : MonoBehaviour
             {
                 isActive = false;
                 onInteractionStarted?.Invoke();
+
+                if (string.IsNullOrEmpty(interactionAction) && string.IsNullOrEmpty(interactionParams))
+                {
+                    if (interactionAction == "ITEM")
+                    {
+                        onItemCollected?.Invoke(interactionParams);
+                    }
+                }
             }
         }
     }
