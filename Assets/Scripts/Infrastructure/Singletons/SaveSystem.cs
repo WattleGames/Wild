@@ -38,6 +38,8 @@ namespace Wattle.Wild.Infrastructure
             {
                 LOG.LogError($"Exception thrown: {e}", LOG.Type.SAVESYSTEM);
             }
+#else
+            AudioSettings = new AudioConfig();
 #endif
 
             yield return base.Initalise();

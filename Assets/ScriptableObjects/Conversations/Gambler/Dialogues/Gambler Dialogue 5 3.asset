@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
+  m_Name: Gambler Dialogue 5 3
+  m_EditorClassIdentifier: 
+  dialogueMessages:
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 94c9d71db502c844187bd4da4e967532, type: 3}
+    voiceLine: {fileID: 0}
+    isSpoken: 1
+    speaker: 
+    dialogueText: I know I gamble, but I'm not that dumb bucko...
+  dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
+  dialogueReplies: []

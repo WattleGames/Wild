@@ -23,10 +23,10 @@ namespace Wattle.Wild.Infrastructure
 
         public string FileName => "SoundSettings";
 
-        public Observable<float> masterVolume = new Observable<float>(70f);
-        public Observable<float> sfxVolume = new Observable<float>(70f);
-        public Observable<float> musicVolume = new Observable<float>(70f);
-        public Observable<float> dialogueVolume = new Observable<float>(70f);
+        public Observable<float> masterVolume = new Observable<float>(0.7f);
+        public Observable<float> sfxVolume = new Observable<float>(0.7f);
+        public Observable<float> musicVolume = new Observable<float>(0.4f);
+        public Observable<float> dialogueVolume = new Observable<float>(0.7f);
 
         public void Deserialize(string json)
         {

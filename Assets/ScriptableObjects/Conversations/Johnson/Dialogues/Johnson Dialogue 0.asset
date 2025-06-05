@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
+  m_Name: Johnson Dialogue 0
+  m_EditorClassIdentifier: 
+  dialogueMessages:
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: b472882f00f2ca24db2885c456998ada, type: 3}
+    voiceLine: {fileID: 8300000, guid: b1b9e2c018388374d82dee7d305127b9, type: 3}
+    isSpoken: 1
+    speaker: 
+    dialogueText: Yee! Wherefore didst thee stealeth mine own proudest bone, yo?
+      I wast almost did finish watching bone alone 2!. And yond's mine own fav'rite
+      movie.
+  dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
+  dialogueReplies:
+  - {fileID: 11400000, guid: 36a64f0c432d3a04489ef171f8dd727b, type: 2}
+  - {fileID: 11400000, guid: 86b384b38ad429140b143a8280a0feb1, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
+  m_Name: Martin Fishman Dialogue 3 Join response
+  m_EditorClassIdentifier: 
+  dialogueMessages:
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 9b5e169625420b24994c51c6802a9a9e, type: 3}
+    voiceLine: {fileID: 0}
+    isSpoken: 1
+    speaker: 
+    dialogueText: '"Sure you can my man."'
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 9b5e169625420b24994c51c6802a9a9e, type: 3}
+    voiceLine: {fileID: 0}
+    isSpoken: 0
+    speaker: 
+    dialogueText: Fishman doesn't give you a fish, he teaches you how to fish. You
+      catch nothing.
+  dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
+  dialogueReplies:
+  - {fileID: 11400000, guid: b689d5f9078a2d5409f69992d9c6f068, type: 2}

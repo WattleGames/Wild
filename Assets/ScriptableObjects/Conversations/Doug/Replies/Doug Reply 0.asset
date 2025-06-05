@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
+  m_Name: Doug Reply 0
+  m_EditorClassIdentifier: 
+  replyText: Try asking the dog where the hell we are by barking at it.
+  nextMessage: {fileID: 11400000, guid: 67e9d9511636e3e4baaae2d10457c7dd, type: 2}

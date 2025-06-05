@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System;
 using UnityEngine;
+using Wattle.Utils;
 using Wattle.Wild.Gameplay.Conversation;
 using Wattle.Wild.Infrastructure;
 using static Wattle.Wild.Gameplay.MapManager;
@@ -98,6 +99,15 @@ namespace Wattle.Wild.Gameplay.Player
             {
                 Vector3 position = sectionDetails.mapSection.GetSpawnLocation().position;
                 rb.transform.position = new Vector3(position.x, position.y, this.transform.position.z);
+
+                if (sectionDetails.location != MapSectionLocation.STARTING_AREA && sectionDetails.location != MapSectionLocation.CAVE)
+                {
+                    rb.transform.localScale = rb.transform.localScale.WithXY(2, 2);
+                }
+            }
+            else
+            {
+                rb.transform.localScale = rb.transform.localScale.WithXY(1, 1);
             }
         }
 

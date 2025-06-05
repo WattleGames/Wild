@@ -49,17 +49,14 @@ public class UIDialogueSpeaker : MonoBehaviour
     {
         direction *= - 1;
 
-        if (upperMouthTween != null)
-            upperMouthTween.Kill(true);
-
         if (moveUpperMouth)
         {
-            upperMouthTween = upperMouth.DOAnchorPosY(2, speed / 2.0f).OnComplete(() =>
+            if (upperMouthTween != null)
+                upperMouthTween.Kill(true);
+
+            upperMouthTween = upperMouth.DOAnchorPosY(2 * -direction, speed / 2.0f).OnComplete(() =>
             {
-                upperMouthTween = upperMouth.DOAnchorPosY(-2, speed / 2.0f).OnComplete(() =>
-                {
-                    upperMouthTween.Kill(true);
-                });
+                upperMouthTween.Kill(true);
             });
         }
 

@@ -85,9 +85,12 @@ namespace Wattle.Wild.Infrastructure
         {
             MapSectionLocation location;
 #if UNITY_EDITOR
-            location = Instance.startingLocation;
+            if (Instance.IsSandbox)
+                location = Instance.startingLocation;
+            else
+                location = MapSectionLocation.STARTING_AREA;
 #else
-            location = MapSectionLocation.CENTER;
+            location = MapSectionLocation.STARTING_AREA;
 #endif
 
             SceneManager.Instance.LoadScene("GameScene", UnityEngine.SceneManagement.LoadSceneMode.Single, () =>
@@ -95,7 +98,7 @@ namespace Wattle.Wild.Infrastructure
                 MapManager mapManager = FindAnyObjectByType<MapManager>();
                 if (mapManager != null)
                 {
-                    mapManager.LoadMap(location);
+                    mapManager.LoadMap(location, Instance.IsSandbox);
                 }
 
                 ChangeGamestate(GameState.World);
