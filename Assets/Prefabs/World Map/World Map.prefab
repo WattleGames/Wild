@@ -946,7 +946,7 @@ PrefabInstance:
     - target: {fileID: 3898795046371880333, guid: 2ebefb82b9a14d2489c7704ef4d17550, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: e79055974a96f55458d0e6f9ac833460, type: 2}
+      objectReference: {fileID: 11400000, guid: 9fa1fecb85eeb24479885edc2f2a0ee4, type: 2}
     - target: {fileID: 6405549987238174903, guid: 2ebefb82b9a14d2489c7704ef4d17550, type: 3}
       propertyPath: m_Name
       value: Casino Exit
@@ -1150,6 +1150,14 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: ac5726f632e810a45a8ee97db665fc86, type: 2}
+    - target: {fileID: 1551461846405448181, guid: 26f06630db072964fa57667facd30f09, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6890132019512369157}
+    - target: {fileID: 1551461846405448181, guid: 26f06630db072964fa57667facd30f09, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 556342219060023320}
     - target: {fileID: 1677824616019804056, guid: 26f06630db072964fa57667facd30f09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
