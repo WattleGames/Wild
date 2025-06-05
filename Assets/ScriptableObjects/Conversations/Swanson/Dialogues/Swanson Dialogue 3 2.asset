@@ -21,3 +21,4 @@ MonoBehaviour:
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
   - {fileID: 11400000, guid: 02f762848fa6d4c4b9531aec7f2413a0, type: 2}
+  - {fileID: 11400000, guid: 1269a8b1ff0a09049a3a57c4ef36be8c, type: 2}

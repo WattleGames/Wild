@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: b472882f00f2ca24db2885c456998ada, type: 3}
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: b3faedad850a0ff42a97ee545bd5443a, type: 3}
     isSpoken: 1
     speaker: 
     dialogueText: Well thank thee then! aught else? if 't be true not, i shall resume

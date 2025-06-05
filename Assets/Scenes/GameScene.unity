@@ -1093,10 +1093,6 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
-    - target: {fileID: 2815815809834676240, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.168
-      objectReference: {fileID: 0}
     - target: {fileID: 2845673132509247903, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1153,10 +1149,6 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
-    - target: {fileID: 6808500070295547251, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: ac5726f632e810a45a8ee97db665fc86, type: 2}
     - target: {fileID: 6890132019512369157, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: mapCamera
       value: 

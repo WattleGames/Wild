@@ -59,7 +59,7 @@ namespace Wattle.Wild.Audio
             {
                 if (instanceType == AudioType.MUSIC)
                 {
-                    yield return Fade(false);
+                    yield return FadeMusic(false);
                 }
                 else if (instanceType == AudioType.VOICE)
                 {
@@ -91,13 +91,16 @@ namespace Wattle.Wild.Audio
         {
             audioSource.volume = 0;
 
-            StartCoroutine(Fade(true));
+            if (instanceType == AudioType.MUSIC)
+                StartCoroutine(FadeMusic(true));
+            else
+                audioSource.volume = EvaluateVolume();
 
             audioSource.Play();
             yield return new WaitUntil(() => !audioSource.isPlaying);
 
-            onInstanceFinished?.Invoke(this);
             onCompleteCallback?.Invoke();
+            onInstanceFinished?.Invoke(this);
 
             audioCoroutine = null;
         }
@@ -112,6 +115,9 @@ namespace Wattle.Wild.Audio
                     SaveSystem.Instance.AudioSettings.sfxVolume.onValueChanged += OnAudioSettingChanged;
                     break;
                 case AudioType.MUSIC:
+                    SaveSystem.Instance.AudioSettings.musicVolume.onValueChanged += OnAudioSettingChanged;
+                    break;
+                case AudioType.VOICE:
                     SaveSystem.Instance.AudioSettings.musicVolume.onValueChanged += OnAudioSettingChanged;
                     break;
             }
@@ -151,7 +157,7 @@ namespace Wattle.Wild.Audio
             return volume;
         }
 
-        private IEnumerator Fade(bool fadeIn)
+        private IEnumerator FadeMusic(bool fadeIn)
         {
             Tweener tween = audioSource.DOFade(fadeIn ? SaveSystem.Instance.AudioSettings.musicVolume.Value : 0, 1).SetAutoKill();
             yield return new WaitUntil(() => !tween.active);

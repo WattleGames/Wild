@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5c361103557914a939c88eb4dd435f, type: 3}
   m_Name: Swanson Conversation
   m_EditorClassIdentifier: 
-  startingStage: {fileID: 11400000, guid: 05ac4e87ca0864f429684fcb662d9c01, type: 2}
+  startingStage: {fileID: 11400000, guid: 746310004e8d02347993c5dfacf7d9be, type: 2}
   conversationMusic: {fileID: 0}

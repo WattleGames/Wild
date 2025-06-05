@@ -299,6 +299,14 @@ PrefabInstance:
       propertyPath: fallbackVoice
       value: 
       objectReference: {fileID: 8300000, guid: baf3783b3fd6fbd4eb2d9b4c74c06056, type: 3}
+    - target: {fileID: 7887616918389270177, guid: e5ef02b002f5ea94db6b65dc5d8096cd, type: 3}
+      propertyPath: moveLowerMouth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887616918389270177, guid: e5ef02b002f5ea94db6b65dc5d8096cd, type: 3}
+      propertyPath: moveUpperMouth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8200102427866346887, guid: e5ef02b002f5ea94db6b65dc5d8096cd, type: 3}
       propertyPath: m_IsActive
       value: 1

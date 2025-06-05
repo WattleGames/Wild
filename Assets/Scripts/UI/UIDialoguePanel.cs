@@ -213,10 +213,12 @@ namespace Wattle.Wild.UI
             bool isProcessing = false;
             int startIndex = -1;
             float speed = DEFAULT_TEXT_SPEED;
+            float lettersInWord = 0f;
 
             for (int index = 0; index < text.Length; ++index)
             {
                 char character = text[index];
+                lettersInWord++;
 
                 if (character == '{' || character == '[')
                 {
@@ -247,7 +249,11 @@ namespace Wattle.Wild.UI
 
                 if (dialogue.dialogueMessages[messageIndex].isSpoken)
                 {
-                    onDialogueSpoken?.Invoke(speed, dialogue.dialogueMessages[messageIndex].speaker);
+                    if (character == ' ')
+                    {
+                        onDialogueSpoken?.Invoke(speed * lettersInWord, dialogue.dialogueMessages[messageIndex].speaker);
+                        lettersInWord = 0;
+                    }
 
                     if (dialogue.dialogueMessages[messageIndex].voiceLine == null)
                         PlayTextCharacterAudio(character);
