@@ -21,7 +21,7 @@ MonoBehaviour:
       They reside in the southeasern parts of the forest.
 
 '
-  - dialogueSpeakerPrefab: {fileID: 0}
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 1c0f5fa800f7f3f47b8b1371cf21ee07, type: 3}
     voiceLine: {fileID: 8300000, guid: 76c4d9de33f09994da8450e3a3ce82c2, type: 3}
     isSpoken: 1
     speaker: 

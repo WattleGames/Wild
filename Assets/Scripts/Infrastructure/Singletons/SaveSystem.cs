@@ -24,23 +24,8 @@ namespace Wattle.Wild.Infrastructure
             configPath = $"{Application.persistentDataPath}/{CONFIG_DIRECTORY}";
             initialised = true;
 
-#if !UNITY_WEBGL
-            LOG.Log($"SAVE PATH {configPath}");
-
-            try
-            {
-                Task.Run(() => LoadConfigs(configPath, () =>
-                {
-                    initialised = true;
-                }));
-            }
-            catch (Exception e)
-            {
-                LOG.LogError($"Exception thrown: {e}", LOG.Type.SAVESYSTEM);
-            }
-#else
             AudioSettings = new AudioConfig();
-#endif
+
 
             yield return base.Initalise();
         }
