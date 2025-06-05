@@ -458,6 +458,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1830755417552546377, guid: 208e9e4523d637f418aa1ecc345099cc, type: 3}
+      propertyPath: destinationSection
+      value: 
+      objectReference: {fileID: 6670850165393913232}
     - target: {fileID: 2085848727687990539, guid: 208e9e4523d637f418aa1ecc345099cc, type: 3}
       propertyPath: m_Name
       value: Casino Tile
@@ -729,6 +733,10 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 9051393238289050899}
+    - target: {fileID: 8162701553970431342, guid: 31232c47813fb44429d34cbeebba61d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1173,7 +1181,7 @@ PrefabInstance:
     - target: {fileID: 6321406186595395345, guid: 26f06630db072964fa57667facd30f09, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: ac5726f632e810a45a8ee97db665fc86, type: 2}
+      objectReference: {fileID: 11400000, guid: e79055974a96f55458d0e6f9ac833460, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
