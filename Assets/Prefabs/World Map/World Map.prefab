@@ -165,6 +165,7 @@ Transform:
   - {fileID: 8415365739100419401}
   - {fileID: 5096921699613139053}
   - {fileID: 4630594020287972334}
+  - {fileID: 166449587104872054}
   m_Father: {fileID: 2845673132509247903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &482275172477517005
@@ -325,6 +326,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990a0c98b1969024a84336aa26fba9b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1515335508457245166
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 286012131237434458}
+    m_Modifications:
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085848727687990539, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: m_Name
+      value: Cave Interior
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347916909129227458, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6890132019512369157}
+    - target: {fileID: 3347916909129227458, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveSections
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347916909129227458, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Wattle.Wild.Gameplay.MapManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347916909129227458, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5361377794227623884}
+    - target: {fileID: 3347916909129227458, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Wattle.Wild.Gameplay.Player.MapSection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647013879740928213, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+--- !u!4 &166449587104872054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1677824616019804056, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+  m_PrefabInstance: {fileID: 1515335508457245166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3468533143055231191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2676608337144488249, guid: 0caf8c98de48f124199251afbbd4b1f3, type: 3}
+  m_PrefabInstance: {fileID: 1515335508457245166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990a0c98b1969024a84336aa26fba9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1758450590478975301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,6 +532,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7108441402195206625}
     m_Modifications:
+    - target: {fileID: 233870942263290213, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 233870942263290213, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: ec828d8b907af094c919f8d71d955f2f, type: 2}
     - target: {fileID: 821151983433965886, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
       propertyPath: destinationSection
       value: 
@@ -482,6 +596,34 @@ PrefabInstance:
       propertyPath: 'sectionDoors.Array.data[0]'
       value: 
       objectReference: {fileID: 3388760022354901274}
+    - target: {fileID: 8737806197540761571, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737806197540761571, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737806197540761571, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737806197540761571, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737806197540761571, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Wattle.Wild.Gameplay.Conversation.ConversationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737806197540761571, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: ec828d8b907af094c919f8d71d955f2f, type: 2}
+    - target: {fileID: 8737806197540761571, guid: a8a7850d6bf78a743b817d0f24ab2fbd, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Wattle.Wild.Infrastructure.Conversation.Conversaion, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -773,9 +915,21 @@ PrefabInstance:
       value: Prolouge
       objectReference: {fileID: 0}
     - target: {fileID: 2385649694935712325, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385649694935712325, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385649694935712325, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6890132019512369157}
+    - target: {fileID: 2385649694935712325, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2385649694935712325, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveSections
@@ -816,6 +970,10 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6987063785784429188, guid: 74e33fc3b06dbba418a672a48dc48028, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 28dfcaefe9172cd42bb1a8f243206a9f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1382,6 +1540,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forest Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 5027484139802273590, guid: 01335bd571472c34f93d34a32eb916fb, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6890132019512369157}
+    - target: {fileID: 5027484139802273590, guid: 01335bd571472c34f93d34a32eb916fb, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveSections
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027484139802273590, guid: 01335bd571472c34f93d34a32eb916fb, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Wattle.Wild.Gameplay.MapManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027484139802273590, guid: 01335bd571472c34f93d34a32eb916fb, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3468533143055231191}
+    - target: {fileID: 5027484139802273590, guid: 01335bd571472c34f93d34a32eb916fb, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Wattle.Wild.Gameplay.Player.MapSection, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1419,6 +1597,10 @@ PrefabInstance:
       propertyPath: destinationSection
       value: 
       objectReference: {fileID: 2563774895626100212}
+    - target: {fileID: 1059239853670952150, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: c0106f29d674d2c4d99a404cc8272b60, type: 2}
     - target: {fileID: 1677824616019804056, guid: 5323a59a2e8f1f84e8c84337b5dcd6bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
