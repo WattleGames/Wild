@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5c361103557914a939c88eb4dd435f, type: 3}
   m_Name: Pink Guy Hooded Conversation
   m_EditorClassIdentifier: 
-  startingStage: {fileID: 0}
+  startingStage: {fileID: 11400000, guid: 69de806607a06f04f8c0f1ae0a4e015c, type: 2}
   conversationMusic: {fileID: 0}

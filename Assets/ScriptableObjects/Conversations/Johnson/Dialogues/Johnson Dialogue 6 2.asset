@@ -18,6 +18,6 @@ MonoBehaviour:
     isSpoken: 1
     speaker: 
     dialogueText: hahahahaha! A daw would knoweth such simple mathematics! what thou
-      art looking f'r happeneth to beest twenty one of course
+      art looking for happeneth to beest twenty one of course
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies: []

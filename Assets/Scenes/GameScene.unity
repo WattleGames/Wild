@@ -1109,6 +1109,18 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
+    - target: {fileID: 2423885714318628932, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1236355873}
+    - target: {fileID: 2423885714318628932, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423885714318628932, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: ec828d8b907af094c919f8d71d955f2f, type: 2}
     - target: {fileID: 2845673132509247903, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1161,6 +1173,38 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
+    - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1236355873}
+    - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Wattle.Wild.Gameplay.Conversation.ConversationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: ec828d8b907af094c919f8d71d955f2f, type: 2}
+    - target: {fileID: 6620101391851921090, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Wattle.Wild.Infrastructure.Conversation.Conversaion, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6808500070295547251, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

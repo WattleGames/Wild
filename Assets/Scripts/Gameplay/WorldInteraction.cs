@@ -13,6 +13,7 @@ public class WorldInteraction : MonoBehaviour
     public static event Action OnWorldInteractionExited;
 
     [SerializeField] private UnityEvent onInteractionStarted;
+
     [SerializeField] private Image interactionSprite;
     [SerializeField] private Transform notificationTransform;
 

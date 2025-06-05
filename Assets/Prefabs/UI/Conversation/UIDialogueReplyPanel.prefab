@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 35
-    m_Right: 35
+    m_Left: 100
+    m_Right: -50
     m_Top: 35
     m_Bottom: 35
   m_ChildAlignment: 0
