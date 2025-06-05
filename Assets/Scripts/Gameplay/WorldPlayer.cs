@@ -46,6 +46,7 @@ namespace Wattle.Wild.Gameplay.Player
             {
                 conversationManager.onItemEarned += HandleItemEarned;
             }
+
             WorldInteraction.onItemCollected += HandleItemEarned;
             Initialiser.OnGameStateChanged += OnGameStateChanged;
         }
@@ -56,8 +57,8 @@ namespace Wattle.Wild.Gameplay.Player
             {
                 conversationManager.onItemEarned -= HandleItemEarned;
             }
-            WorldInteraction.onItemCollected -= HandleItemEarned;
 
+            WorldInteraction.onItemCollected -= HandleItemEarned;
             Initialiser.OnGameStateChanged -= OnGameStateChanged;
         }
 

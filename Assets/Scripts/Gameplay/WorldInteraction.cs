@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using Wattle.Utils;
+using Wattle.Wild;
 using Wattle.Wild.Gameplay.Player;
 using Wattle.Wild.Logging;
 
@@ -11,6 +12,9 @@ public class WorldInteraction : MonoBehaviour
 {
     public static event Action OnWorldInteractionEntered;
     public static event Action OnWorldInteractionExited;
+
+    [Header("Requirement")]
+    [SerializeField] private string requirementItemTag;
 
     [Header("Action")]
     [SerializeField] private string interactionAction;
@@ -36,6 +40,26 @@ public class WorldInteraction : MonoBehaviour
     {
         notificationTransform.localScale = Vector3.zero;
         notificationTransform.localPosition = notificationTransform.localPosition.WithY(0);
+
+        WorldPlayer.OnPlayerItemCollected += OnPlayerItemCollected;
+
+        if (!string.IsNullOrEmpty(requirementItemTag) && requirementItemTag != interactionParams)
+        {
+            interactionSprite.enabled = false;
+            isActive = false;
+        }
+    }
+
+    private void OnPlayerItemCollected(string item)
+    {
+        if (!isActive)
+        {
+            if (!string.IsNullOrEmpty(requirementItemTag) && requirementItemTag == interactionParams)
+            {
+                interactionSprite.enabled = true;
+                isActive = true;
+            }
+        }
     }
 
     private void Update()
@@ -52,6 +76,7 @@ public class WorldInteraction : MonoBehaviour
                     if (interactionAction == "ITEM")
                     {
                         onItemCollected?.Invoke(interactionParams);
+                        transform.ToggleActive(false);
                     }
                 }
             }
