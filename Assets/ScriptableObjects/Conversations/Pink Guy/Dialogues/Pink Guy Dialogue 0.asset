@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pink Guy Dialogue 0
   m_EditorClassIdentifier: 
   dialogueMessages:
-  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 694a24b2093902d448f1a952829553d7, type: 3}
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 93a31ec404d7fa445b248885329f0f9a, type: 3}
     voiceLine: {fileID: 8300000, guid: 4c94f0b4d310f92418a72e5753105846, type: 3}
     isSpoken: 1
     speaker: 
@@ -22,6 +22,6 @@ MonoBehaviour:
       tunnel and rest assured you'll find whatever your looking for.
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
-  - {fileID: 11400000, guid: b74c4f152b5be0f4386ab60737d76a85, type: 2}
-  - {fileID: 11400000, guid: fdadcee092c902f49829a4ac31f7da5d, type: 2}
-  - {fileID: 11400000, guid: 149292eeceeb83e43ad977af8773b8de, type: 2}
+  - {fileID: 11400000, guid: 62c0b11ff883caa46b64ef272b4b30c2, type: 2}
+  - {fileID: 11400000, guid: 053f970c9f97aac48a2ebc6342a73e68, type: 2}
+  - {fileID: 11400000, guid: d6ebef74b7e32bc4c98d91c2e13ad112, type: 2}

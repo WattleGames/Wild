@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pink Guy Dialogue 2 1
   m_EditorClassIdentifier: 
   dialogueMessages:
-  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 694a24b2093902d448f1a952829553d7, type: 3}
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 93a31ec404d7fa445b248885329f0f9a, type: 3}
     voiceLine: {fileID: 8300000, guid: 781622b7d4daaeb4eae29daaca99dd00, type: 3}
     isSpoken: 1
     speaker: 

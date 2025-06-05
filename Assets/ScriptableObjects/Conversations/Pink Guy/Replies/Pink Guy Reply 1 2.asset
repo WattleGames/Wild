@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Pink Guy Reply 1 2
   m_EditorClassIdentifier: 
-  replyText: youre in a place only found by those who are truly lost...
-  nextMessage: {fileID: 11400000, guid: 4336426ccf1760548bf9e986b3344a43, type: 2}
+  replyText: how do you know im searching for something?
+  nextMessage: {fileID: 11400000, guid: 94a8c14cecfec1641bacc6b8b57a795a, type: 2}

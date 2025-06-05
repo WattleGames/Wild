@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
-  m_Name: Pink Guy Hooded Dialogue 2 1
+  m_Name: Pink Guy Hooded Dialogue 2 2
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 694a24b2093902d448f1a952829553d7, type: 3}
-    voiceLine: {fileID: 8300000, guid: 781622b7d4daaeb4eae29daaca99dd00, type: 3}
+    voiceLine: {fileID: 0}
     isSpoken: 1
     speaker: 
-    dialogueText: you're in a place only found by those who become truly lost...
+    dialogueText: what I wear is besides the point, adventure awaits traveler and
+      finding what was once lost, just follow the light.
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
-  dialogueReplies:
-  - {fileID: 11400000, guid: b74c4f152b5be0f4386ab60737d76a85, type: 2}
+  dialogueReplies: []

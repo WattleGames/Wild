@@ -532,6 +532,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2599194672838026664, guid: 8142ea0654c2d4b4e8fe431b1d9d7002, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20.781616
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599194672838026664, guid: 8142ea0654c2d4b4e8fe431b1d9d7002, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10.732002
+      objectReference: {fileID: 0}
     - target: {fileID: 3211854616789803039, guid: 8142ea0654c2d4b4e8fe431b1d9d7002, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1141,26 +1149,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4799203151708096660, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7758570361526280045}
-    - target: {fileID: 4799203151708096660, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MoveSections
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799203151708096660, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Wattle.Wild.Gameplay.MapManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799203151708096660, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 7758570361526280046}
-    - target: {fileID: 4799203151708096660, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Wattle.Wild.Gameplay.Player.MapSection, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5017322905801282196, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
       propertyPath: m_Name
       value: World Map
@@ -1197,33 +1185,19 @@ PrefabInstance:
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1236355873}
+    - target: {fileID: 8576413831504214143, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1236355873}
+    - target: {fileID: 8576413831504214143, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
+      propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: c0106f29d674d2c4d99a404cc8272b60, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
---- !u!114 &7758570361526280045 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6890132019512369157, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-  m_PrefabInstance: {fileID: 7758570361526280044}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3304dfdeab26e164ab9ab5f1518f432b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7758570361526280046 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9051393238289050899, guid: 814a649a881fa8542868c33a637f4e34, type: 3}
-  m_PrefabInstance: {fileID: 7758570361526280044}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 990a0c98b1969024a84336aa26fba9b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

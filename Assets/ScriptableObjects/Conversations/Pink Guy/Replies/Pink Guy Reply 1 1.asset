@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Pink Guy Reply 1 1
   m_EditorClassIdentifier: 
-  replyText: Hey there weary traveler, you look like you've had it rough, you must
-    be exhausted. dont ya worry though just a short walk through that there tunnel
-    and rest assured youll find whatever you're looking for.
-  nextMessage: {fileID: 11400000, guid: 365653a95ebf9904f8596525cd0d94c4, type: 2}
+  replyText: where am I?
+  nextMessage: {fileID: 11400000, guid: 94f0ef6c89576954bae9bee65ca58bef, type: 2}

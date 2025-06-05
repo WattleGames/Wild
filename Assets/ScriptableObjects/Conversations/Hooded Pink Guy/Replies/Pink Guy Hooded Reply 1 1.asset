@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
   m_Name: Pink Guy Hooded Reply 1 1
   m_EditorClassIdentifier: 
-  replyText: '"Where am I?"'
-  nextMessage: {fileID: 11400000, guid: 365653a95ebf9904f8596525cd0d94c4, type: 2}
+  replyText: '"uh... weren''t you just outside?"'
+  nextMessage: {fileID: 0}

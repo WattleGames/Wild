@@ -23,7 +23,8 @@ MonoBehaviour:
     isSpoken: 1
     speaker: 
     dialogueText: Anyhow - Welcome to The Wild Wild East. A bit of an anomaly of
-      the wild, really. I learned the hard way people are sent here if they perish.
+      the wild, really. I learned the hard way people are sent here if they fail
+      in life.
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: dc549eb065475aa4a91d806aee45a5b8, type: 3}
     voiceLine: {fileID: 0}
     isSpoken: 1

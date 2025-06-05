@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singletonManager: {fileID: 1299597352}
-  sandboxMode: 0
+  sandboxMode: 1
   clearSave: 0
-  startingLocation: 10
+  startingLocation: 7
 --- !u!4 &114513174
 Transform:
   m_ObjectHideFlags: 0

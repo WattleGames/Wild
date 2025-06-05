@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50441ec0399a905428a76df449ad790f, type: 3}
-  m_Name: Pink Guy Hooded Reply 1 3
+  m_Script: {fileID: 11500000, guid: 2a5c361103557914a939c88eb4dd435f, type: 3}
+  m_Name: Tomathomas Conversation
   m_EditorClassIdentifier: 
-  replyText: '*tickle him*'
-  nextMessage: {fileID: 11400000, guid: 67a8176ba3ad51549bda785599cb8296, type: 2}
+  startingStage: {fileID: 11400000, guid: 1b4f110242763f54fbe780d14608017d, type: 2}
+  conversationMusic: {fileID: 0}

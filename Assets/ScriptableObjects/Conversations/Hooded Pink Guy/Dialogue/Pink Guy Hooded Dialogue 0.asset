@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
-  m_Name: Pink Guy Hooded Dialogue 2 2
+  m_Name: Pink Guy Hooded Dialogue 0
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 694a24b2093902d448f1a952829553d7, type: 3}
-    voiceLine: {fileID: 8300000, guid: 30e5ad40aa0439a44bafbb0f9d557715, type: 3}
+    voiceLine: {fileID: 0}
     isSpoken: 1
     speaker: 
-    dialogueText: oh pshh ya don't need to worry about the details...
+    dialogueText: traveler, I have waiting a long time for this moment, I could sense
+      your aura from here and so I waited for the day you would come
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
-  - {fileID: 11400000, guid: fdadcee092c902f49829a4ac31f7da5d, type: 2}
+  - {fileID: 11400000, guid: b74c4f152b5be0f4386ab60737d76a85, type: 2}
+  - {fileID: 11400000, guid: 2c18b25a536f18542927535b71b930de, type: 2}
