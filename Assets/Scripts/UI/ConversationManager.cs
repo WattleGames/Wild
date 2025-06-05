@@ -169,7 +169,7 @@ namespace Wattle.Wild.Gameplay.Conversation
             {
                 if (reply.replyAction == "ITEM")
                 {
-                    onItemEarned?.Invoke(reply.replyAction);
+                    onItemEarned?.Invoke(reply.actionParams);
                 }
             }
 

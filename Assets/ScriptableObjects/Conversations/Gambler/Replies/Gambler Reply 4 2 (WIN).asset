@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replyText: '*Show Cards*'
   nextMessage: {fileID: 11400000, guid: 63776ac3a64445940a417acf9408c07b, type: 2}
-  replyAction: BRIDGE
-  actionParams: 
+  replyAction: ITEM
+  actionParams: BOAT

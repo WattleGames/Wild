@@ -23,7 +23,7 @@ public class WorldInteraction : MonoBehaviour
     [SerializeField] private UnityEvent onInteractionStarted;
     public static event Action<string> onItemCollected;
 
-    [SerializeField] private Image interactionSprite;
+    [SerializeField] private SpriteRenderer interactionSprite;
     [SerializeField] private Transform notificationTransform;
 
     private Vector3 targetScale = new Vector3(0.04f, 0.025f, 1);
