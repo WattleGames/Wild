@@ -8159,20 +8159,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: sectionDoors.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: 'sectionDoors.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2632153172227567222}
     - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: 'sectionDoors.Array.data[1]'
       value: 
-      objectReference: {fileID: 2632153172227567222}
+      objectReference: {fileID: 120788625910608322}
     - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: 'sectionDoors.Array.data[2]'
       value: 
-      objectReference: {fileID: 120788625910608322}
+      objectReference: {fileID: 3894567368574484713}
     - target: {fileID: 7050980172355847994, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: 'sectionDoors.Array.data[3]'
       value: 
@@ -8566,7 +8566,7 @@ PrefabInstance:
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: 48cd341a2e9dd4b478a6810cb6f5d0ca, type: 2}
+      objectReference: {fileID: 11400000, guid: ac5726f632e810a45a8ee97db665fc86, type: 2}
     - target: {fileID: 8374267658086876241, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_Size.x
       value: 0.15923546
