@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 1c0f5fa800f7f3f47b8b1371cf21ee07, type: 3}
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: f09a104e552fee740b817f9c84066b3d, type: 3}
     isSpoken: 1
     speaker: 
     dialogueText: Sigh... Guess it doesn't work squad. I'm just trying to get any
       advantage I can in the fight against those bandits. They've been encroaching
       our forest home for as long as I can remember.
   - dialogueSpeakerPrefab: {fileID: 0}
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: ed10bb2e222d7974185c93baf1f94d1d, type: 3}
     isSpoken: 1
     speaker: 
     dialogueText: You seem particularly harmless, not part of any of that. Maybe
