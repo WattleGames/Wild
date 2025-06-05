@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueMessages:
   - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 94c9d71db502c844187bd4da4e967532, type: 3}
     voiceLine: {fileID: 0}
-    isSpoken: 0
+    isSpoken: 1
     speaker: 
     dialogueText: ... Why yes of course! The other guests happen to be in the restroom,
       sir. They'll be back any time sir, yes, they'll be back any time.
