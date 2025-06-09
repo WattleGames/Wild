@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singletonManager: {fileID: 1299597352}
   endCanvas: {fileID: 1634275431}
-  sandboxMode: 1
+  sandboxMode: 0
   clearSave: 0
   startingLocation: 0
 --- !u!4 &114513174
