@@ -1,9 +1,7 @@
 using DG.Tweening;
 using System;
-using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using Wattle.Utils;
 using Wattle.Wild.Infrastructure.Conversation;
@@ -74,13 +72,13 @@ namespace Wattle.Wild.UI
         public void PlayEnterAnimation()
         {
             content.DOAnchorPosX(0, 1f)
-                .SetEase(Ease.OutCubic);
+                .SetEase(Ease.OutCubic).SetLink(this.gameObject);
         }
 
         public Tweener PlayExitAnimation()
         {
             return content.DOAnchorPosX(-300, 0.5f)
-                .SetEase(Ease.OutCubic);
+                .SetEase(Ease.OutCubic).SetLink(this.gameObject);
         }
 
         private void OnEnable()

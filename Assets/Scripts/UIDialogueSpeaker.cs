@@ -57,7 +57,8 @@ public class UIDialogueSpeaker : MonoBehaviour
             upperMouthTween = upperMouth.DOAnchorPosY(2 * -direction, speed / 2.0f).OnComplete(() =>
             {
                 upperMouthTween.Kill(true);
-            });
+            }
+            ).SetLink(this.gameObject);
         }
 
         if (moveLowerMouth)
@@ -68,7 +69,8 @@ public class UIDialogueSpeaker : MonoBehaviour
             lowerMothTween = lowerMouth.DOAnchorPosY(2 * direction, speed).OnComplete(() =>
             {
                 lowerMothTween.Kill(true);
-            });
+            }
+            ).SetLink(this.gameObject);
         }
     }
 }

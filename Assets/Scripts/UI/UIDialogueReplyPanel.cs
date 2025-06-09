@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Wattle.Wild.Infrastructure.Conversation;
 
 namespace Wattle.Wild.UI
@@ -64,7 +63,7 @@ namespace Wattle.Wild.UI
             }
         }
 
-        public void CloseReplyPanel(Action onComplete = null) // TODO: handle exit animations
+        public void CloseReplyPanel(Action onComplete = null)
         {
             StartCoroutine(RemoveReplies(() =>
             {

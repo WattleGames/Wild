@@ -33,19 +33,22 @@ namespace Wattle.Wild.Audio
         {
             StartCoroutine(CleanUp(() =>
             {
-                this.onCompleteCallback = onCompleteCallback;
-                this.instanceType = instanceType;
-                this.audioClip = audioClip;
-
-                if (instanceType == AudioType.MUSIC)
+                if (audioSource != null)
                 {
-                    audioSource.loop = true;
-                    audioSource.spatialize = false;
+                    this.onCompleteCallback = onCompleteCallback;
+                    this.instanceType = instanceType;
+                    this.audioClip = audioClip;
+
+                    if (instanceType == AudioType.MUSIC)
+                    {
+                        audioSource.loop = true;
+                        audioSource.spatialize = false;
+                    }
+
+                    SubscribeToSettingEvents();
+
+                    Play();
                 }
-
-                SubscribeToSettingEvents();
-
-                Play();
             }));
         }
 
@@ -78,7 +81,6 @@ namespace Wattle.Wild.Audio
             }
 
             yield return null;
-
         }
 
         private void Play()

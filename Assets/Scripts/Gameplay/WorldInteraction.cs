@@ -45,20 +45,21 @@ public class WorldInteraction : MonoBehaviour
 
         if (!string.IsNullOrEmpty(requirementItemTag) && requirementItemTag != interactionParams)
         {
-            interactionSprite.enabled = false;
-            isActive = false;
+            if (interactionSprite != null)
+                interactionSprite.enabled = false;
         }
+    }
+
+    private void OnDisable()
+    {
+        WorldPlayer.OnPlayerItemCollected -= OnPlayerItemCollected;
     }
 
     private void OnPlayerItemCollected(string item)
     {
-        if (!isActive)
+        if (!string.IsNullOrEmpty(requirementItemTag) && requirementItemTag == interactionParams)
         {
-            if (!string.IsNullOrEmpty(requirementItemTag) && requirementItemTag == interactionParams)
-            {
-                interactionSprite.enabled = true;
-                isActive = true;
-            }
+            interactionSprite.enabled = true;
         }
     }
 
@@ -71,7 +72,7 @@ public class WorldInteraction : MonoBehaviour
                 isActive = false;
                 onInteractionStarted?.Invoke();
 
-                if (string.IsNullOrEmpty(interactionAction) && string.IsNullOrEmpty(interactionParams))
+                if (!string.IsNullOrEmpty(interactionAction) && !string.IsNullOrEmpty(interactionParams))
                 {
                     if (interactionAction == "ITEM")
                     {
@@ -147,8 +148,8 @@ public class WorldInteraction : MonoBehaviour
 
     private void PlayAnimation(bool isEntering, Action onComplete = null)
     {
-        spriteTweener = notificationTransform.DOScale(isEntering ? targetScale : Vector3.zero, speed).SetAutoKill().SetEase(Ease.InQuart);
-        moveTweener = notificationTransform.DOLocalMoveY(isEntering ? targetPos : 0, speed).SetAutoKill().SetEase(Ease.InQuart);
+        spriteTweener = notificationTransform.DOScale(isEntering ? targetScale : Vector3.zero, speed).SetAutoKill().SetEase(Ease.InQuart).SetLink(this.gameObject);
+        moveTweener = notificationTransform.DOLocalMoveY(isEntering ? targetPos : 0, speed).SetAutoKill().SetEase(Ease.InQuart).SetLink(this.gameObject);
 
         spriteTweener.onComplete += () =>
         {

@@ -133,13 +133,11 @@ namespace Wattle.Wild
             });
         }
 
-        public static IEnumerator FadeCanvas(Tweener tween, CanvasGroup canvasGroup, bool fadeIn, float duration)
+        public static IEnumerator FadeCanvas(CanvasGroup canvasGroup, bool fadeIn, float duration)
         {
-            tween?.Kill();
+            Tweener tween = canvasGroup.DOFade(fadeIn ? 1 : 0, duration).SetAutoKill(true);
 
-            tween = canvasGroup.DOFade(fadeIn ? 1 : 0, duration).SetAutoKill(true);
-
-            yield return new WaitUntil(() => tween == null);
+            yield return new WaitUntil(() => !tween.active);
         }
     }
 }

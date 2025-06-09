@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 236d525c37dae5f4186cb7921b31ae9c, type: 3}
-  m_Name: Martin Fishman Dialogue 2 Introduces
+  m_Name: King Dialogue 2 1
   m_EditorClassIdentifier: 
   dialogueMessages:
-  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: 9b5e169625420b24994c51c6802a9a9e, type: 3}
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: b02f6e06d70b9b340a20063db0776491, type: 3}
+    voiceLine: {fileID: 0}
+    isSpoken: 0
+    speaker: 
+    dialogueText: The King's facade is suddenly adjourned.
+  - dialogueSpeakerPrefab: {fileID: 5704650793626984200, guid: b02f6e06d70b9b340a20063db0776491, type: 3}
     voiceLine: {fileID: 0}
     isSpoken: 1
     speaker: 
-    dialogueText: '"I''m Martin Fishman. Been here for ages. I''ve tried it all except
-      love. I like fishing here, it''s peaceful."'
+    dialogueText: Please, enlighten me then.
   dialogueStyle: {fileID: 11400000, guid: e27540f883cd67142b198b90f0c13817, type: 2}
   dialogueReplies:
-  - {fileID: 11400000, guid: 2814e0ad201fd034bb9085d4700f9985, type: 2}
+  - {fileID: 11400000, guid: 151216577d27d3d4488968e51188b412, type: 2}
+  - {fileID: 11400000, guid: a0dcee57920500741847d308eb43e3bd, type: 2}

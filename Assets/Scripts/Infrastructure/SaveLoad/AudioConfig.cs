@@ -25,8 +25,8 @@ namespace Wattle.Wild.Infrastructure
 
         public Observable<float> masterVolume = new Observable<float>(0.7f);
         public Observable<float> sfxVolume = new Observable<float>(0.7f);
-        public Observable<float> musicVolume = new Observable<float>(0.4f);
-        public Observable<float> dialogueVolume = new Observable<float>(0.7f);
+        public Observable<float> musicVolume = new Observable<float>(0.2f);
+        public Observable<float> dialogueVolume = new Observable<float>(0.9f);
 
         public void Deserialize(string json)
         {

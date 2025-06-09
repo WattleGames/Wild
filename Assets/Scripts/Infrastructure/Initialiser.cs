@@ -1,6 +1,12 @@
 using Wattle.Utils;
 using System;
 using Wattle.Wild.Gameplay;
+using System.Collections;
+using Wattle.Wild.UI;
+using DG.Tweening;
+
+
+
 
 
 #if UNITY_EDITOR
@@ -25,6 +31,7 @@ namespace Wattle.Wild.Infrastructure
         private static GameState gameState;
 
         [SerializeField] private SingletonManager singletonManager;
+        [SerializeField] private CanvasGroup endCanvas;
 
 #if UNITY_EDITOR
         [Header("Dev Tools")]
@@ -74,6 +81,38 @@ namespace Wattle.Wild.Infrastructure
                     LoadSandbox();
                 }
             });
+        }
+
+        public void EndGame()
+        {
+            StartCoroutine(StartEndSequence());
+
+            IEnumerator StartEndSequence()
+            {
+                bool screenLoaded = false;
+
+                AudioManager.PlayMusic(null);
+
+                UILoading.ShowScreen(() =>
+                {
+                    screenLoaded = true;
+                });
+
+                yield return new WaitUntil(() =>  screenLoaded);
+
+                yield return new WaitForSeconds(0.5f);
+
+                yield return HelperFunctions.FadeCanvas(endCanvas, true, 0.4f);
+
+                yield return new WaitForSeconds(0.4f);
+
+                yield return HelperFunctions.FadeCanvas(endCanvas, false, 0.4f);
+
+                SceneManager.Instance.LoadScene("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, () =>
+                {
+                    ChangeGamestate(GameState.MainMenu);
+                });
+            }
         }
 
         private void LoadSandbox()

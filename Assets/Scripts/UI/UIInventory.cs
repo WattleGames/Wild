@@ -35,8 +35,6 @@ public class UIInventory : MonoBehaviour
         WorldInteraction.OnWorldInteractionExited -= OnInteractionExited;
 
         handleButton.onClick.RemoveListener(HandleButtonClick);
-
-        movingTween?.Kill();
     }
 
     private void OnGameStateChanged(GameState gameState)
@@ -46,6 +44,8 @@ public class UIInventory : MonoBehaviour
             case GameState.Conversation:
             case GameState.WorldTransition:
                 Toggle(false);
+                break;
+            default:
                 break;
         }
     }
@@ -71,7 +71,7 @@ public class UIInventory : MonoBehaviour
         movingTween?.Kill();
 
         //open the inventory
-        movingTween = rectTransform.DOAnchorPosY(enabled ? -220f : -118f, 1f).SetEase(Ease.OutElastic);
+        movingTween = rectTransform.DOAnchorPosY(enabled ? -220f : -118f, 1f).SetEase(Ease.OutElastic).SetLink(this.gameObject);
         inventoryOpened = enabled;
     }
 }

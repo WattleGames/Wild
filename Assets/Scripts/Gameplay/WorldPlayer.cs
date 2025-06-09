@@ -37,6 +37,7 @@ namespace Wattle.Wild.Gameplay.Player
         private (Vector2, MapSectionLocation) currentSectionDetails;
 
         private string isMovingParameter = "isMoving";
+        public bool isMoving = false;
 
         private Dictionary<string, bool> items = new Dictionary<string, bool>();
 
@@ -106,7 +107,8 @@ namespace Wattle.Wild.Gameplay.Player
 
         private void HandleItemEarned(string item)
         {
-            TryAddItemToPlayer(item);
+            if (!string.IsNullOrEmpty(item))
+                TryAddItemToPlayer(item);
         }
 
         public void TryAddItemToPlayer(string itemName)
@@ -153,18 +155,18 @@ namespace Wattle.Wild.Gameplay.Player
             }
         }
 
-        public void MoveIntoNewSection(MapSectionDetails sectionDetails, Action onComplete = null)
+        public void MoveIntoNewSection(MapSectionDetails oldSectionDetails, MapSectionDetails sectionDetails, Action onComplete = null)
         {
             this.currentSectionDetails = (new Vector2(sectionDetails.mapSection.transform.position.x, sectionDetails.mapSection.transform.position.y), sectionDetails.location);
 
-            Vector2 oldPosition = new Vector2(this.transform.position.x, this.transform.position.y);
-            Vector2 newPosition = oldPosition + new Vector2(movement.x * 2, movement.y * 2);
+            Vector2 dir = (sectionDetails.mapSection.transform.position - oldSectionDetails.mapSection.transform.position).normalized;
+            Vector2 newPosition = this.transform.position + this.transform.position.WithXY(dir.x * 2, dir.y * 2);
 
             Tweener tween = rb.DOMove(newPosition, 0.35f).OnComplete(() =>
             {
                 onComplete?.Invoke();
-            }
-            ).SetLink(this.gameObject);
+            })
+            .SetLink(this.gameObject);
         }
     }
 }

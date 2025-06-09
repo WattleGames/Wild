@@ -75,7 +75,15 @@ namespace Wattle.Wild.Gameplay.Conversation
             Initialiser.ChangeGamestate(GameState.Conversation);
         }
 
-        public void EndConversation()
+        private void OnDestroy()
+        {
+            dialoguePanel.onDialogueStarted -= OnDialogueStarted;
+            dialoguePanel.onDialogueFinished -= OnDialogueFinished;
+
+            dialogueReplyPanel.OnReplySelected -= OnReplySelected;
+        }
+
+        public void EndConversation(Action onComplete = null)
         {
             dialoguePanel.onDialogueStarted -= OnDialogueStarted;
             dialoguePanel.onDialogueFinished -= OnDialogueFinished;
@@ -86,6 +94,7 @@ namespace Wattle.Wild.Gameplay.Conversation
             {
                 dialogueSpeaker = null;
                 Initialiser.ChangeGamestate(GameState.World);
+                onComplete?.Invoke();
             }));
         }
 
@@ -173,6 +182,15 @@ namespace Wattle.Wild.Gameplay.Conversation
                 }
             }
 
+            if (reply.replyAction == "END GAME")
+            {
+                EndConversation(() =>
+                {
+                    Initialiser.Instance.EndGame();
+                });
+                return;
+            }
+
             if (isLeave)
             {
                 EndConversation();
@@ -205,7 +223,8 @@ namespace Wattle.Wild.Gameplay.Conversation
             speakerMovementTween = speakerContainer.DOAnchorPosX(speakerEndingXPosition, 1f).SetEase(Ease.OutQuint).OnComplete(() =>
             {
                 speakerBobTween = speakerContainer.DOAnchorPosY(-8f, 2f).SetLoops(-1, LoopType.Yoyo)
-                .SetEase(Ease.InOutQuad);
+                .SetEase(Ease.InOutQuad)
+                .SetLink(this.gameObject);
             });
         }
 

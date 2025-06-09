@@ -125,7 +125,7 @@ namespace Wattle.Wild.Gameplay
             }
             else if (IsSectionOnWorldMap(currentSection) && IsSectionOnWorldMap(newSectionDetails))
             {
-                worldPlayer.MoveIntoNewSection(newSectionDetails, () =>
+                worldPlayer.MoveIntoNewSection(currentSection, newSectionDetails, () =>
                 {
                     currentSection = newSectionDetails;
                     Initialiser.ChangeGamestate(GameState.World);

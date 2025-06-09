@@ -465,8 +465,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1519933875
-  m_SortingLayer: 1
+  m_SortingLayerID: 506211799
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 75e227b852b0fa44b961a5640337bb3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -890,11 +890,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1953435424303635603, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.281
       objectReference: {fileID: 0}
     - target: {fileID: 1953435424303635603, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.179
+      value: 0.061
       objectReference: {fileID: 0}
     - target: {fileID: 1953435424303635603, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -934,11 +934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2645341584396746330, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.20403227
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2645341584396746330, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.18626785
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2645341584396746330, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -954,11 +954,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3849542336384550893, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2841
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3849542336384550893, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1026
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size
@@ -1034,7 +1034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374267658086876241, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_Size.x
-      value: 0.10055715
+      value: 0.08314032
       objectReference: {fileID: 0}
     - target: {fileID: 8374267658086876241, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_Size.y
@@ -1042,7 +1042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374267658086876241, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_Offset.x
-      value: 0.13903695
+      value: 0.025088947
       objectReference: {fileID: 0}
     - target: {fileID: 8374267658086876241, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_Offset.y
@@ -1311,6 +1311,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2307322701016999968}
     m_Modifications:
+    - target: {fileID: 167345235378293745, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5263525b9d653d4e8a89a927e726bbc, type: 3}
     - target: {fileID: 1953435424303635603, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1381,11 +1385,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3849542336384550893, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.34
+      value: 0.3672
       objectReference: {fileID: 0}
     - target: {fileID: 3849542336384550893, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0692
+      value: 0.0454
       objectReference: {fileID: 0}
     - target: {fileID: 6620370663921426171, guid: 4bbf744e224e40947bfafec633b5860e, type: 3}
       propertyPath: onInteractionStarted.m_PersistentCalls.m_Calls.Array.size

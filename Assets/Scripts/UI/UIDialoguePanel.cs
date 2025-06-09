@@ -180,8 +180,8 @@ namespace Wattle.Wild.UI
                 scaleTween = null;
             }
 
-            scaleTween = messageBox.DOScale(endScale, speed).SetAutoKill().SetEase(ease);
-            moveTween = messageBox.DOAnchorPos(endPos, speed).SetAutoKill().SetEase(ease);
+            scaleTween = messageBox.DOScale(endScale, speed).SetAutoKill().SetEase(ease).SetLink(this.gameObject);
+            moveTween = messageBox.DOAnchorPos(endPos, speed).SetAutoKill().SetEase(ease).SetLink(this.gameObject);
 
             scaleTween.onComplete += () =>
             {

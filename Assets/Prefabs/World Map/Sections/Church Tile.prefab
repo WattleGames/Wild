@@ -685,6 +685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076471181799353557}
   - component: {fileID: 8973665513942640168}
+  - component: {fileID: 1490685111469572153}
   m_Layer: 0
   m_Name: TomaThomas
   m_TagString: Untagged
@@ -751,7 +752,7 @@ SpriteRenderer:
   m_SortingLayerID: 506211799
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1492caca9edec8e43998b618d848a50f, type: 3}
+  m_Sprite: {fileID: 7720287105644663950, guid: 1492caca9edec8e43998b618d848a50f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -762,6 +763,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!95 &1490685111469572153
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945496741181768438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f55ff89b72d8ff46a77474dc84001c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2026180768325281559
 GameObject:
   m_ObjectHideFlags: 0
@@ -4456,6 +4479,10 @@ PrefabInstance:
     - target: {fileID: 4954238091097900111, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154654172492325023, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6032554775747975579, guid: 0932e8c9b5327b9459441929dcf8f831, type: 3}
       propertyPath: m_LocalPosition.x
